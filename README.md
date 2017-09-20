@@ -35,8 +35,8 @@ To get the whole process started, I've gathered some module names here, based on
 | | | |
 | [Joda-Time](http://www.joda.org/joda-time/) | [joda-time:joda-time](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22joda-time%22%20AND%20a%3A%22joda-time%22) | **org.joda.time** ||
 | [Joda-Money](http://www.joda.org/joda-money/) | [org.joda:joda-money](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.joda%22%20AND%20a%3A%22joda-money%22) | **org.joda.money** ||
-| [Joda-Beans](http://www.joda.org/joda-beans/) | [org.joda:joda-beans](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.joda%22%20AND%20a%3A%22joda-beans%22) | **org.joda.beans** ||
-| [Joda-Convert](http://www.joda.org/joda-convert/) | [org.joda:joda-convert](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.joda%22%20AND%20a%3A%22joda-convert%22) | **org.joda.convert** ||
+| [Joda-Beans](http://www.joda.org/joda-beans/) | [org.joda:joda-beans](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.joda%22%20AND%20a%3A%22joda-beans%22) | [**org.joda.beans**](https://github.com/JodaOrg/joda-beans/issues/175) | v2.0 |
+| [Joda-Convert](http://www.joda.org/joda-convert/) | [org.joda:joda-convert](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.joda%22%20AND%20a%3A%22joda-convert%22) | [**org.joda.convert**](https://github.com/JodaOrg/joda-convert/issues/17) | v1.9.1 |
 | | | |
 | [SLF4J-API](https://www.slf4j.org/) | [org.slf4j:slf4j-api](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.slf4j%22%20AND%20a%3A%22slf4j-api%22) | **org.slf4j** ||
 | [Jackson (JSON)](https://github.com/FasterXML/jackson) | [com.fasterxml.jackson.core:jackson-core](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22jackson-core%22) | [**com.fasterxml.jackson.core**](https://github.com/FasterXML/jackson-core/issues/397) | v2.9.1 |
