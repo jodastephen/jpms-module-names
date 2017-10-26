@@ -31,7 +31,7 @@ To get the whole process started, I've gathered some module names here, based on
 | [Commons-Lang v3](https://commons.apache.org/proper/commons-lang/) | [org.apache.commons:commons-lang3](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.apache.commons%22%20AND%20a%3A%22commons-lang3%22) | **org.apache.commons.lang3** | v3.6 |
 | [Commons-Lang v2](https://commons.apache.org/proper/commons-lang/) | [commons-lang:commons-lang](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22commons-lang%22%20AND%20a%3A%22commons-lang%22) | **org.apache.commons.lang** ||
 | | | |
-| [Google-Guava](https://github.com/google/guava) | [com.google.guava:guava](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.google.guava%22%20AND%20a%3A%22guava%22) | [**com.google.common**](https://groups.google.com/d/msg/guava-discuss/1I--H7xwwR8/fbvZJCRaBAAJ) ||
+| [Google-Guava](https://github.com/google/guava) | [com.google.guava:guava](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.google.guava%22%20AND%20a%3A%22guava%22) | [**com.google.common**](https://groups.google.com/d/msg/guava-discuss/1I--H7xwwR8/fbvZJCRaBAAJ) | 23.2-jre |
 | | | |
 | [Joda-Time](http://www.joda.org/joda-time/) | [joda-time:joda-time](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22joda-time%22%20AND%20a%3A%22joda-time%22) | **org.joda.time** ||
 | [Joda-Money](http://www.joda.org/joda-money/) | [org.joda:joda-money](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.joda%22%20AND%20a%3A%22joda-money%22) | **org.joda.money** ||
