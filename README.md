@@ -16,6 +16,7 @@ To get the whole process started, I've gathered some module names here, based on
 
 | Project | Maven co-ordinates | JPMS module name | Released version |
 |----|----|----|----|
+| [BootstrapFX](https://github.com/aalmiray/bootstrapfx) | [org.kordamp.bootstrapfx:bootstrapfx-core](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.bootstrapfx%22%20AND%20a%3A%22bootstrapfx-core%22) | **org.kordamp.bootstrapfx.core** | v0.2.2 |
 | [Commons-BeanUtils](https://commons.apache.org/proper/commons-beanutils/) | [commons-beanutils:commons-beanutils](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22commons-beanutils%22%20AND%20a%3A%22commons-beanutils%22) | **org.apache.commons.beanutils** ||
 | [Commons-CLI](https://commons.apache.org/proper/commons-cli/) | [commons-cli:commons-cli](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22commons-cli%22%20AND%20a%3A%22commons-cli%22) | **org.apache.commons.cli** ||
 | [Commons-Codec](https://commons.apache.org/proper/commons-codec/) | [commons-codec:commons-codec](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22commons-codec%22%20AND%20a%3A%22commons-codec%22) | **org.apache.commons.codec** ||
@@ -65,5 +66,6 @@ To get the whole process started, I've gathered some module names here, based on
 | [SLF4J-API](https://www.slf4j.org/) | [org.slf4j:slf4j-api](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.slf4j%22%20AND%20a%3A%22slf4j-api%22) | **org.slf4j** ||
 | [Jackson (JSON)](https://github.com/FasterXML/jackson) | [com.fasterxml.jackson.core:jackson-core](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22jackson-core%22) | [**com.fasterxml.jackson.core**](https://github.com/FasterXML/jackson-core/issues/397) | v2.9.1 |
 | [Jackson (JSON)](https://github.com/FasterXML/jackson) | [com.fasterxml.jackson.core:jackson-databind](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22jackson-databind%22) | [**com.fasterxml.jackson.databind**](https://github.com/FasterXML/jackson-core/issues/397) | v2.9.1 |
+| [JSilhouette](https://github.com/aalmiray/jsilhouette) | [org.kordamp.jsilhouette:jsilhouette-javafx](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.jsilhouette%22%20AND%20a%3A%22jsilhouette-javafx%22) | **org.kordamp.jsilhouette.javafx** | v0.2.2 |
 
 
