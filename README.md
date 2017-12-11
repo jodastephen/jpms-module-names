@@ -16,6 +16,7 @@ To get the whole process started, I've gathered some module names here, based on
 
 | Project | Maven co-ordinates | JPMS module name | Released version |
 |----|----|----|----|
+| [BootstrapFX](https://github.com/aalmiray/bootstrapfx) | [org.kordamp.bootstrapfx:bootstrapfx-core](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.bootstrapfx%22%20AND%20a%3A%22bootstrapfx-core%22) | **org.kordamp.bootstrapfx.core** | v0.2.2 |
 | [Commons-BeanUtils](https://commons.apache.org/proper/commons-beanutils/) | [commons-beanutils:commons-beanutils](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22commons-beanutils%22%20AND%20a%3A%22commons-beanutils%22) | **org.apache.commons.beanutils** ||
 | [Commons-CLI](https://commons.apache.org/proper/commons-cli/) | [commons-cli:commons-cli](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22commons-cli%22%20AND%20a%3A%22commons-cli%22) | **org.apache.commons.cli** ||
 | [Commons-Codec](https://commons.apache.org/proper/commons-codec/) | [commons-codec:commons-codec](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22commons-codec%22%20AND%20a%3A%22commons-codec%22) | **org.apache.commons.codec** ||
