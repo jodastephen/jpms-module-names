@@ -1,0 +1,20 @@
+
+apply plugin: 'groovy'
+apply plugin: 'application'
+
+mainClassName = "CsvGenerator"
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.4.13'
+
+    testCompile 'junit:junit:4.12'
+}
+
+run {
+    args "${projectDir}/../README.md", "${projectDir}/modules.csv"
+}
+
