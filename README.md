@@ -81,3 +81,25 @@ To get the whole process started, I've gathered some module names here, based on
 | [JUnit Vintage](http://junit.org/)  | [org.junit.vintage:junit-vintage-engine](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.junit.vintage%22%20AND%20a%3A%22junit-vintage-engine%22)                      | **org.junit.vintage.engine**           | v4.12.2 or v5.1.0-M1 |
 | | | |
 | [SLF4J-API](https://www.slf4j.org/) | [org.slf4j:slf4j-api](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.slf4j%22%20AND%20a%3A%22slf4j-api%22) | **org.slf4j** ||
+| | | |
+| [Spring](https://projects.spring.io/spring-framework/) | [org.springframework:spring-aop](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-aop%22) | **spring.aop** | 5.0.2 |
+|  | [org.springframework:spring-aspects](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-aspects%22) | **spring.aspects** | 5.0.2 |
+|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-beans%22) | **spring.beans** | 5.0.2 |
+|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-context-indexer%22) | **spring.context-.indexer** | 5.0.2 |
+|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-context-support%22) | **spring.context.support** | 5.0.2 |
+|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-context%22) | **spring.context** | 5.0.2 |
+|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-core%22) | **spring.core** | 5.0.2 |
+|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-expression%22) | **spring.expression** | 5.0.2 |
+|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-instrument%22) | **spring.instrument** | 5.0.2 |
+|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-jcl%22) | **spring.jcl** | 5.0.2 |
+|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-jdbc%22) | **spring.jdbc** | 5.0.2 |
+|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-jms%22) | **spring.jms** | 5.0.2 |
+|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-messaging%22) | **spring.messaging** | 5.0.2 |
+|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-orm%22) | **spring.orm** | 5.0.2 |
+|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-oxm%22) | **spring.oxm** | 5.0.2 |
+|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-test%22) | **spring.test** | 5.0.2 |
+|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-tx%22) | **spring.tx** | 5.0.2 |
+|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-web%22) | **spring.webflux** | 5.0.2 |
+|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-webmvc%22) | **spring.webmvc** | 5.0.2 |
+|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-websocket%22) | **spring.websocket** | 5.0.2 |
+
