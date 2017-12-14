@@ -85,7 +85,7 @@ To get the whole process started, I've gathered some module names here, based on
 | [Spring](https://projects.spring.io/spring-framework/) | [org.springframework:spring-aop](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-aop%22) | **spring.aop** | 5.0.2 |
 |  | [org.springframework:spring-aspects](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-aspects%22) | **spring.aspects** | 5.0.2 |
 |  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-beans%22) | **spring.beans** | 5.0.2 |
-|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-context-indexer%22) | **spring.context-.indexer** | 5.0.2 |
+|  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-context-indexer%22) | **spring.context.indexer** | 5.0.2 |
 |  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-context-support%22) | **spring.context.support** | 5.0.2 |
 |  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-context%22) | **spring.context** | 5.0.2 |
 |  | [org.springframework:spring-](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-core%22) | **spring.core** | 5.0.2 |
