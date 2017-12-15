@@ -102,5 +102,8 @@ To get the whole process started, I've gathered some module names here, based on
 |  | [org.springframework:spring-webflux](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-web%22) | **spring.webflux** | 5.0.2 |
 |  | [org.springframework:spring-webmvc](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-webmvc%22) | **spring.webmvc** | 5.0.2 |
 |  | [org.springframework:spring-websocket](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-websocket%22) | **spring.websocket** | 5.0.2 |
+| | | |
+| [Square JavaPoet](http://github.com/square/javapoet/) | [com.squareup:javapoet](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.squareup%22%20AND%20a%3A%22javapoet%22) | **com.squareup.javapoet** ||
+| | | |
 
 
