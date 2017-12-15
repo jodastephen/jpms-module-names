@@ -80,6 +80,38 @@ To get the whole process started, I've gathered some module names here, based on
 |                                     | [org.junit.jupiter:junit-jupiter-params](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.junit.jupiter%22%20AND%20a%3A%22junit-jupiter-params%22)                     | **org.junit.jupiter.params**           |  v5.0.2 or v5.1.0-M1 |
 | [JUnit Vintage](http://junit.org/)  | [org.junit.vintage:junit-vintage-engine](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.junit.vintage%22%20AND%20a%3A%22junit-vintage-engine%22)                      | **org.junit.vintage.engine**           | v4.12.2 or v5.1.0-M1 |
 | | | |
+| [LWJGL](https://www.lwjgl.org) | [org.lwjgl:lwjgl](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl%22) | **org.lwjgl** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-assimp](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-assimp%22) | **org.lwjgl.assimp** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-bgfx](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-bgfx%22) | **org.lwjgl.bgfx** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-egl](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-egl%22) | **org.lwjgl.egl** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-glfw](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-glfw%22) | **org.lwjgl.glfw** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-jawt](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-jawt%22) | **org.lwjgl.jawt** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-jemalloc](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-jemalloc%22) | **org.lwjgl.jemalloc** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-lmdb](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-lmdb%22) | **org.lwjgl.lmdb** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-lz4](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-lz4%22) | **org.lwjgl.lz4** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-nanovg](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-nanovg%22) | **org.lwjgl.nanovg** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-nfd](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-nfd%22) | **org.lwjgl.nfd** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-nuklear](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-nuklear%22) | **org.lwjgl.nuklear** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-odbc](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-odbc%22) | **org.lwjgl.odbc** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-openal](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-openal%22) | **org.lwjgl.openal** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-opencl](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-opencl%22) | **org.lwjgl.opencl** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-opengl](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-opengl%22) | **org.lwjgl.opengl** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-opengles](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-opengles%22) | **org.lwjgl.opengles** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-openvr](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-openvr%22) | **org.lwjgl.openvr** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-ovr](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-ovr%22) | **org.lwjgl.ovr** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-par](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-par%22) | **org.lwjgl.par** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-remotery](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-remotery%22) | **org.lwjgl.remotery** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-rpmalloc](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-rpmalloc%22) | **org.lwjgl.rpmalloc** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-sse](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-sse%22) | **org.lwjgl.sse** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-stb](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-stb%22) | **org.lwjgl.stb** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-tinyexr](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-tinyexr%22) | **org.lwjgl.tinyexr** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-tinyfd](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-tinyfd%22) | **org.lwjgl.tinyfd** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-tootle](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-tootle%22) | **org.lwjgl.tootle** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-vulkan](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-vulkan%22) | **org.lwjgl.vulkan** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-xxhash](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-xxhash%22) | **org.lwjgl.xxhash** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-yoga](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-yoga%22) | **org.lwjgl.yoga** | 3.1.5 |
+|  | [org.lwjgl:lwjgl-zstd](https://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.lwjgl%22%20AND%20a%3A%22lwjgl-zstd%22) | **org.lwjgl.zstd** | 3.1.5 |
+| | | |
 | [SLF4J-API](https://www.slf4j.org/) | [org.slf4j:slf4j-api](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.slf4j%22%20AND%20a%3A%22slf4j-api%22) | **org.slf4j** ||
 | | | |
 | [Spring](https://projects.spring.io/spring-framework/) | [org.springframework:spring-aop](https://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.springframework%22%20AND%20a%3A%22spring-aop%22) | **spring.aop** | 5.0.2 |
