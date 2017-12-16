@@ -43,6 +43,27 @@ class CsvGeneratorTestCase {
         assert "\"Project\",\"Maven co-ordinates\",\"JPMS module name\",\"Released version\"" == result
     }
 
+
+    @Test
+    void testIsRelevant_separator() {
+        def line = "| | | |"
+
+        // test 
+        def result = csvGenerator.isRelevant(line)
+
+        assert ! result
+    }
+
+    @Test
+    void testIsRelevant_one() {
+        def line = "| [BootstrapFX](https://github.com/aalmiray/bootstrapfx) | [org.kordamp.bootstrapfx:bootstrapfx-core](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.bootstrapfx%22%20AND%20a%3A%22bootstrapfx-core%22) | **org.kordamp.bootstrapfx.core** | v0.2.2 |"
+
+        // test 
+        def result = csvGenerator.isRelevant(line)
+
+        assert result
+    }
+
     @Test
     void testGenerateLine_one() {
         def line = "| [BootstrapFX](https://github.com/aalmiray/bootstrapfx) | [org.kordamp.bootstrapfx:bootstrapfx-core](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.bootstrapfx%22%20AND%20a%3A%22bootstrapfx-core%22) | **org.kordamp.bootstrapfx.core** | v0.2.2 |"
@@ -55,11 +76,23 @@ class CsvGeneratorTestCase {
 
     @Test
     void testGenerateLine_two() {
-        def line = "| [SLF4J-API](https://www.slf4j.org/) | [org.slf4j:slf4j-api](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.slf4j%22%20AND%20a%3A%22slf4j-api%22) | **org.slf4j** ||"
+        def line = "| [SLF4J-API](https://www.slf4j.org/) | [org.slf4j:slf4j-api](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.slf4j%22%20AND%20a%3A%22slf4j-api%22) | **org.slf4j** | |"
 
         // test 
         def result = csvGenerator.generateLine(line)
 
         assert "\"SLF4J-API\",\"org.slf4j:slf4j-api\",\"org.slf4j\",\"\"" == result
+    }
+
+    @Test
+    void testCleanLine_one() {
+        def line = " | [SLF4J-API](https://www.slf4j.org/) | [org.slf4j:slf4j-api](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.slf4j%22%20AND%20a%3A%22slf4j-api%22) | **org.slf4j** || "
+
+        // test 
+        def result = csvGenerator.cleanLine(line)
+    
+        def expected = "| [SLF4J-API](https://www.slf4j.org/) | [org.slf4j:slf4j-api](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.slf4j%22%20AND%20a%3A%22slf4j-api%22) | **org.slf4j** | |"
+
+        assert expected == result
     }
 }

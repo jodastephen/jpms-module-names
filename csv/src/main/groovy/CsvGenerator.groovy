@@ -25,25 +25,32 @@ class CsvGenerator {
 
     def generateLine(def line) {
         def result = ""
-        def trimLine = line.trim().replaceAll(/\|\|/, "| |")
 
-        if (trimLine ==~ ROW_REGEX) {
-            def fields = trimLine.split(/\|/)
+        def fields = line.split(/\|/)
 
-            if (fields.size() == NUM_TOKENS) {
-                def (x, f1, f2, f3, f4) = generateFields(fields)
-                result = String.format(OUTPUT_FORMAT, f1, f2, f3, f4) 
-            } else {
-                println "WARN: " + trimLine
-            }
+        if (fields.size() == NUM_TOKENS) {
+            def (x, f1, f2, f3, f4) = generateFields(fields)
+            result = String.format(OUTPUT_FORMAT, f1, f2, f3, f4) 
+        } else {
+            println "WARN: " + line
         }
 
         result
     }
+
+    def isRelevant(def line) {
+        (line ==~ ROW_REGEX) 
+    }
+
+    def cleanLine(def line) {
+        line.trim().replaceAll(/\|\|/, "| |")
+    }
     
     def generate(def inFilePath, def outFilePath) {
         def oldLines = new File(inFilePath).readLines()
-        def newLines = oldLines.collect { generateLine(it) }.findAll { ! it.isEmpty() }
+        def newLines = oldLines.collect { cleanLine(it) }
+                               .findAll { isRelevant(it) }
+                               .collect { generateLine(it) }
 
         new File(outFilePath).withWriter { writer ->
             newLines.each { writer.write("${it}\n") }
