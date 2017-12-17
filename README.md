@@ -36,10 +36,12 @@ To get the whole process started, I've gathered some module names here, based on
 | [Google-Guava](https://github.com/google/guava) | [com.google.guava:guava](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.google.guava%22%20AND%20a%3A%22guava%22) | [**com.google.common**](https://groups.google.com/d/msg/guava-discuss/1I--H7xwwR8/fbvZJCRaBAAJ) | 23.2-jre |
 | | | |
 | [Ikonli](https://github.com/aalmiray/ikonli) | [org.kordamp.ikonli:ikonli-core](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-core%22) | **org.kordamp.ikonli.core** | v2.0.1 |
+|  | [org.kordamp.ikonli:ikonli-dashicons-pack](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-dashicons-pack%22) | **org.kordamp.ikonli.dashicons** | v2.1.0 |
 |  | [org.kordamp.ikonli:ikonli-devicons-pack](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-devicons-pack%22) | **org.kordamp.ikonli.devicons** | v2.0.1 |
 |  | [org.kordamp.ikonli:ikonli-elusive-pack](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-elusive-pack%22) | **org.kordamp.ikonli.elusive** | v2.0.1 |
 |  | [org.kordamp.ikonli:ikonli-feather-pack](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-feather-pack%22) | **org.kordamp.ikonli.feather** | v2.0.1 |
 |  | [org.kordamp.ikonli:ikonli-fontawesome-pack](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-fontawesome-pack%22) | **org.kordamp.ikonli.fontawesome** | v2.0.1 |
+|  | [org.kordamp.ikonli:ikonli-fontawesome5-pack](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-fontawesome5-pack%22) | **org.kordamp.ikonli.fontawesome5** | v2.1.0 |
 |  | [org.kordamp.ikonli:ikonli-fontelico-pack](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-fontelico-pack%22) | **org.kordamp.ikonli.fontelico** | v2.0.1 |
 |  | [org.kordamp.ikonli:ikonli-foundation-pack](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-foundation-pack%22) | **org.kordamp.ikonli.foundation** | v2.0.1 |
 |  | [org.kordamp.ikonli:ikonli-hawconsfilled-pack](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-hawconsfilled-pack%22) | **org.kordamp.ikonli.hawconsfilled** | v2.0.1 |
@@ -47,8 +49,10 @@ To get the whole process started, I've gathered some module names here, based on
 |  | [org.kordamp.ikonli:ikonli-icomoon-pack](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-icomoon-pack%22) | **org.kordamp.ikonli.icomoon** | v2.0.1 |
 |  | [org.kordamp.ikonli:ikonli-ionicons-pack](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-ionicons-pack%22) | **org.kordamp.ikonli.ionicons** | v2.0.1 |
 |  | [org.kordamp.ikonli:ikonli-javafx](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-javafx%22) | **org.kordamp.ikonli.javafx** | v2.0.1 |
+|  | [org.kordamp.ikonli:ikonli-ligaturesymbols-pack](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-ligaturesymbols-pack%22) | **org.kordamp.ikonli.ligaturesymbols** | v2.1.0 |
 |  | [org.kordamp.ikonli:ikonli-maki-pack](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-maki-pack%22) | **org.kordamp.ikonli.maki** | v2.0.1 |
 |  | [org.kordamp.ikonli:ikonli-maki2-pack](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-maki2-pack%22) | **org.kordamp.ikonli.maki2** | v2.0.1 |
+|  | [org.kordamp.ikonli:ikonli-mapicons-pack](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-mapicons-pack%22) | **org.kordamp.ikonli.mapicons** | v2.1.0 |
 |  | [org.kordamp.ikonli:ikonli-material-pack](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-material-pack%22) | **org.kordamp.ikonli.material** | v2.0.1 |
 |  | [org.kordamp.ikonli:ikonli-materialdesign-pack](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-materialdesign-pack%22) | **org.kordamp.ikonli.materialdesign** | v2.0.1 |
 |  | [org.kordamp.ikonli:ikonli-metrizeicons-pack](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22org.kordamp.ikonli%22%20AND%20a%3A%22ikonli-metrizeicons-pack%22) | **org.kordamp.ikonli.metrizeicons** | v2.0.1 |
