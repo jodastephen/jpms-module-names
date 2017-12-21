@@ -32,6 +32,11 @@ builder.add(Builder.Item.forModule("org.apache.commons.lang").group("commons-lan
 
 // ASM
 builder.add("org.ow2.asm", "asm").project("ASM Core").homepage("http://asm.ow2.org")
+builder.add("org.ow2.asm", "asm-analysis")
+builder.add("org.ow2.asm", "asm-commons")
+builder.add("org.ow2.asm", "asm-tree")
+builder.add("org.ow2.asm", "asm-util")
+builder.add("org.ow2.asm", "asm-xml")
 
 // Google
 builder.add("com.google.guava", "guava")
@@ -119,6 +124,33 @@ builder.add("org.lwjgl", "lwjgl-vulkan")
 builder.add("org.lwjgl", "lwjgl-xxhash")
 builder.add("org.lwjgl", "lwjgl-yoga")
 builder.add("org.lwjgl", "lwjgl-zstd")
+
+// Netty
+builder.add("io.netty", "netty-buffer")
+builder.add("io.netty", "netty-codec")
+builder.add("io.netty", "netty-codec-dns")
+builder.add("io.netty", "netty-codec-haproxy")
+builder.add("io.netty", "netty-codec-http")
+builder.add("io.netty", "netty-codec-http2")
+builder.add("io.netty", "netty-codec-memcache")
+builder.add("io.netty", "netty-codec-mqtt")
+builder.add("io.netty", "netty-codec-redis")
+builder.add("io.netty", "netty-codec-smtp")
+builder.add("io.netty", "netty-codec-socks")
+builder.add("io.netty", "netty-codec-stomp")
+builder.add("io.netty", "netty-codec-xml")
+builder.add("io.netty", "netty-common")
+builder.add("io.netty", "netty-handler")
+builder.add("io.netty", "netty-handler-proxy")
+builder.add("io.netty", "netty-resolver")
+builder.add("io.netty", "netty-resolver-dns")
+builder.add("io.netty", "netty-transport")
+builder.add("io.netty", "netty-transport-native-epoll")
+builder.add("io.netty", "netty-transport-native-kqueue")
+builder.add("io.netty", "netty-transport-rxtx")
+builder.add("io.netty", "netty-transport-sctp")
+builder.add("io.netty", "netty-transport-udt")
+builder.add("io.netty", "netty-transport-native-unix-common")
 
 // SLF4J
 builder.add("org.slf4j", "slf4j-api", "1.8.0-beta0")

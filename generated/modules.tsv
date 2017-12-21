@@ -14,6 +14,11 @@ Commons-IO	org.apache.commons.io	commons-io	commons-io
 Apache Commons Lang	org.apache.commons.lang3	org.apache.commons	commons-lang3	3.7
 Commons-Lang v2	org.apache.commons.lang	commons-lang	commons-lang	
 ASM Core	org.objectweb.asm	org.ow2.asm	asm	6.0
+ASM Analysis	org.objectweb.asm.analysis	org.ow2.asm	asm-analysis	6.0
+ASM Commons	org.objectweb.asm.commons	org.ow2.asm	asm-commons	6.0
+ASM Tree	org.objectweb.asm.tree	org.ow2.asm	asm-tree	6.0
+ASM Util	org.objectweb.asm.util	org.ow2.asm	asm-util	6.0
+ASM XML	org.objectweb.asm.xml	org.ow2.asm	asm-xml	6.0
 Guava: Google Core Libraries for Java	com.google.common	com.google.guava	guava	23.5-jre
 BootstrapFX core	org.kordamp.bootstrapfx.core	org.kordamp.bootstrapfx	bootstrapfx-core	0.2.2
 ikonli-core	org.kordamp.ikonli.core	org.kordamp.ikonli	ikonli-core	2.1.0
@@ -89,6 +94,31 @@ LWJGL - Vulkan bindings	org.lwjgl.vulkan	org.lwjgl	lwjgl-vulkan	3.1.5
 LWJGL - xxHash bindings	org.lwjgl.xxhash	org.lwjgl	lwjgl-xxhash	3.1.5
 LWJGL - Yoga bindings	org.lwjgl.yoga	org.lwjgl	lwjgl-yoga	3.1.5
 LWJGL - Zstandard bindings	org.lwjgl.zstd	org.lwjgl	lwjgl-zstd	3.1.5
+Netty/Buffer	io.netty.buffer	io.netty	netty-buffer	4.1.19.Final
+Netty/Codec	io.netty.codec	io.netty	netty-codec	4.1.19.Final
+Netty/Codec/DNS	io.netty.codec.dns	io.netty	netty-codec-dns	4.1.19.Final
+Netty/Codec/HAProxy	io.netty.codec.haproxy	io.netty	netty-codec-haproxy	4.1.19.Final
+Netty/Codec/HTTP	io.netty.codec.http	io.netty	netty-codec-http	4.1.19.Final
+Netty/Codec/HTTP2	io.netty.codec.http2	io.netty	netty-codec-http2	4.1.19.Final
+Netty/Codec/Memcache	io.netty.codec.memcache	io.netty	netty-codec-memcache	4.1.19.Final
+Netty/Codec/MQTT	io.netty.codec.mqtt	io.netty	netty-codec-mqtt	4.1.19.Final
+Netty/Codec/Redis	io.netty.codec.redis	io.netty	netty-codec-redis	4.1.19.Final
+Netty/Codec/SMTP	io.netty.codec.smtp	io.netty	netty-codec-smtp	4.1.19.Final
+Netty/Codec/Socks	io.netty.codec.socks	io.netty	netty-codec-socks	4.1.19.Final
+Netty/Codec/Stomp	io.netty.codec.stomp	io.netty	netty-codec-stomp	4.1.19.Final
+Netty/Codec/XML	io.netty.codec.xml	io.netty	netty-codec-xml	4.1.19.Final
+Netty/Common	io.netty.common	io.netty	netty-common	4.1.19.Final
+Netty/Handler	io.netty.handler	io.netty	netty-handler	4.1.19.Final
+Netty/Handler/Proxy	io.netty.handler.proxy	io.netty	netty-handler-proxy	4.1.19.Final
+Netty/Resolver	io.netty.resolver	io.netty	netty-resolver	4.1.19.Final
+Netty/Resolver/DNS	io.netty.resolver.dns	io.netty	netty-resolver-dns	4.1.19.Final
+Netty/Transport	io.netty.transport	io.netty	netty-transport	4.1.19.Final
+Netty/Transport/Native/Epoll	io.netty.transport.epoll	io.netty	netty-transport-native-epoll	4.1.19.Final
+Netty/Transport/Native/KQueue	io.netty.transport.kqueue	io.netty	netty-transport-native-kqueue	4.1.19.Final
+Netty/Transport/RXTX	io.netty.transport.rxtx	io.netty	netty-transport-rxtx	4.1.19.Final
+Netty/Transport/SCTP	io.netty.transport.sctp	io.netty	netty-transport-sctp	4.1.19.Final
+Netty/Transport/UDT	io.netty.transport.udt	io.netty	netty-transport-udt	4.1.19.Final
+Netty/Transport/Native/Unix/Common	io.netty.transport.unix.common	io.netty	netty-transport-native-unix-common	4.1.19.Final
 SLF4J API Module	org.slf4j	org.slf4j	slf4j-api	1.8.0-beta0
 Spring AOP	spring.aop	org.springframework	spring-aop	5.0.2.RELEASE
 Spring Aspects	spring.aspects	org.springframework	spring-aspects	5.0.2.RELEASE
