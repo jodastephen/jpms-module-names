@@ -32,7 +32,7 @@ class Builder {
     Builder builder = new Builder();
 
     builder
-        .add(Line.forModule("org.joda.time").group("joda-time").artifact("joda-time"))
+        .add(Item.forModule("org.joda.time").group("joda-time").artifact("joda-time"))
         .project("Joda-Time")
         .homepage("http://www.joda.org/joda-time");
 
@@ -53,35 +53,35 @@ class Builder {
     builder.toModuleLines(it -> it.module).forEach(System.out::println);
   }
 
-  final List<Line> lines;
+  final List<Item> items;
   final List<Resolver> resolvers;
 
   public Builder() {
-    lines = new ArrayList<>();
+    items = new ArrayList<>();
     resolvers = List.of(new MvnRepositoryResolver());
   }
 
-  /** Add raw line. */
-  public Line add(Line line) {
-    lines.add(line);
-    return line;
+  /** Add raw item. */
+  public Item add(Item item) {
+    items.add(item);
+    return item;
   }
 
-  /** Resolve module and add line. */
-  public Line add(String group, String artifact, String version) {
-    Line line = resolve(group, artifact, version);
-    lines.add(line);
-    return line;
+  /** Resolve module and add item. */
+  public Item add(String group, String artifact, String version) {
+    Item item = resolve(group, artifact, version);
+    items.add(item);
+    return item;
   }
 
-  /** Resolve released version, module and add a line. */
-  public Line add(String group, String artifact) {
+  /** Resolve released version, module and add a item. */
+  public Item add(String group, String artifact) {
     for (Resolver resolver : resolvers) {
       try {
         String version = resolver.version(group, artifact);
-        Line line = resolve(resolver, group, artifact, version);
-        lines.add(line);
-        return line;
+        Item item = resolve(resolver, group, artifact, version);
+        items.add(item);
+        return item;
       } catch (NoSuchElementException e) {
         // continue;
       }
@@ -89,11 +89,11 @@ class Builder {
     throw new Error("resolving failed: " + group + ":" + artifact);
   }
 
-  public List<String> toModuleLines(Function<Line, String> function) {
+  public List<String> toModuleLines(Function<Item, String> function) {
     Map<String, String> map = new TreeMap<>();
-    for (Line line : lines) {
-      String key = line.module;
-      String value = function.apply(line);
+    for (Item item : items) {
+      String key = item.module;
+      String value = function.apply(item);
       if (key.isEmpty() || value.isEmpty()) {
         continue;
       }
@@ -106,7 +106,7 @@ class Builder {
   }
 
   public List<String> toCsvLines(String delimiter) {
-    List<String> list = new ArrayList<>(lines.size() + 16);
+    List<String> list = new ArrayList<>(items.size() + 16);
     list.add(
         String.join(
             delimiter,
@@ -116,20 +116,20 @@ class Builder {
             "Maven Artifact",
             "Released Version"));
     List<String> temp = new ArrayList<>();
-    for (Line line : lines) {
+    for (Item item : items) {
       temp.clear();
-      temp.add(line.project);
-      temp.add(line.module);
-      temp.add(line.group);
-      temp.add(line.artifact);
-      temp.add(line.version);
+      temp.add(item.project);
+      temp.add(item.module);
+      temp.add(item.group);
+      temp.add(item.artifact);
+      temp.add(item.version);
       list.add(String.join(delimiter, temp));
     }
     return list;
   }
 
   public List<String> toMarkdownLines() {
-    List<String> list = new ArrayList<>(lines.size() + 16);
+    List<String> list = new ArrayList<>(items.size() + 16);
     list.add("| Project | JPMS Module Name | Maven Group | Maven Artifact | Released Version |");
     list.add("|---------|------------------|-------------|----------------|------------------|");
     String template = "| %s | %s | %s | %s | %s |";
@@ -139,24 +139,24 @@ class Builder {
     String artifact;
     String version;
     Resolver defaultResolver = new MvnRepositoryResolver();
-    for (Line line : lines) {
+    for (Item item : items) {
       // project
-      project = line.project;
-      if (!line.homepage.isEmpty()) {
-        project = toMarkdownLink(project, URI.create(line.homepage));
+      project = item.project;
+      if (!item.homepage.isEmpty()) {
+        project = toMarkdownLink(project, URI.create(item.homepage));
       }
       // module name
-      boolean resolved = line.resolver != null;
-      module = resolved ? "**" + line.module + "**" : "*" + line.module + "*";
+      boolean resolved = item.resolver != null;
+      module = resolved ? "**" + item.module + "**" : "*" + item.module + "*";
       // maven coordinates
-      Resolver resolver = resolved ? line.resolver : defaultResolver;
-      group = toMarkdownLink(line.group, resolver.link(line.group));
-      artifact = toMarkdownLink(line.artifact, resolver.link(line.group, line.artifact));
-      version = line.version;
+      Resolver resolver = resolved ? item.resolver : defaultResolver;
+      group = toMarkdownLink(item.group, resolver.link(item.group));
+      artifact = toMarkdownLink(item.artifact, resolver.link(item.group, item.artifact));
+      version = item.version;
       if (!version.isEmpty()) {
-        version = toMarkdownLink(version, resolver.link(line.group, line.artifact, version));
-        if (line.descriptor != null) {
-          version = (line.descriptor.isAutomatic() ? "\uD83D\uDCBF " : " \uD83D\uDCC0 ") + version;
+        version = toMarkdownLink(version, resolver.link(item.group, item.artifact, version));
+        if (item.descriptor != null) {
+          version = (item.descriptor.isAutomatic() ? "\uD83D\uDCBF " : " \uD83D\uDCC0 ") + version;
         }
       }
       // append string
@@ -169,7 +169,7 @@ class Builder {
     return String.format("[%s](%s)", text, uri);
   }
 
-  Line resolve(String group, String artifact, String version) {
+  Item resolve(String group, String artifact, String version) {
     for (Resolver resolver : resolvers) {
       try {
         return resolve(resolver, group, artifact, version);
@@ -180,10 +180,10 @@ class Builder {
     throw new RuntimeException("resolve failed for: " + String.join(":", group, artifact, version));
   }
 
-  Line resolve(Resolver resolver, String group, String artifact, String version) {
+  Item resolve(Resolver resolver, String group, String artifact, String version) {
     Optional<ModuleDescriptor> descriptor = describeModule(resolver.jar(group, artifact, version));
     if (descriptor.isPresent()) {
-      return Line.forModule(descriptor.get())
+      return Item.forModule(descriptor.get())
           .group(group)
           .artifact(artifact)
           .version(version)
@@ -245,7 +245,7 @@ class Builder {
     String version(String group, String artifact);
   }
 
-  static class Line {
+  static class Item {
     String project = "";
     String homepage = "";
     String group = "";
@@ -255,47 +255,47 @@ class Builder {
     Resolver resolver = null;
     ModuleDescriptor descriptor = null;
 
-    static Line forModule(ModuleDescriptor descriptor) {
+    static Item forModule(ModuleDescriptor descriptor) {
       return forModule(descriptor.name()).descriptor(descriptor);
     }
 
-    static Line forModule(String module) {
-      Line line = new Line();
-      line.module = module;
-      return line;
+    static Item forModule(String module) {
+      Item item = new Item();
+      item.module = module;
+      return item;
     }
 
-    Line descriptor(ModuleDescriptor descriptor) {
+    Item descriptor(ModuleDescriptor descriptor) {
       this.descriptor = descriptor;
       return this;
     }
 
-    Line project(String project) {
+    Item project(String project) {
       this.project = project;
       return this;
     }
 
-    Line homepage(String homepage) {
+    Item homepage(String homepage) {
       this.homepage = homepage;
       return this;
     }
 
-    Line group(String group) {
+    Item group(String group) {
       this.group = group;
       return this;
     }
 
-    Line artifact(String artifact) {
+    Item artifact(String artifact) {
       this.artifact = artifact;
       return this;
     }
 
-    Line version(String version) {
+    Item version(String version) {
       this.version = version;
       return this;
     }
 
-    Line resolved(Resolver resolver) {
+    Item resolved(Resolver resolver) {
       this.resolver = resolver;
       return this;
     }

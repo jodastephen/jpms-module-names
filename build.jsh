@@ -11,7 +11,7 @@ println("Building...")
 Builder builder = new Builder()
 
 // Joda
-builder.add(Builder.Line.forModule("org.joda.time").group("joda-time").artifact("joda-time")).project("Joda-Time").homepage("http://www.joda.org/joda-time")
+builder.add(Builder.Item.forModule("org.joda.time").group("joda-time").artifact("joda-time")).project("Joda-Time").homepage("http://www.joda.org/joda-time")
 builder.add("org.joda", "joda-beans", "2.0").project("Joda-Beans").homepage("http://www.joda.org/joda-beans")
 builder.add("org.joda", "joda-beans").project("Joda-Beans").homepage("http://www.joda.org/joda-beans")
 
@@ -26,9 +26,9 @@ builder.add("org.junit.jupiter", "junit-jupiter-api").project("JUnit Jupiter").h
 
 // Square
 // builder.add("com.squareup", "javapoet").project("Square JavaPoet").homepage("http://github.com/square/javapoet")
-builder.add(Builder.Line.forModule("com.squareup.javapoet").group("com.squareup").artifact("javapoet")).project("Square JavaPoet").homepage("http://github.com/square/javapoet")
+builder.add(Builder.Item.forModule("com.squareup.javapoet").group("com.squareup").artifact("javapoet")).project("Square JavaPoet").homepage("http://github.com/square/javapoet")
 
-printf("%d lines collected.%n", builder.lines.size())
+printf("%d items collected.%n", builder.items.size())
 
 Files.write(Paths.get("generated/modules.md"), builder.toMarkdownLines())
 Files.write(Paths.get("generated/modules.csv"), builder.toCsvLines(","))
