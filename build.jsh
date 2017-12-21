@@ -15,6 +15,9 @@ builder.add(Builder.Line.forModule("org.joda.time").group("joda-time").artifact(
 builder.add("org.joda", "joda-beans", "2.0").project("Joda-Beans").homepage("http://www.joda.org/joda-beans")
 builder.add("org.joda", "joda-beans").project("Joda-Beans").homepage("http://www.joda.org/joda-beans")
 
+// ASM
+builder.add("org.ow2.asm", "asm", "6.0").project("ASM Core").homepage("http://asm.ow2.org")
+
 // Kordamp
 builder.add("org.kordamp.bootstrapfx", "bootstrapfx-core", "0.2.2").project("BootstrapFX core").homepage("https://github.com/aalmiray/bootstrapfx")
 
