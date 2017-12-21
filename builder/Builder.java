@@ -12,7 +12,6 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -25,7 +24,7 @@ import java.util.regex.Pattern;
 @SuppressWarnings("WeakerAccess")
 class Builder {
 
-  public static void main(String... args) throws Exception {
+  public static void main(String... args) {
     Builder builder = new Builder();
 
     builder
@@ -45,7 +44,7 @@ class Builder {
 
     // TODO builder.addAll("org.joda", "[The Joda project](http://www.joda.org)")
 
-    Files.write(Paths.get("modules.md"), builder.toMarkdownLines());
+    builder.toMarkdownLines().forEach(System.out::println);
 
     // TODO Files.write(Paths.get("modules.csv"), builder.toCsvLines(","));
   }
@@ -113,6 +112,9 @@ class Builder {
       version = line.version;
       if (!version.isEmpty()) {
         version = toMarkdownLink(version, resolver.link(line.group, line.artifact, version));
+        if (line.descriptor != null) {
+          version = (line.descriptor.isAutomatic() ? "\uD83D\uDCBF " : " \uD83D\uDCC0 ") + version;
+        }
       }
       // append string
       list.add(String.format(template, project, module, group, artifact, version));
@@ -136,15 +138,56 @@ class Builder {
   }
 
   Line resolve(Resolver resolver, String group, String artifact, String version) {
-    Optional<String> module = Util.scan(resolver.jar(group, artifact, version));
-    if (module.isPresent()) {
-      return Line.forModule(module.get())
+    Optional<ModuleDescriptor> descriptor = describeModule(resolver.jar(group, artifact, version));
+    if (descriptor.isPresent()) {
+      return Line.forModule(descriptor.get())
           .group(group)
           .artifact(artifact)
           .version(version)
           .resolved(resolver);
     }
     throw new NoSuchElementException();
+  }
+
+  Optional<ModuleDescriptor> describeModule(URI uri) {
+    // TODO debug("scanJar({0} -> {1})", uri, value);
+    Optional<Path> path = Util.load(uri);
+    if (!path.isPresent()) {
+      // TODO System.out.printf("scanJar(%s) failed%n", uri);
+      return Optional.empty();
+    }
+    try {
+      return describeModule(path.get(), true);
+    } finally {
+      try {
+        Files.delete(path.get());
+      } catch (IOException e) {
+        // TODO System.err.println("deleting temp file failed: " + e);
+      }
+    }
+  }
+
+  Optional<ModuleDescriptor> describeModule(Path path, boolean reportFileNameBasedModuleAsEmpty) {
+    try {
+      Set<ModuleReference> allModules = ModuleFinder.of(path).findAll();
+      if (allModules.size() != 1) {
+        throw new IllegalStateException("expected to find single module, but got: " + allModules);
+      }
+      ModuleReference reference = allModules.iterator().next();
+      ModuleDescriptor descriptor = reference.descriptor();
+      System.out.println(descriptor + " packaged in " + path);
+      if (reportFileNameBasedModuleAsEmpty) {
+        if (descriptor.isAutomatic()) {
+          if (!Util.isAutomaticModuleNameAttributeAvailable(reference)) {
+            return Optional.empty();
+          }
+        }
+      }
+      return Optional.of(descriptor);
+    } catch (FindException e) {
+      // TODO debug("scan failed: {0}", e);
+      return Optional.empty();
+    }
   }
 
   interface Resolver {
@@ -167,11 +210,21 @@ class Builder {
     String module = "";
     String version = "";
     Resolver resolver = null;
+    ModuleDescriptor descriptor = null;
+
+    static Line forModule(ModuleDescriptor descriptor) {
+      return forModule(descriptor.name()).descriptor(descriptor);
+    }
 
     static Line forModule(String module) {
       Line line = new Line();
       line.module = module;
       return line;
+    }
+
+    Line descriptor(ModuleDescriptor descriptor) {
+      this.descriptor = descriptor;
+      return this;
     }
 
     Line project(String project) {
@@ -259,48 +312,6 @@ class Builder {
         }
         return Optional.of(temp);
       } catch (Exception e) {
-        return Optional.empty();
-      }
-    }
-
-    static Optional<String> scan(URI uri) {
-      // TODO debug("scanJar({0} -> {1})", uri, value);
-      Optional<Path> path = Util.load(uri);
-      if (!path.isPresent()) {
-        // TODO System.out.printf("scanJar(%s) failed%n", uri);
-        return Optional.empty();
-      }
-      try {
-        return scan(path.get(), true);
-      } finally {
-        try {
-          Files.delete(path.get());
-        } catch (IOException e) {
-          // TODO System.err.println("deleting temp file failed: " + e);
-        }
-      }
-    }
-
-    static Optional<String> scan(Path path, boolean reportFileNameBasedModuleAsEmpty) {
-      try {
-        Set<ModuleReference> allModules = ModuleFinder.of(path).findAll();
-        if (allModules.size() != 1) {
-          throw new IllegalStateException("expected to find single module, but got: " + allModules);
-        }
-        ModuleReference reference = allModules.iterator().next();
-        ModuleDescriptor descriptor = reference.descriptor();
-        String module = descriptor.name();
-        System.out.println(descriptor + " packaged in " + path);
-        if (reportFileNameBasedModuleAsEmpty) {
-          if (descriptor.isAutomatic()) {
-            if (!isAutomaticModuleNameAttributeAvailable(reference)) {
-              return Optional.empty();
-            }
-          }
-        }
-        return Optional.of(module);
-      } catch (FindException e) {
-        // TODO debug("scan failed: {0}", e);
         return Optional.empty();
       }
     }

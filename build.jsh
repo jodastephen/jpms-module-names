@@ -27,6 +27,6 @@ builder.add(Builder.Line.forModule("com.squareup.javapoet").group("com.squareup"
 
 printf("%d lines collected.%n", builder.lines.size())
 
-Files.write(Paths.get("modules.md"), builder.toMarkdownLines());
+Files.write(Paths.get("generated/modules.md"), builder.toMarkdownLines());
 
 /exit
