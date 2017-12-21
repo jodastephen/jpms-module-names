@@ -123,9 +123,9 @@ SLF4J API Module,org.slf4j,org.slf4j,slf4j-api,1.8.0-beta0
 Spring AOP,spring.aop,org.springframework,spring-aop,5.0.2.RELEASE
 Spring Aspects,spring.aspects,org.springframework,spring-aspects,5.0.2.RELEASE
 Spring Beans,spring.beans,org.springframework,spring-beans,5.0.2.RELEASE
+Spring Context,spring.context,org.springframework,spring-context,5.0.2.RELEASE
 Spring Context Indexer,spring.context.indexer,org.springframework,spring-context-indexer,5.0.2.RELEASE
 Spring Context Support,spring.context.support,org.springframework,spring-context-support,5.0.2.RELEASE
-Spring Context,spring.context,org.springframework,spring-context,5.0.2.RELEASE
 Spring Core,spring.core,org.springframework,spring-core,5.0.2.RELEASE
 Spring Expression Language (SpEL),spring.expression,org.springframework,spring-expression,5.0.2.RELEASE
 Spring Instrument,spring.instrument,org.springframework,spring-instrument,5.0.2.RELEASE
@@ -135,10 +135,65 @@ Spring JMS,spring.jms,org.springframework,spring-jms,5.0.2.RELEASE
 Spring Messaging,spring.messaging,org.springframework,spring-messaging,5.0.2.RELEASE
 Spring Object/Relational Mapping,spring.orm,org.springframework,spring-orm,5.0.2.RELEASE
 Spring Object/XML Marshalling,spring.oxm,org.springframework,spring-oxm,5.0.2.RELEASE
-Spring TestContext Framework,spring.test,org.springframework,spring-test,5.0.2.RELEASE
-Spring Transaction,spring.tx,org.springframework,spring-tx,5.0.2.RELEASE
-Spring WebFlux,spring.webflux,org.springframework,spring-webflux,5.0.2.RELEASE
-Spring Web MVC,spring.webmvc,org.springframework,spring-webmvc,5.0.2.RELEASE
-Spring WebSocket,spring.websocket,org.springframework,spring-websocket,5.0.2.RELEASE
+Spring AMQP Core,spring.amqp,org.springframework.amqp,spring-amqp,2.0.1.RELEASE
+Spring RabbitMQ Support,spring.rabbit,org.springframework.amqp,spring-rabbit,2.0.1.RELEASE
+Spring Rabbit JUnit Support,spring.rabbit.junit,org.springframework.amqp,spring-rabbit-junit,2.0.1.RELEASE
+Spring Data for Apache Cassandra Core,spring.data.cassandra,org.springframework.data,spring-data-cassandra,2.0.2.RELEASE
+Spring Data Core,spring.data.commons,org.springframework.data,spring-data-commons,2.0.2.RELEASE
+Spring Data Couchbase,spring.data.couchbase,org.springframework.data,spring-data-couchbase,3.0.2.RELEASE
+Spring Data Elasticsearch,spring.data.elasticsearch,org.springframework.data,spring-data-elasticsearch,3.0.2.RELEASE
+Spring Data Envers,spring.data.envers,org.springframework.data,spring-data-envers,2.0.2.RELEASE
+Spring Data GemFire,spring.data.gemfire,org.springframework.data,spring-data-gemfire,2.0.2.RELEASE
+Spring Data Geode,spring.data.geode,org.springframework.data,spring-data-geode,2.0.2.RELEASE
+Spring Data JPA,spring.data.jpa,org.springframework.data,spring-data-jpa,2.0.2.RELEASE
+Spring Data KeyValue,spring.data.keyvalue,org.springframework.data,spring-data-keyvalue,2.0.2.RELEASE
+Spring Data LDAP,spring.data.ldap,org.springframework.data,spring-data-ldap,2.0.2.RELEASE
+Spring Data MongoDB - Core,spring.data.mongodb,org.springframework.data,spring-data-mongodb,2.0.2.RELEASE
+Spring Data MongoDB - Cross-Store Support,spring.data.mongodb.cross.store,org.springframework.data,spring-data-mongodb-cross-store,2.0.2.RELEASE
+Spring Data Neo4J - Core,spring.data.neo4j,org.springframework.data,spring-data-neo4j,5.0.2.RELEASE
+Spring Data Redis,spring.data.redis,org.springframework.data,spring-data-redis,2.0.2.RELEASE
+Spring Data REST - Core,spring.data.rest.core,org.springframework.data,spring-data-rest-core,3.0.2.RELEASE
+Spring Data REST - HAL Browser,spring.data.rest.hal.browser,org.springframework.data,spring-data-rest-hal-browser,3.0.2.RELEASE
+Spring Data REST - WebMVC,spring.data.rest.webmvc,org.springframework.data,spring-data-rest-webmvc,3.0.2.RELEASE
+Spring Data Solr,spring.data.solr,org.springframework.data,spring-data-solr,3.0.2.RELEASE
+Spring Integration AMQP Support,spring.integration.amqp,org.springframework.integration,spring-integration-amqp,5.0.0.RELEASE
+Spring Integration Core,spring.integration.core,org.springframework.integration,spring-integration-core,5.0.0.RELEASE
+Spring Integration ApplicationEvent Support,spring.integration.event,org.springframework.integration,spring-integration-event,5.0.0.RELEASE
+Spring Integration RSS Feed Support,spring.integration.feed,org.springframework.integration,spring-integration-feed,5.0.0.RELEASE
+Spring Integration File Support,spring.integration.file,org.springframework.integration,spring-integration-file,5.0.0.RELEASE
+Spring Integration FTP Support,spring.integration.ftp,org.springframework.integration,spring-integration-ftp,5.0.0.RELEASE
+Spring Integration GemFire Support,spring.integration.gemfire,org.springframework.integration,spring-integration-gemfire,5.0.0.RELEASE
+Spring Integration Groovy Support,spring.integration.groovy,org.springframework.integration,spring-integration-groovy,5.0.0.RELEASE
+Spring Integration HTTP Support,spring.integration.http,org.springframework.integration,spring-integration-http,5.0.0.RELEASE
+Spring Integration IP Support,spring.integration.ip,org.springframework.integration,spring-integration-ip,5.0.0.RELEASE
+Spring Integration JDBC Support,spring.integration.jdbc,org.springframework.integration,spring-integration-jdbc,5.0.0.RELEASE
+Spring Integration JMS Support,spring.integration.jms,org.springframework.integration,spring-integration-jms,5.0.0.RELEASE
+Spring Integration JMX Support,spring.integration.jmx,org.springframework.integration,spring-integration-jmx,5.0.0.RELEASE
+Spring Integration JPA Support,spring.integration.jpa,org.springframework.integration,spring-integration-jpa,5.0.0.RELEASE
+Spring Integration Kafka Support,spring.integration.kafka,org.springframework.integration,spring-integration-kafka,3.0.0.RELEASE
+Spring Integration Mail Support,spring.integration.mail,org.springframework.integration,spring-integration-mail,5.0.0.RELEASE
+Spring Integration MongoDB Support,spring.integration.mongodb,org.springframework.integration,spring-integration-mongodb,5.0.0.RELEASE
+Spring Integration MQTT Support,spring.integration.mqtt,org.springframework.integration,spring-integration-mqtt,5.0.0.RELEASE
+Spring Integration Redis Support,spring.integration.redis,org.springframework.integration,spring-integration-redis,5.0.0.RELEASE
+Spring Integration RMI Support,spring.integration.rmi,org.springframework.integration,spring-integration-rmi,5.0.0.RELEASE
+Spring Integration Scripting Support,spring.integration.scripting,org.springframework.integration,spring-integration-scripting,5.0.0.RELEASE
+Spring Integration Security Support,spring.integration.security,org.springframework.integration,spring-integration-security,5.0.0.RELEASE
+Spring Integration SFTP Support,spring.integration.sftp,org.springframework.integration,spring-integration-sftp,5.0.0.RELEASE
+Spring Integration STOMP Support,spring.integration.stomp,org.springframework.integration,spring-integration-stomp,5.0.0.RELEASE
+Spring Integration Stream Support,spring.integration.stream,org.springframework.integration,spring-integration-stream,5.0.0.RELEASE
+Spring Integration Syslog Support,spring.integration.syslog,org.springframework.integration,spring-integration-syslog,5.0.0.RELEASE
+Spring Integration Testing Framework,spring.integration.test,org.springframework.integration,spring-integration-test,5.0.0.RELEASE
+Spring Integration Test Support - **No SI Dependencies Allowed**,spring.integration.test.support,org.springframework.integration,spring-integration-test-support,5.0.0.RELEASE
+Spring Integration Twitter Support,spring.integration.twitter,org.springframework.integration,spring-integration-twitter,5.0.0.RELEASE
+Spring Integration HTTP Support,spring.integration.webflux,org.springframework.integration,spring-integration-webflux,5.0.0.RELEASE
+Spring Integration WebSockets Support,spring.integration.websocket,org.springframework.integration,spring-integration-websocket,5.0.0.RELEASE
+Spring Integration Web Services Support,spring.integration.ws,org.springframework.integration,spring-integration-ws,5.0.0.RELEASE
+Spring Integration XML Support,spring.integration.xml,org.springframework.integration,spring-integration-xml,5.0.0.RELEASE
+Spring Integration XMPP Support,spring.integration.xmpp,org.springframework.integration,spring-integration-xmpp,5.0.0.RELEASE
+Spring Integration Zookeeper Support,spring.integration.zookeeper,org.springframework.integration,spring-integration-zookeeper,5.0.0.RELEASE
+Spring Kafka Support,spring.kafka,org.springframework.kafka,spring-kafka,2.1.0.RELEASE
+spring-security-acl,spring.security.acl,org.springframework.security,spring-security-acl,5.0.0.RELEASE
+spring-security-aspects,spring.security.aspects,org.springframework.security,spring-security-aspects,5.0.0.RELEASE
+spring-security-cas,spring.security.cas,org.springframework.security,spring-security-cas,5.0.0.RELEASE
 Square JavaPoet,com.squareup.javapoet,com.squareup,javapoet,
 Square KotlinPoet,com.squareup.kotlinpoet,com.squareup,kotlinpoet,
