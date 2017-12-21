@@ -1,7 +1,10 @@
+import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.StringReader;
 import java.lang.module.FindException;
 import java.lang.module.ModuleDescriptor;
 import java.lang.module.ModuleFinder;
@@ -24,6 +27,10 @@ import java.util.function.Supplier;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathFactory;
 
 @SuppressWarnings("WeakerAccess")
 class Builder {
@@ -36,15 +43,8 @@ class Builder {
         .project("Joda-Time")
         .homepage("http://www.joda.org/joda-time");
 
-    builder
-        .add("org.joda", "joda-beans", "2.0")
-        .project("Joda-Beans")
-        .homepage("http://www.joda.org/joda-beans");
-
-    builder
-        .add("org.joda", "joda-beans")
-        .project("Joda-Beans")
-        .homepage("http://www.joda.org/joda-beans");
+    builder.add("org.joda", "joda-beans", "2.0");
+    builder.add("org.joda", "joda-beans");
 
     // TODO builder.addAll("org.joda", "[The Joda project](http://www.joda.org)")
 
@@ -181,12 +181,16 @@ class Builder {
   }
 
   Item resolve(Resolver resolver, String group, String artifact, String version) {
-    Optional<ModuleDescriptor> descriptor = describeModule(resolver.jar(group, artifact, version));
+    URI jar = resolver.jar(group, artifact, version);
+    Optional<ModuleDescriptor> descriptor = describeModule(jar);
+    Map<String, String> pom = mapPom(URI.create(jar.toString().replaceFirst("\\.jar$", ".pom")));
     if (descriptor.isPresent()) {
       return Item.forModule(descriptor.get())
           .group(group)
           .artifact(artifact)
           .version(version)
+          .project(pom.getOrDefault("name", ""))
+          .homepage(pom.getOrDefault("url", ""))
           .resolved(resolver);
     }
     throw new NoSuchElementException();
@@ -233,6 +237,29 @@ class Builder {
     }
   }
 
+  Map<String, String> mapPom(URI pom) {
+    return mapPom(Util.read(pom).orElseThrow(() -> new Error("path")));
+  }
+
+  Map<String, String> mapPom(String pom) {
+    try {
+      DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+      Document document = builder.parse(new InputSource(new StringReader(pom)));
+      XPath xpath = XPathFactory.newInstance().newXPath();
+      String name = xpath.evaluate("/project/name", document);
+      String url = xpath.evaluate("/project/url", document);
+      String group = xpath.evaluate("/project/groupId", document);
+      String artifact = xpath.evaluate("/project/artifactId", document);
+      if (group.isEmpty()) {
+        group = xpath.evaluate("/project/parent/groupId", document);
+      }
+      return Map.of("name", name, "url", url, "group", group, "artifact", artifact);
+    } catch (Exception e) {
+      // TODO debug("scan({0}) failed: {1}", path, e);
+    }
+    return Map.of();
+  }
+
   interface Resolver {
     URI link(String group);
 
@@ -255,14 +282,14 @@ class Builder {
     Resolver resolver = null;
     ModuleDescriptor descriptor = null;
 
-    static Item forModule(ModuleDescriptor descriptor) {
-      return forModule(descriptor.name()).descriptor(descriptor);
-    }
-
     static Item forModule(String module) {
       Item item = new Item();
       item.module = module;
       return item;
+    }
+
+    static Item forModule(ModuleDescriptor descriptor) {
+      return forModule(descriptor.name()).descriptor(descriptor);
     }
 
     Item descriptor(ModuleDescriptor descriptor) {
