@@ -14,12 +14,16 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.Set;
+import java.util.TreeMap;
+import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 @SuppressWarnings("WeakerAccess")
 class Builder {
@@ -45,8 +49,8 @@ class Builder {
     // TODO builder.addAll("org.joda", "[The Joda project](http://www.joda.org)")
 
     builder.toMarkdownLines().forEach(System.out::println);
-
-    // TODO Files.write(Paths.get("modules.csv"), builder.toCsvLines(","));
+    builder.toCsvLines(" # ").forEach(System.out::println);
+    builder.toModuleLines(it -> it.module).forEach(System.out::println);
   }
 
   final List<Line> lines;
@@ -83,6 +87,45 @@ class Builder {
       }
     }
     throw new Error("resolving failed: " + group + ":" + artifact);
+  }
+
+  public List<String> toModuleLines(Function<Line, String> function) {
+    Map<String, String> map = new TreeMap<>();
+    for (Line line : lines) {
+      String key = line.module;
+      String value = function.apply(line);
+      if (key.isEmpty() || value.isEmpty()) {
+        continue;
+      }
+      map.put(key, value);
+    }
+    return map.entrySet()
+        .stream()
+        .map(e -> e.getKey() + "=" + e.getValue())
+        .collect(Collectors.toList());
+  }
+
+  public List<String> toCsvLines(String delimiter) {
+    List<String> list = new ArrayList<>(lines.size() + 16);
+    list.add(
+        String.join(
+            delimiter,
+            "Project",
+            "JPMS Module Name",
+            "Maven Group",
+            "Maven Artifact",
+            "Released Version"));
+    List<String> temp = new ArrayList<>();
+    for (Line line : lines) {
+      temp.clear();
+      temp.add(line.project);
+      temp.add(line.module);
+      temp.add(line.group);
+      temp.add(line.artifact);
+      temp.add(line.version);
+      list.add(String.join(delimiter, temp));
+    }
+    return list;
   }
 
   public List<String> toMarkdownLines() {

@@ -30,6 +30,10 @@ builder.add(Builder.Line.forModule("com.squareup.javapoet").group("com.squareup"
 
 printf("%d lines collected.%n", builder.lines.size())
 
-Files.write(Paths.get("generated/modules.md"), builder.toMarkdownLines());
+Files.write(Paths.get("generated/modules.md"), builder.toMarkdownLines())
+Files.write(Paths.get("generated/modules.csv"), builder.toCsvLines(","))
+Files.write(Paths.get("generated/modules.tsv"), builder.toCsvLines("\t"))
+Files.write(Paths.get("generated/module-maven.properties"), builder.toModuleLines(it -> it.group + ":" + it.artifact))
+Files.write(Paths.get("generated/module-version.properties"), builder.toModuleLines(it -> it.version))
 
 /exit
