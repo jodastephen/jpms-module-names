@@ -52,17 +52,17 @@ Joda-Time,org.joda.time,joda-time,joda-time,
 Joda-Money,org.joda.money,org.joda,joda-money,
 Joda-Beans,org.joda.beans,org.joda,joda-beans,2.0.2
 Joda-Convert,org.joda.convert,org.joda,joda-convert,1.9.2
-org.junit.platform:junit-platform-commons,org.junit.platform.commons,org.junit.platform,junit-platform-commons,1.0.2
-org.junit.platform:junit-platform-console,org.junit.platform.console,org.junit.platform,junit-platform-console,1.0.2
-org.junit.platform:junit-platform-launcher,org.junit.platform.launcher,org.junit.platform,junit-platform-launcher,1.0.2
-org.junit.platform:junit-platform-engine,org.junit.platform.engine,org.junit.platform,junit-platform-engine,1.0.2
-org.junit.platform:junit-platform-runner,org.junit.platform.runner,org.junit.platform,junit-platform-runner,1.0.2
-org.junit.platform:junit-platform-suite-api,org.junit.platform.suite.api,org.junit.platform,junit-platform-suite-api,1.0.2
-org.junit.jupiter:junit-jupiter-api,org.junit.jupiter.api,org.junit.jupiter,junit-jupiter-api,5.0.2
-org.junit.jupiter:junit-jupiter-engine,org.junit.jupiter.engine,org.junit.jupiter,junit-jupiter-engine,5.0.2
-org.junit.jupiter:junit-jupiter-migrationsupport,org.junit.jupiter.migrationsupport,org.junit.jupiter,junit-jupiter-migrationsupport,5.0.2
-org.junit.jupiter:junit-jupiter-params,org.junit.jupiter.params,org.junit.jupiter,junit-jupiter-params,5.0.2
-org.junit.vintage:junit-vintage-engine,org.junit.vintage.engine,org.junit.vintage,junit-vintage-engine,4.12.2
+JUnit Platform Commons,org.junit.platform.commons,org.junit.platform,junit-platform-commons,1.0.2
+JUnit Platform Console,org.junit.platform.console,org.junit.platform,junit-platform-console,1.0.2
+JUnit Platform Launcher,org.junit.platform.launcher,org.junit.platform,junit-platform-launcher,1.0.2
+JUnit Platform Engine,org.junit.platform.engine,org.junit.platform,junit-platform-engine,1.0.2
+JUnit Platform Runner,org.junit.platform.runner,org.junit.platform,junit-platform-runner,1.0.2
+JUnit Platform Suite API,org.junit.platform.suite.api,org.junit.platform,junit-platform-suite-api,1.0.2
+JUnit Jupiter API,org.junit.jupiter.api,org.junit.jupiter,junit-jupiter-api,5.0.2
+JUnit Jupiter Engine,org.junit.jupiter.engine,org.junit.jupiter,junit-jupiter-engine,5.0.2
+JUnit Jupiter Migration Support,org.junit.jupiter.migrationsupport,org.junit.jupiter,junit-jupiter-migrationsupport,5.0.2
+JUnit Jupiter Params,org.junit.jupiter.params,org.junit.jupiter,junit-jupiter-params,5.0.2
+JUnit Vintage Engine,org.junit.vintage.engine,org.junit.vintage,junit-vintage-engine,4.12.2
 LWJGL,org.lwjgl,org.lwjgl,lwjgl,3.1.5
 LWJGL - Assimp bindings,org.lwjgl.assimp,org.lwjgl,lwjgl-assimp,3.1.5
 LWJGL - bgfx bindings,org.lwjgl.bgfx,org.lwjgl,lwjgl-bgfx,3.1.5
@@ -183,7 +183,7 @@ Spring Integration STOMP Support,spring.integration.stomp,org.springframework.in
 Spring Integration Stream Support,spring.integration.stream,org.springframework.integration,spring-integration-stream,5.0.0.RELEASE
 Spring Integration Syslog Support,spring.integration.syslog,org.springframework.integration,spring-integration-syslog,5.0.0.RELEASE
 Spring Integration Testing Framework,spring.integration.test,org.springframework.integration,spring-integration-test,5.0.0.RELEASE
-Spring Integration Test Support - **No SI Dependencies Allowed**,spring.integration.test.support,org.springframework.integration,spring-integration-test-support,5.0.0.RELEASE
+Spring Integration Test Support,spring.integration.test.support,org.springframework.integration,spring-integration-test-support,5.0.0.RELEASE
 Spring Integration Twitter Support,spring.integration.twitter,org.springframework.integration,spring-integration-twitter,5.0.0.RELEASE
 Spring Integration HTTP Support,spring.integration.webflux,org.springframework.integration,spring-integration-webflux,5.0.0.RELEASE
 Spring Integration WebSockets Support,spring.integration.websocket,org.springframework.integration,spring-integration-websocket,5.0.0.RELEASE

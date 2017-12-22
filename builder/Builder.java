@@ -45,6 +45,7 @@ class Builder {
 
     builder.add("org.joda", "joda-beans", "2.0");
     builder.add("org.joda", "joda-beans");
+    builder.add("org.ow2.asm", "asm");
 
     // TODO builder.addAll("org.joda", "[The Joda project](http://www.joda.org)")
 
@@ -130,10 +131,11 @@ class Builder {
 
   public List<String> toMarkdownLines() {
     List<String> list = new ArrayList<>(items.size() + 16);
-    list.add("| Project | JPMS Module Name | Maven Group | Maven Artifact | Released Version |");
-    list.add("|---------|------------------|-------------|----------------|------------------|");
-    String template = "| %s | %s | %s | %s | %s |";
+    list.add("| Project | JPMS Module Name | Maven Group : Artifact : Version |");
+    list.add("|---------|------------------|----------------------------------|");
+    String template = "| %s | %s | %s |";
     String project;
+    String icon;
     String module;
     String group;
     String artifact;
@@ -145,22 +147,28 @@ class Builder {
       if (!item.homepage.isEmpty()) {
         project = toMarkdownLink(project, URI.create(item.homepage));
       }
-      // module name
+      // icon + module name
+      icon = "";
+      if (item.descriptor != null) {
+        icon = item.descriptor.isAutomatic() ? ":cd:" : ":dvd:";
+      }
       boolean resolved = item.resolver != null;
-      module = resolved ? "**" + item.module + "**" : "*" + item.module + "*";
+      module = icon + "`" + item.module + "`";
+      module = resolved ? "**" + module + "**" : "*" + module + "*";
       // maven coordinates
       Resolver resolver = resolved ? item.resolver : defaultResolver;
       group = toMarkdownLink(item.group, resolver.link(item.group));
       artifact = toMarkdownLink(item.artifact, resolver.link(item.group, item.artifact));
       version = item.version;
+      List<String> coordinates = new ArrayList<>();
+      coordinates.add(group);
+      coordinates.add(artifact);
       if (!version.isEmpty()) {
-        version = toMarkdownLink(version, resolver.link(item.group, item.artifact, version));
-        if (item.descriptor != null) {
-          version = (item.descriptor.isAutomatic() ? "\uD83D\uDCBF " : " \uD83D\uDCC0 ") + version;
-        }
+        coordinates.add(toMarkdownLink(version, resolver.link(item.group, item.artifact, version)));
       }
+      String maven = String.join("<br>", coordinates);
       // append string
-      list.add(String.format(template, project, module, group, artifact, version));
+      list.add(String.format(template, project, module, maven, version));
     }
     return list;
   }
@@ -177,7 +185,7 @@ class Builder {
         // continue;
       }
     }
-    throw new RuntimeException("resolve failed for: " + String.join(":", group, artifact, version));
+    throw new RuntimeException("resolve failed for: " + String.join("<br>", group, artifact, version));
   }
 
   Item resolve(Resolver resolver, String group, String artifact, String version) {
