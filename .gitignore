@@ -1,3 +1,8 @@
-csv/.gradle/
-csv/build/
-*.class
+# Gradle
+.gradle/
+build/
+
+# IntelliJ IDEA
+.idea/
+out/
+*.iml

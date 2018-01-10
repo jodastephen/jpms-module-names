@@ -1,0 +1,199 @@
+Project,JPMS Module Name,Maven Group,Maven Artifact,Released Version
+Commons-BeanUtils,org.apache.commons.beanutils,commons-beanutils,commons-beanutils,
+Commons-CLI,org.apache.commons.cli,commons-cli,commons-cli,
+Commons-Codec,org.apache.commons.codec,commons-codec,commons-codec,
+Commons-Collections v4,org.apache.commons.collections4,org.apache.commons,commons-collections4,
+Commons-Collections v3,org.apache.commons.collections,commons-collections,commons-collections,
+Apache Commons Compress,org.apache.commons.compress,org.apache.commons,commons-compress,1.15
+Commons-Crypto,org.apache.commons.crypto,org.apache.commons,commons-crypto,
+Commons-CSV,org.apache.commons.csv,org.apache.commons,commons-csv,
+Apache Commons Configuration,org.apache.commons.configuration2,org.apache.commons,commons-configuration2,2.2
+Commons-DBCP v2,org.apache.commons.dbcp2,org.apache.commons,commons-dbcp2,
+Commons-DBUtils,org.apache.commons.dbutils,commons-dbutils,commons-dbutils,
+Commons-IO,org.apache.commons.io,commons-io,commons-io,
+Apache Commons Lang,org.apache.commons.lang3,org.apache.commons,commons-lang3,3.7
+Commons-Lang v2,org.apache.commons.lang,commons-lang,commons-lang,
+ASM Core,org.objectweb.asm,org.ow2.asm,asm,6.0
+ASM Analysis,org.objectweb.asm.analysis,org.ow2.asm,asm-analysis,6.0
+ASM Commons,org.objectweb.asm.commons,org.ow2.asm,asm-commons,6.0
+ASM Tree,org.objectweb.asm.tree,org.ow2.asm,asm-tree,6.0
+ASM Util,org.objectweb.asm.util,org.ow2.asm,asm-util,6.0
+ASM XML,org.objectweb.asm.xml,org.ow2.asm,asm-xml,6.0
+Guava: Google Core Libraries for Java,com.google.common,com.google.guava,guava,23.5-jre
+BootstrapFX core,org.kordamp.bootstrapfx.core,org.kordamp.bootstrapfx,bootstrapfx-core,0.2.2
+ikonli-core,org.kordamp.ikonli.core,org.kordamp.ikonli,ikonli-core,2.1.0
+ikonli-devicons-pack,org.kordamp.ikonli.devicons,org.kordamp.ikonli,ikonli-devicons-pack,2.1.0
+ikonli-elusive-pack,org.kordamp.ikonli.elusive,org.kordamp.ikonli,ikonli-elusive-pack,2.1.0
+ikonli-feather-pack,org.kordamp.ikonli.feather,org.kordamp.ikonli,ikonli-feather-pack,2.1.0
+ikonli-fontawesome-pack,org.kordamp.ikonli.fontawesome,org.kordamp.ikonli,ikonli-fontawesome-pack,2.1.0
+ikonli-fontelico-pack,org.kordamp.ikonli.fontelico,org.kordamp.ikonli,ikonli-fontelico-pack,2.1.0
+ikonli-foundation-pack,org.kordamp.ikonli.foundation,org.kordamp.ikonli,ikonli-foundation-pack,2.1.0
+ikonli-hawconsfilled-pack,org.kordamp.ikonli.hawconsfilled,org.kordamp.ikonli,ikonli-hawconsfilled-pack,2.1.0
+ikonli-hawconsstroke-pack,org.kordamp.ikonli.hawconsstroke,org.kordamp.ikonli,ikonli-hawconsstroke-pack,2.1.0
+ikonli-icomoon-pack,org.kordamp.ikonli.icomoon,org.kordamp.ikonli,ikonli-icomoon-pack,2.1.0
+ikonli-ionicons-pack,org.kordamp.ikonli.ionicons,org.kordamp.ikonli,ikonli-ionicons-pack,2.1.0
+ikonli-javafx,org.kordamp.ikonli.javafx,org.kordamp.ikonli,ikonli-javafx,2.1.0
+ikonli-maki-pack,org.kordamp.ikonli.maki,org.kordamp.ikonli,ikonli-maki-pack,2.1.0
+ikonli-maki2-pack,org.kordamp.ikonli.maki2,org.kordamp.ikonli,ikonli-maki2-pack,2.1.0
+ikonli-material-pack,org.kordamp.ikonli.material,org.kordamp.ikonli,ikonli-material-pack,2.1.0
+ikonli-materialdesign-pack,org.kordamp.ikonli.materialdesign,org.kordamp.ikonli,ikonli-materialdesign-pack,2.1.0
+ikonli-metrizeicons-pack,org.kordamp.ikonli.metrizeicons,org.kordamp.ikonli,ikonli-metrizeicons-pack,2.1.0
+ikonli-octicons-pack,org.kordamp.ikonli.octicons,org.kordamp.ikonli,ikonli-octicons-pack,2.1.0
+ikonli-openiconic-pack,org.kordamp.ikonli.openiconic,org.kordamp.ikonli,ikonli-openiconic-pack,2.1.0
+ikonli-runestroicons-pack,org.kordamp.ikonli.runestroicons,org.kordamp.ikonli,ikonli-runestroicons-pack,2.1.0
+ikonli-swing,org.kordamp.ikonli.swing,org.kordamp.ikonli,ikonli-swing,2.1.0
+ikonli-typicons-pack,org.kordamp.ikonli.typicons,org.kordamp.ikonli,ikonli-typicons-pack,2.1.0
+ikonli-weathericons-pack,org.kordamp.ikonli.weathericons,org.kordamp.ikonli,ikonli-weathericons-pack,2.1.0
+ikonli-websymbols-pack,org.kordamp.ikonli.websymbols,org.kordamp.ikonli,ikonli-websymbols-pack,2.1.0
+jsilhouette-javafx,org.kordamp.jsilhouette.javafx,org.kordamp.jsilhouette,jsilhouette-javafx,0.2.2
+Jackson-core,com.fasterxml.jackson.core,com.fasterxml.jackson.core,jackson-core,2.9.3
+jackson-databind,com.fasterxml.jackson.databind,com.fasterxml.jackson.core,jackson-databind,2.9.3
+Joda-Time,org.joda.time,joda-time,joda-time,
+Joda-Money,org.joda.money,org.joda,joda-money,
+Joda-Beans,org.joda.beans,org.joda,joda-beans,2.0.2
+Joda-Convert,org.joda.convert,org.joda,joda-convert,1.9.2
+JUnit Platform Commons,org.junit.platform.commons,org.junit.platform,junit-platform-commons,1.0.2
+JUnit Platform Console,org.junit.platform.console,org.junit.platform,junit-platform-console,1.0.2
+JUnit Platform Launcher,org.junit.platform.launcher,org.junit.platform,junit-platform-launcher,1.0.2
+JUnit Platform Engine,org.junit.platform.engine,org.junit.platform,junit-platform-engine,1.0.2
+JUnit Platform Runner,org.junit.platform.runner,org.junit.platform,junit-platform-runner,1.0.2
+JUnit Platform Suite API,org.junit.platform.suite.api,org.junit.platform,junit-platform-suite-api,1.0.2
+JUnit Jupiter API,org.junit.jupiter.api,org.junit.jupiter,junit-jupiter-api,5.0.2
+JUnit Jupiter Engine,org.junit.jupiter.engine,org.junit.jupiter,junit-jupiter-engine,5.0.2
+JUnit Jupiter Migration Support,org.junit.jupiter.migrationsupport,org.junit.jupiter,junit-jupiter-migrationsupport,5.0.2
+JUnit Jupiter Params,org.junit.jupiter.params,org.junit.jupiter,junit-jupiter-params,5.0.2
+JUnit Vintage Engine,org.junit.vintage.engine,org.junit.vintage,junit-vintage-engine,4.12.2
+LWJGL,org.lwjgl,org.lwjgl,lwjgl,3.1.5
+LWJGL - Assimp bindings,org.lwjgl.assimp,org.lwjgl,lwjgl-assimp,3.1.5
+LWJGL - bgfx bindings,org.lwjgl.bgfx,org.lwjgl,lwjgl-bgfx,3.1.5
+LWJGL - EGL bindings,org.lwjgl.egl,org.lwjgl,lwjgl-egl,3.1.5
+LWJGL - GLFW bindings,org.lwjgl.glfw,org.lwjgl,lwjgl-glfw,3.1.5
+LWJGL - JAWT bindings,org.lwjgl.jawt,org.lwjgl,lwjgl-jawt,3.1.5
+LWJGL - jemalloc bindings,org.lwjgl.jemalloc,org.lwjgl,lwjgl-jemalloc,3.1.5
+LWJGL - LMDB bindings,org.lwjgl.lmdb,org.lwjgl,lwjgl-lmdb,3.1.5
+LWJGL - LZ4 bindings,org.lwjgl.lz4,org.lwjgl,lwjgl-lz4,3.1.5
+LWJGL - NanoVG & NanoSVG bindings,org.lwjgl.nanovg,org.lwjgl,lwjgl-nanovg,3.1.5
+LWJGL - Native File Dialog bindings,org.lwjgl.nfd,org.lwjgl,lwjgl-nfd,3.1.5
+LWJGL - Nuklear bindings,org.lwjgl.nuklear,org.lwjgl,lwjgl-nuklear,3.1.5
+LWJGL - ODBC bindings,org.lwjgl.odbc,org.lwjgl,lwjgl-odbc,3.1.5
+LWJGL - OpenAL bindings,org.lwjgl.openal,org.lwjgl,lwjgl-openal,3.1.5
+LWJGL - OpenCL bindings,org.lwjgl.opencl,org.lwjgl,lwjgl-opencl,3.1.5
+LWJGL - OpenGL bindings,org.lwjgl.opengl,org.lwjgl,lwjgl-opengl,3.1.5
+LWJGL - OpenGL ES bindings,org.lwjgl.opengles,org.lwjgl,lwjgl-opengles,3.1.5
+LWJGL - OpenVR bindings,org.lwjgl.openvr,org.lwjgl,lwjgl-openvr,3.1.5
+LWJGL - OVR bindings,org.lwjgl.ovr,org.lwjgl,lwjgl-ovr,3.1.5
+LWJGL - par_shapes bindings,org.lwjgl.par,org.lwjgl,lwjgl-par,3.1.5
+LWJGL - Remotery bindings,org.lwjgl.remotery,org.lwjgl,lwjgl-remotery,3.1.5
+LWJGL - rpmalloc bindings,org.lwjgl.rpmalloc,org.lwjgl,lwjgl-rpmalloc,3.1.5
+LWJGL - SSE bindings,org.lwjgl.sse,org.lwjgl,lwjgl-sse,3.1.5
+LWJGL - stb bindings,org.lwjgl.stb,org.lwjgl,lwjgl-stb,3.1.5
+LWJGL - Tiny OpenEXR bindings,org.lwjgl.tinyexr,org.lwjgl,lwjgl-tinyexr,3.1.5
+LWJGL - Tiny File Dialogs bindings,org.lwjgl.tinyfd,org.lwjgl,lwjgl-tinyfd,3.1.5
+LWJGL - AMD Tootle bindings,org.lwjgl.tootle,org.lwjgl,lwjgl-tootle,3.1.5
+LWJGL - Vulkan bindings,org.lwjgl.vulkan,org.lwjgl,lwjgl-vulkan,3.1.5
+LWJGL - xxHash bindings,org.lwjgl.xxhash,org.lwjgl,lwjgl-xxhash,3.1.5
+LWJGL - Yoga bindings,org.lwjgl.yoga,org.lwjgl,lwjgl-yoga,3.1.5
+LWJGL - Zstandard bindings,org.lwjgl.zstd,org.lwjgl,lwjgl-zstd,3.1.5
+Netty/Buffer,io.netty.buffer,io.netty,netty-buffer,4.1.19.Final
+Netty/Codec,io.netty.codec,io.netty,netty-codec,4.1.19.Final
+Netty/Codec/DNS,io.netty.codec.dns,io.netty,netty-codec-dns,4.1.19.Final
+Netty/Codec/HAProxy,io.netty.codec.haproxy,io.netty,netty-codec-haproxy,4.1.19.Final
+Netty/Codec/HTTP,io.netty.codec.http,io.netty,netty-codec-http,4.1.19.Final
+Netty/Codec/HTTP2,io.netty.codec.http2,io.netty,netty-codec-http2,4.1.19.Final
+Netty/Codec/Memcache,io.netty.codec.memcache,io.netty,netty-codec-memcache,4.1.19.Final
+Netty/Codec/MQTT,io.netty.codec.mqtt,io.netty,netty-codec-mqtt,4.1.19.Final
+Netty/Codec/Redis,io.netty.codec.redis,io.netty,netty-codec-redis,4.1.19.Final
+Netty/Codec/SMTP,io.netty.codec.smtp,io.netty,netty-codec-smtp,4.1.19.Final
+Netty/Codec/Socks,io.netty.codec.socks,io.netty,netty-codec-socks,4.1.19.Final
+Netty/Codec/Stomp,io.netty.codec.stomp,io.netty,netty-codec-stomp,4.1.19.Final
+Netty/Codec/XML,io.netty.codec.xml,io.netty,netty-codec-xml,4.1.19.Final
+Netty/Common,io.netty.common,io.netty,netty-common,4.1.19.Final
+Netty/Handler,io.netty.handler,io.netty,netty-handler,4.1.19.Final
+Netty/Handler/Proxy,io.netty.handler.proxy,io.netty,netty-handler-proxy,4.1.19.Final
+Netty/Resolver,io.netty.resolver,io.netty,netty-resolver,4.1.19.Final
+Netty/Resolver/DNS,io.netty.resolver.dns,io.netty,netty-resolver-dns,4.1.19.Final
+Netty/Transport,io.netty.transport,io.netty,netty-transport,4.1.19.Final
+Netty/Transport/Native/Epoll,io.netty.transport.epoll,io.netty,netty-transport-native-epoll,4.1.19.Final
+Netty/Transport/Native/KQueue,io.netty.transport.kqueue,io.netty,netty-transport-native-kqueue,4.1.19.Final
+Netty/Transport/RXTX,io.netty.transport.rxtx,io.netty,netty-transport-rxtx,4.1.19.Final
+Netty/Transport/SCTP,io.netty.transport.sctp,io.netty,netty-transport-sctp,4.1.19.Final
+Netty/Transport/UDT,io.netty.transport.udt,io.netty,netty-transport-udt,4.1.19.Final
+Netty/Transport/Native/Unix/Common,io.netty.transport.unix.common,io.netty,netty-transport-native-unix-common,4.1.19.Final
+SLF4J API Module,org.slf4j,org.slf4j,slf4j-api,1.8.0-beta0
+Spring AOP,spring.aop,org.springframework,spring-aop,5.0.2.RELEASE
+Spring Aspects,spring.aspects,org.springframework,spring-aspects,5.0.2.RELEASE
+Spring Beans,spring.beans,org.springframework,spring-beans,5.0.2.RELEASE
+Spring Context,spring.context,org.springframework,spring-context,5.0.2.RELEASE
+Spring Context Indexer,spring.context.indexer,org.springframework,spring-context-indexer,5.0.2.RELEASE
+Spring Context Support,spring.context.support,org.springframework,spring-context-support,5.0.2.RELEASE
+Spring Core,spring.core,org.springframework,spring-core,5.0.2.RELEASE
+Spring Expression Language (SpEL),spring.expression,org.springframework,spring-expression,5.0.2.RELEASE
+Spring Instrument,spring.instrument,org.springframework,spring-instrument,5.0.2.RELEASE
+Spring Commons Logging Bridge,spring.jcl,org.springframework,spring-jcl,5.0.2.RELEASE
+Spring JDBC,spring.jdbc,org.springframework,spring-jdbc,5.0.2.RELEASE
+Spring JMS,spring.jms,org.springframework,spring-jms,5.0.2.RELEASE
+Spring Messaging,spring.messaging,org.springframework,spring-messaging,5.0.2.RELEASE
+Spring Object/Relational Mapping,spring.orm,org.springframework,spring-orm,5.0.2.RELEASE
+Spring Object/XML Marshalling,spring.oxm,org.springframework,spring-oxm,5.0.2.RELEASE
+Spring AMQP Core,spring.amqp,org.springframework.amqp,spring-amqp,2.0.1.RELEASE
+Spring RabbitMQ Support,spring.rabbit,org.springframework.amqp,spring-rabbit,2.0.1.RELEASE
+Spring Rabbit JUnit Support,spring.rabbit.junit,org.springframework.amqp,spring-rabbit-junit,2.0.1.RELEASE
+Spring Data for Apache Cassandra Core,spring.data.cassandra,org.springframework.data,spring-data-cassandra,2.0.2.RELEASE
+Spring Data Core,spring.data.commons,org.springframework.data,spring-data-commons,2.0.2.RELEASE
+Spring Data Couchbase,spring.data.couchbase,org.springframework.data,spring-data-couchbase,3.0.2.RELEASE
+Spring Data Elasticsearch,spring.data.elasticsearch,org.springframework.data,spring-data-elasticsearch,3.0.2.RELEASE
+Spring Data Envers,spring.data.envers,org.springframework.data,spring-data-envers,2.0.2.RELEASE
+Spring Data GemFire,spring.data.gemfire,org.springframework.data,spring-data-gemfire,2.0.2.RELEASE
+Spring Data Geode,spring.data.geode,org.springframework.data,spring-data-geode,2.0.2.RELEASE
+Spring Data JPA,spring.data.jpa,org.springframework.data,spring-data-jpa,2.0.2.RELEASE
+Spring Data KeyValue,spring.data.keyvalue,org.springframework.data,spring-data-keyvalue,2.0.2.RELEASE
+Spring Data LDAP,spring.data.ldap,org.springframework.data,spring-data-ldap,2.0.2.RELEASE
+Spring Data MongoDB - Core,spring.data.mongodb,org.springframework.data,spring-data-mongodb,2.0.2.RELEASE
+Spring Data MongoDB - Cross-Store Support,spring.data.mongodb.cross.store,org.springframework.data,spring-data-mongodb-cross-store,2.0.2.RELEASE
+Spring Data Neo4J - Core,spring.data.neo4j,org.springframework.data,spring-data-neo4j,5.0.2.RELEASE
+Spring Data Redis,spring.data.redis,org.springframework.data,spring-data-redis,2.0.2.RELEASE
+Spring Data REST - Core,spring.data.rest.core,org.springframework.data,spring-data-rest-core,3.0.2.RELEASE
+Spring Data REST - HAL Browser,spring.data.rest.hal.browser,org.springframework.data,spring-data-rest-hal-browser,3.0.2.RELEASE
+Spring Data REST - WebMVC,spring.data.rest.webmvc,org.springframework.data,spring-data-rest-webmvc,3.0.2.RELEASE
+Spring Data Solr,spring.data.solr,org.springframework.data,spring-data-solr,3.0.2.RELEASE
+Spring Integration AMQP Support,spring.integration.amqp,org.springframework.integration,spring-integration-amqp,5.0.0.RELEASE
+Spring Integration Core,spring.integration.core,org.springframework.integration,spring-integration-core,5.0.0.RELEASE
+Spring Integration ApplicationEvent Support,spring.integration.event,org.springframework.integration,spring-integration-event,5.0.0.RELEASE
+Spring Integration RSS Feed Support,spring.integration.feed,org.springframework.integration,spring-integration-feed,5.0.0.RELEASE
+Spring Integration File Support,spring.integration.file,org.springframework.integration,spring-integration-file,5.0.0.RELEASE
+Spring Integration FTP Support,spring.integration.ftp,org.springframework.integration,spring-integration-ftp,5.0.0.RELEASE
+Spring Integration GemFire Support,spring.integration.gemfire,org.springframework.integration,spring-integration-gemfire,5.0.0.RELEASE
+Spring Integration Groovy Support,spring.integration.groovy,org.springframework.integration,spring-integration-groovy,5.0.0.RELEASE
+Spring Integration HTTP Support,spring.integration.http,org.springframework.integration,spring-integration-http,5.0.0.RELEASE
+Spring Integration IP Support,spring.integration.ip,org.springframework.integration,spring-integration-ip,5.0.0.RELEASE
+Spring Integration JDBC Support,spring.integration.jdbc,org.springframework.integration,spring-integration-jdbc,5.0.0.RELEASE
+Spring Integration JMS Support,spring.integration.jms,org.springframework.integration,spring-integration-jms,5.0.0.RELEASE
+Spring Integration JMX Support,spring.integration.jmx,org.springframework.integration,spring-integration-jmx,5.0.0.RELEASE
+Spring Integration JPA Support,spring.integration.jpa,org.springframework.integration,spring-integration-jpa,5.0.0.RELEASE
+Spring Integration Kafka Support,spring.integration.kafka,org.springframework.integration,spring-integration-kafka,3.0.0.RELEASE
+Spring Integration Mail Support,spring.integration.mail,org.springframework.integration,spring-integration-mail,5.0.0.RELEASE
+Spring Integration MongoDB Support,spring.integration.mongodb,org.springframework.integration,spring-integration-mongodb,5.0.0.RELEASE
+Spring Integration MQTT Support,spring.integration.mqtt,org.springframework.integration,spring-integration-mqtt,5.0.0.RELEASE
+Spring Integration Redis Support,spring.integration.redis,org.springframework.integration,spring-integration-redis,5.0.0.RELEASE
+Spring Integration RMI Support,spring.integration.rmi,org.springframework.integration,spring-integration-rmi,5.0.0.RELEASE
+Spring Integration Scripting Support,spring.integration.scripting,org.springframework.integration,spring-integration-scripting,5.0.0.RELEASE
+Spring Integration Security Support,spring.integration.security,org.springframework.integration,spring-integration-security,5.0.0.RELEASE
+Spring Integration SFTP Support,spring.integration.sftp,org.springframework.integration,spring-integration-sftp,5.0.0.RELEASE
+Spring Integration STOMP Support,spring.integration.stomp,org.springframework.integration,spring-integration-stomp,5.0.0.RELEASE
+Spring Integration Stream Support,spring.integration.stream,org.springframework.integration,spring-integration-stream,5.0.0.RELEASE
+Spring Integration Syslog Support,spring.integration.syslog,org.springframework.integration,spring-integration-syslog,5.0.0.RELEASE
+Spring Integration Testing Framework,spring.integration.test,org.springframework.integration,spring-integration-test,5.0.0.RELEASE
+Spring Integration Test Support,spring.integration.test.support,org.springframework.integration,spring-integration-test-support,5.0.0.RELEASE
+Spring Integration Twitter Support,spring.integration.twitter,org.springframework.integration,spring-integration-twitter,5.0.0.RELEASE
+Spring Integration HTTP Support,spring.integration.webflux,org.springframework.integration,spring-integration-webflux,5.0.0.RELEASE
+Spring Integration WebSockets Support,spring.integration.websocket,org.springframework.integration,spring-integration-websocket,5.0.0.RELEASE
+Spring Integration Web Services Support,spring.integration.ws,org.springframework.integration,spring-integration-ws,5.0.0.RELEASE
+Spring Integration XML Support,spring.integration.xml,org.springframework.integration,spring-integration-xml,5.0.0.RELEASE
+Spring Integration XMPP Support,spring.integration.xmpp,org.springframework.integration,spring-integration-xmpp,5.0.0.RELEASE
+Spring Integration Zookeeper Support,spring.integration.zookeeper,org.springframework.integration,spring-integration-zookeeper,5.0.0.RELEASE
+Spring Kafka Support,spring.kafka,org.springframework.kafka,spring-kafka,2.1.0.RELEASE
+spring-security-acl,spring.security.acl,org.springframework.security,spring-security-acl,5.0.0.RELEASE
+spring-security-aspects,spring.security.aspects,org.springframework.security,spring-security-aspects,5.0.0.RELEASE
+spring-security-cas,spring.security.cas,org.springframework.security,spring-security-cas,5.0.0.RELEASE
+Square JavaPoet,com.squareup.javapoet,com.squareup,javapoet,
+Square KotlinPoet,com.squareup.kotlinpoet,com.squareup,kotlinpoet,

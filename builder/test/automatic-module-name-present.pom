@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.apiguardian</groupId>
+    <artifactId>apiguardian-api</artifactId>
+    <version>1.0.0</version>
+    <name>org.apiguardian:apiguardian-api</name>
+    <description>@API Guardian</description>
+    <url>https://github.com/apiguardian-team/apiguardian</url>
+</project>
