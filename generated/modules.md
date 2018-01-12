@@ -25,6 +25,8 @@ The new major version of the programmer-friendly testing framework for Java 8 an
 | [org.junit.jupiter:junit-jupiter-migrationsupport](http://junit.org/junit5/) | **:cd:`org.junit.jupiter.migrationsupport`** | org.junit.jupiter<br>[junit-jupiter-migrationsupport](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-migrationsupport)<br>5.1.0-M1 |
 | [org.junit.jupiter:junit-jupiter-params](http://junit.org/junit5/) | **:cd:`org.junit.jupiter.params`** | org.junit.jupiter<br>[junit-jupiter-params](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-params)<br>5.1.0-M1 |
 | [org.junit.vintage:junit-vintage-engine](http://junit.org/junit5/) | **:cd:`org.junit.vintage.engine`** | org.junit.vintage<br>[junit-vintage-engine](https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine)<br>5.1.0-M1 |
+| [org.apiguardian:apiguardian-api](https://github.com/apiguardian-team/apiguardian) | **:cd:`org.apiguardian.api`** | org.apiguardian<br>[apiguardian-api](https://mvnrepository.com/artifact/org.apiguardian/apiguardian-api)<br>1.0.0 |
+| [org.opentest4j:opentest4j](https://github.com/ota4j-team/opentest4j) | **:cd:`org.opentest4j`** | org.opentest4j<br>[opentest4j](https://mvnrepository.com/artifact/org.opentest4j/opentest4j)<br>1.0.0 |
 
 ## [ASM](http://asm.ow2.org)
 ASM is an all purpose Java bytecode manipulation and analysis framework.

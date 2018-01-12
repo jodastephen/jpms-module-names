@@ -43,6 +43,7 @@ org.apache.commons.dbutils	Apache Commons DBUtils	commons-dbutils	commons-dbutil
 org.apache.commons.io	Apache Commons IO	commons-io	commons-io	
 org.apache.commons.lang	Apache Commons Lang v2	commons-lang	commons-lang	
 org.apache.commons.lang3	Apache Commons Lang	org.apache.commons	commons-lang3	3.7
+org.apiguardian.api	org.apiguardian:apiguardian-api	org.apiguardian	apiguardian-api	1.0.0
 org.joda.beans	Joda-Beans	org.joda	joda-beans	2.0.2
 org.joda.convert	Joda-Convert	org.joda	joda-convert	1.9.2
 org.joda.money	Joda-Money	org.joda	joda-money	
@@ -121,6 +122,7 @@ org.objectweb.asm.tree	asm-tree	org.ow2.asm	asm-tree	6.1-beta
 org.objectweb.asm.tree.analysis	asm-analysis	org.ow2.asm	asm-analysis	6.1-beta
 org.objectweb.asm.util	asm-util	org.ow2.asm	asm-util	6.1-beta
 org.objectweb.asm.xml	asm-xml	org.ow2.asm	asm-xml	6.1-beta
+org.opentest4j	org.opentest4j:opentest4j	org.opentest4j	opentest4j	1.0.0
 org.slf4j	SLF4J API Module	org.slf4j	slf4j-api	1.8.0-beta0
 spring.amqp	Spring AMQP Core	org.springframework.amqp	spring-amqp	2.0.1.RELEASE
 spring.aop	Spring AOP	org.springframework	spring-aop	5.0.2.RELEASE
