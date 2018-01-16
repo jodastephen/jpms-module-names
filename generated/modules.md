@@ -135,6 +135,7 @@ Bringing better technology to the world by promoting open source.
 | Project | JPMS Module Name | Maven Group, Artifact and Version |
 |---------|------------------|-----------------------------------|
 | Guava: Google Core Libraries for Java | **:cd:`com.google.common`** | com.google.guava<br>[guava](https://mvnrepository.com/artifact/com.google.guava/guava)<br>23.6-jre |
+| Gson JSON library | *`com.google.gson`* | com.google.code.gson<br>[gson](https://mvnrepository.com/artifact/com.google.code.gson/gson) |
 
 ## [Faster:XML](http://fasterxml.com/)
 Faster, better open source XML and JSON parsing for the Java platform.

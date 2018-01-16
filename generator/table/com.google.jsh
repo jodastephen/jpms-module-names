@@ -4,4 +4,4 @@ google.homepage = "https://opensource.google.com"
 google.description = "Bringing better technology to the world by promoting open source."
 
 google.add("com.google.guava", "guava", "23.6-jre")
-// TODO add "com.google.gson" https://github.com/google/gson/commit/7ddac52748c59228cb86d08d60b417ce737a0563
+google.raw("Gson JSON library", "com.google.gson", "com.google.code.gson", "gson") // 2.8.3-SNAPSHOT
