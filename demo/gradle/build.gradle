@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply from: 'https://raw.githubusercontent.com/jodastephen/jpms-module-names/master/demo/gradle/module-maven.gradle'
+
+// add an explicit mapping via: mav4mod('foo:bar:123', 'foo.bar')
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile     mod2mav('org.apache.commons.lang3')
+    compile     mod2mav('org.joda.beans')
+    compile     mod2mav('org.opentest4j')
+    compile     mod2mav('org.slf4j')
+    compile     mod2mav('org.apiguardian.api')
+    testCompile mod2mav('org.junit.jupiter.api')
+    testRuntime mod2mav('org.junit.jupiter.engine')
+}
+
+task copyResolvedArtifacts(type: org.gradle.api.tasks.Copy) {
+    into 'build/mods'
+    from configurations.testRuntimeClasspath
+    eachFile { println it.name }
+}
+
+build.dependsOn copyResolvedArtifacts

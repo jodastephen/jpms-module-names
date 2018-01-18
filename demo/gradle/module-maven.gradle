@@ -1,0 +1,74 @@
+/**
+ * Simple Gradle script translating JPMS module names to maven coordinates.
+ *
+ * @author Christian Stein
+ */
+
+import java.nio.file.Files
+import java.nio.file.Path
+
+ModuleMavenTranslator moduleMavenTranslator = new ModuleMavenTranslator(project)
+ext.mod2mav = { String module -> moduleMavenTranslator.get(module) }
+ext.mav4mod = { String maven, String module -> moduleMavenTranslator.put(module, maven) }
+
+class ModuleMavenTranslator {
+
+    private final Project project
+    private final Properties custom
+    private final Properties mavens
+    private final Properties versions
+
+    ModuleMavenTranslator(Project project) {
+        this.project = project
+        this.custom = new Properties()
+        this.mavens = buildProperties("module-maven.properties")
+        this.versions = buildProperties("module-version.properties")
+    }
+
+    Properties buildProperties(String filename) {
+        // load remote defaults
+        def remote = new Properties()
+        load(remote, generated(filename))
+        // load local files
+        def local = new Properties(remote)
+        load(local, filename)
+        return local
+    }
+
+    File generated(String filename) {
+        Path directory = Files.createDirectories(project.buildDir.toPath().resolve("jpms-module-names"))
+        Path target = directory.resolve(filename)
+        if (Files.notExists(target)) {
+            URL url = new URL("https://raw.githubusercontent.com/jodastephen/jpms-module-names/master/generated/" + filename)
+            Files.write(target, url.getText().getBytes())
+        }
+        return target.toFile()
+    }
+
+    void load(Properties properties, Object path) {
+        def file = project.file(path)
+        if (file.exists()) {
+            file.withInputStream { properties.load(it) }
+            project.logger.info("loaded ${properties.size()} properties from ${path}")
+        }
+    }
+
+    void put(String module, String maven) {
+        custom.setProperty(module, maven)
+    }
+
+    String get(String module) {
+        if (custom.getProperty(module) != null) {
+            return custom.getProperty(module)
+        }
+        def mavenGroupAndArtifact = mavens.getProperty(module)
+        if (mavenGroupAndArtifact == null) {
+            project.logger.warn("Module $module is not mapped to group:artifact!")
+        }
+        def mavenVersion = versions.getProperty(module)
+        if (mavenVersion == null) {
+            project.logger.warn("Module $module is not mapped to a version!")
+        }
+        return mavenGroupAndArtifact + ':' + mavenVersion
+    }
+}
