@@ -1,26 +1,38 @@
 apply plugin: 'java'
 apply from: 'https://raw.githubusercontent.com/jodastephen/jpms-module-names/master/demo/gradle/module-maven.gradle'
 
-// add an explicit mapping via: mav4mod('foo:bar:123', 'foo.bar')
-
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compile     mod2mav('org.apache.commons.lang3')
-    compile     mod2mav('org.joda.beans')
-    compile     mod2mav('org.opentest4j')
-    compile     mod2mav('org.slf4j')
-    compile     mod2mav('org.apiguardian.api')
+    // main
+    compile mod2mav('org.apache.commons.lang3')
+    compile mod2mav('org.joda.beans')
+    compile mod2mav('org.objectweb.asm')
+    compile mod2mav('org.slf4j')
+    // test
+    testCompile mod2mav('org.apiguardian.api') // can be removed when 5.1.0-M2 is released
     testCompile mod2mav('org.junit.jupiter.api')
     testRuntime mod2mav('org.junit.jupiter.engine')
+    testRuntime mod2mav('org.junit.platform.console')
 }
 
-task copyResolvedArtifacts(type: org.gradle.api.tasks.Copy) {
-    into 'build/mods'
-    from configurations.testRuntimeClasspath
-    eachFile { println it.name }
+compileTestJava {
+    options.compilerArgs = ['--module-path', classpath.asPath]
+    classpath = files()
 }
 
-build.dependsOn copyResolvedArtifacts
+task testJUnitPlatform(type: Exec, dependsOn: compileTestJava) {
+    executable = 'java'
+    args = [
+            '--module-path', files(configurations.testRuntimeClasspath, compileTestJava.destinationDir).asPath,
+            '--add-modules', 'hello.world',
+            '--module', 'org.junit.platform.console',
+            '--scan-modules',
+            '--reports-dir', "${buildDir}/test-results/junit-platform"
+    ]
+}
+
+test.enabled false
+build.dependsOn testJUnitPlatform
