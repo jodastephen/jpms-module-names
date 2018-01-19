@@ -13,12 +13,12 @@ ext.mav4mod = { String maven, String module -> moduleMavenTranslator.put(module,
 
 class ModuleMavenTranslator {
 
-    private final Project project
+    private final org.gradle.api.Project project
     private final Properties custom
     private final Properties mavens
     private final Properties versions
 
-    ModuleMavenTranslator(Project project) {
+    ModuleMavenTranslator(org.gradle.api.Project project) {
         this.project = project
         this.custom = new Properties()
         this.mavens = buildProperties("module-maven.properties")
@@ -26,13 +26,9 @@ class ModuleMavenTranslator {
     }
 
     Properties buildProperties(String filename) {
-        // load remote defaults
-        def remote = new Properties()
-        load(remote, generated(filename))
-        // load local files
-        def local = new Properties(remote)
-        load(local, filename)
-        return local
+        def generated = generated(filename)
+        def defaults = load(new Properties(), generated)
+        return load(new Properties(defaults), filename)
     }
 
     File generated(String filename) {
@@ -40,17 +36,18 @@ class ModuleMavenTranslator {
         Path target = directory.resolve(filename)
         if (Files.notExists(target)) {
             URL url = new URL("https://raw.githubusercontent.com/jodastephen/jpms-module-names/master/generated/" + filename)
-            Files.write(target, url.getText().getBytes())
+            Files.write(target, (byte[]) url.getText().getBytes())
         }
         return target.toFile()
     }
 
-    void load(Properties properties, Object path) {
+    Properties load(Properties properties, Object path) {
         def file = project.file(path)
         if (file.exists()) {
-            file.withInputStream { properties.load(it) }
+            file.withInputStream { InputStream it -> properties.load(it) }
             project.logger.info("loaded ${properties.size()} properties from ${path}")
         }
+        return properties
     }
 
     void put(String module, String maven) {
