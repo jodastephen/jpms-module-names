@@ -150,7 +150,7 @@ As a company built on open source, here are some of the internally-developed lib
 
 | Project | JPMS Module Name | Maven Group, Artifact and Version |
 |---------|------------------|-----------------------------------|
-| [JavaPoet](http://github.com/square/javapoet/) | **:cd:`com.squareup.javapoet`** | com.squareup<br>[javapoet](https://mvnrepository.com/artifact/com.squareup/javapoet)<br>1.10.0-SNAPSHOT |
+| [JavaPoet](http://github.com/square/javapoet/) | **:cd:`com.squareup.javapoet`** | com.squareup<br>[javapoet](https://mvnrepository.com/artifact/com.squareup/javapoet)<br>1.10.0 |
 | [KotlinPoet](http://github.com/square/kotlinpoet/) | **:cd:`com.squareup.kotlinpoet`** | com.squareup<br>[kotlinpoet](https://mvnrepository.com/artifact/com.squareup/kotlinpoet)<br>0.7.0-SNAPSHOT |
 
 ## [Netty](http://netty.io)

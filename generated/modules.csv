@@ -3,7 +3,7 @@ com.fasterxml.jackson.core,Jackson-core,com.fasterxml.jackson.core,jackson-core,
 com.fasterxml.jackson.databind,jackson-databind,com.fasterxml.jackson.core,jackson-databind,2.9.3
 com.google.common,Guava: Google Core Libraries for Java,com.google.guava,guava,23.6-jre
 com.google.gson,Gson JSON library,com.google.code.gson,gson,
-com.squareup.javapoet,JavaPoet,com.squareup,javapoet,1.10.0-SNAPSHOT
+com.squareup.javapoet,JavaPoet,com.squareup,javapoet,1.10.0
 com.squareup.kotlinpoet,KotlinPoet,com.squareup,kotlinpoet,0.7.0-SNAPSHOT
 io.netty.buffer,Netty/Buffer,io.netty,netty-buffer,4.1.19.Final
 io.netty.codec,Netty/Codec,io.netty,netty-codec,4.1.19.Final
