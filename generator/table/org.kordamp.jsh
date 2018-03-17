@@ -10,7 +10,7 @@ kordamp.add("org.kordamp.bootstrapfx", "bootstrapfx-core", "0.2.2")
 kordamp.add("org.kordamp.jsilhouette", "jsilhouette-javafx", "0.2.2")
 
 // Ikonli
-version = "2.1.0"
+version = "2.1.1"
 kordamp.add("org.kordamp.ikonli", "ikonli-core", version)
 kordamp.add("org.kordamp.ikonli", "ikonli-devicons-pack", version)
 kordamp.add("org.kordamp.ikonli", "ikonli-elusive-pack", version)

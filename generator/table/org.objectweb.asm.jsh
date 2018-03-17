@@ -3,7 +3,7 @@ var asm = generator.add("ASM")
 asm.homepage = "http://asm.ow2.org"
 asm.description = "ASM is an all purpose Java bytecode manipulation and analysis framework."
 asm.group = "org.ow2.asm"
-asm.version = "6.1-beta"
+asm.version = "6.1"
 
 asm.add("asm")
 asm.add("asm-analysis")

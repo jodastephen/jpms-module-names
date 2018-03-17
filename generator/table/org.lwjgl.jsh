@@ -3,7 +3,7 @@ var lwjgl = generator.add("LWJGL")
 lwjgl.homepage = "https://www.lwjgl.org/"
 lwjgl.description = "Lightweight Java Game Library 3"
 lwjgl.group = "org.lwjgl"
-lwjgl.version = "3.1.5"
+lwjgl.version = "3.1.6"
 
 lwjgl.add("lwjgl")
 lwjgl.add("lwjgl-assimp")

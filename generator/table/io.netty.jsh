@@ -3,7 +3,7 @@ var netty = generator.add("Netty")
 netty.homepage = "http://netty.io"
 netty.description = "Netty is an asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers & clients."
 netty.group = "io.netty"
-netty.version = "4.1.19.Final"
+netty.version = "4.1.22.Final"
 
 netty.add("netty-buffer")
 netty.add("netty-codec")

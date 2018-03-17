@@ -197,7 +197,12 @@ class Generator {
         // project
         project = row.caption;
         if (!row.homepage.isEmpty()) {
-          project = toMarkdownLink(project, URI.create(row.homepage));
+          try {
+            project = toMarkdownLink(project, URI.create(row.homepage));
+          }
+          catch (IllegalArgumentException e) {
+            System.err.println(project + ": not a valid homepage URI? " + row.homepage);
+          }
         }
         // icon + module name
         icon = "";
