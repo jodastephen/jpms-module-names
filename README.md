@@ -18,8 +18,9 @@ To get the whole process started, I've gathered some module names, based on conv
 
 * Markdown table: [modules.md](generated/modules.md)
 
-> :dvd: indicates an explicit module: the jar includes a valid `module-info.class` --
-> :cd: marks an automatic module, the jar just defines a stable `Automatic-Module-Name` in it's `MANIFEST.MF` file.
+> :dvd: indicates an explicit module: the jar includes a valid `module-info.class`.
+
+> :cd: marks a jar that defines a stable `Automatic-Module-Name` in it's `MANIFEST.MF` file.
 
 * Comma/tab separated values: [modules.csv](generated/modules.csv) / [modules.tsv](generated/modules.tsv)
 * Module name to Maven Group+Artifact ID map: [module-maven.properties](generated/module-maven.properties)
