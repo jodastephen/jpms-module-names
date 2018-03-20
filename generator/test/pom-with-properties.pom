@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <!-- ==================================================================== -->
+  <!-- Build requires Java SE 7 or later -->
+  <!-- Releases require Java SE 9 or later -->
+  <!-- ==================================================================== -->
+  <parent>
+    <groupId>org.joda</groupId>
+    <artifactId>joda-parent</artifactId>
+    <version>1.0.4</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>joda-convert</artifactId>
+  <packaging>jar</packaging>
+  <name>Joda-Convert</name>
+  <version>2.0.1</version>
+  <description>Library to convert Objects to and from String</description>
+  <url>http://www.joda.org/${joda.artifactId}/</url>
+
+  <!-- ==================================================================== -->
+  <inceptionYear>2010</inceptionYear>
+  <scm>
+    <connection>scm:git:https://github.com/JodaOrg/${joda.artifactId}.git</connection>
+    <developerConnection>scm:git:https://github.com/JodaOrg/${joda.artifactId}.git</developerConnection>
+    <url>https://github.com/JodaOrg/${joda.artifactId}</url>
+    <tag>v2.0.1</tag>
+  </scm>
+
+  <!-- ==================================================================== -->
+  <contributors>
+    <contributor>
+      <name>Chris Kent</name>
+      <url>https://github.com/cjkent</url>
+    </contributor>
+    <contributor>
+      <name>Raman Gupta</name>
+      <url>https://github.com/rocketraman</url>
+    </contributor>
+  </contributors>
+
+  <!-- ==================================================================== -->
+  <build>
+    <plugins>
+      <!-- Turn on Checkstyle -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+      </plugin>
+      <!-- Turn on JaCoCo -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+      </plugin>
+      <!-- Setup surefire to test with Guava not present -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <executions>
+          <!-- execute all suitable tests with guava not present -->
+          <execution>
+            <id>no-guava</id>
+            <goals>
+              <goal>test</goal>
+            </goals>
+            <phase>test</phase>
+            <configuration>
+              <classpathDependencyExcludes>
+                <classpathDependencyExclude>com.google.guava:guava</classpathDependencyExclude>
+              </classpathDependencyExcludes>
+              <includes>
+                <include>**/TestBooleanArrayStringConverterFactory.java</include>
+                <include>**/TestBooleanObjectArrayStringConverterFactory.java</include>
+                <include>**/TestByteObjectArrayStringConverterFactory.java</include>
+                <include>**/TestCharObjectArrayStringConverterFactory.java</include>
+                <include>**/TestJDKStringConverters.java</include>
+                <include>**/TestNumericArrayStringConverterFactory.java</include>
+                <include>**/TestNumericObjectArrayStringConverterFactory.java</include>
+                <include>**/TestStringConvert.java</include>
+                <include>**/TestStringConverterFactory.java</include>
+              </includes>
+            </configuration>
+          </execution>
+        </executions>
+        <configuration>
+          <properties>
+            <property>
+              <name>usedefaultlisteners</name>
+              <value>false</value>
+            </property>
+          </properties>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- ==================================================================== -->
+  <dependencies>
+    <!-- The Guava dependency is accessed by reflection, so only needed for tests -->
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>20.0</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.12</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <!-- ==================================================================== -->
+  <profiles>
+    <!-- Main deployment profile, activated by -Doss.repo -->
+    <profile>
+      <id>release-artifacts</id>
+      <activation>
+        <property>
+          <name>oss.repo</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <!-- Create dist files -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <attach>false</attach>
+              <descriptors>
+                <descriptor>src/main/assembly/dist.xml</descriptor>
+              </descriptors>
+              <tarLongFileMode>gnu</tarLongFileMode>
+            </configuration>
+            <executions>
+              <execution>
+                <id>make-assembly</id>
+                <phase>install</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <!-- Release dist files to GitHub -->
+          <!-- This will create a tag on GitHub on deploy -->
+          <!-- The release commit must have been pushed first -->
+          <plugin>
+            <groupId>de.jutzig</groupId>
+            <artifactId>github-release-plugin</artifactId>
+            <version>1.1.1</version>
+            <configuration>
+              <releaseName>Release v${project.version}</releaseName>
+              <description>See the [change notes](http://www.joda.org/${joda.artifactId}/changes-report.html) for more information.</description>
+              <tag>v${project.version}</tag>
+              <overwriteArtifact>true</overwriteArtifact>
+              <fileSets>
+                <fileSet>
+                  <directory>${project.build.directory}</directory>
+                  <includes>
+                    <include>${joda.artifactId}*-dist.tar.gz</include>
+                    <include>${joda.artifactId}*-dist.zip</include>
+                  </includes>
+                </fileSet>
+              </fileSets>
+            </configuration>
+            <executions>
+              <execution>
+                <id>github-releases</id>
+                <phase>deploy</phase>
+                <goals>
+                  <goal>release</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+  <!-- ==================================================================== -->
+  <properties>
+    <!-- Parent pom.xml control -->
+    <joda.osgi.packages>org.joda.convert.*</joda.osgi.packages>
+    <joda.module.name>org.joda.convert</joda.module.name>
+    <joda.artifactId>joda-convert</joda.artifactId>
+    <!-- Set to Java 6 -->
+    <joda.release.version>6</joda.release.version>
+    <maven.compiler.compilerVersion>1.6</maven.compiler.compilerVersion>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
+  </properties>
+</project>

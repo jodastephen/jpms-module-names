@@ -64,6 +64,15 @@ class GeneratorTests {
         () -> assertEquals("baz", map.get("artifact")));
   }
 
+  @Test
+  void scanPomWithProperties() {
+    var pom = "pom-with-properties.pom";
+    var map = new Generator().mapPom(load(pom));
+    assertAll(
+            "scan " + pom,
+            () -> assertEquals("http://www.joda.org/joda-convert/", map.get("url")));
+  }
+
   private ModuleDescriptor describe(String jar) {
     return describe(jar, true);
   }

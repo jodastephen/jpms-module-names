@@ -4,8 +4,8 @@ The Joda project provides quality low-level libraries for the Java platform.
 
 | Project | JPMS Module Name | Maven Group, Artifact and Version |
 |---------|------------------|-----------------------------------|
-| Joda-Beans | **:dvd:`org.joda.beans`** | org.joda<br>[joda-beans](https://mvnrepository.com/artifact/org.joda/joda-beans)<br>2.2 |
-| Joda-Convert | **:dvd:`org.joda.convert`** | org.joda<br>[joda-convert](https://mvnrepository.com/artifact/org.joda/joda-convert)<br>2.0.1 |
+| [Joda-Beans](http://www.joda.org/joda-beans/) | **:dvd:`org.joda.beans`** | org.joda<br>[joda-beans](https://mvnrepository.com/artifact/org.joda/joda-beans)<br>2.2 |
+| [Joda-Convert](http://www.joda.org/joda-convert/) | **:dvd:`org.joda.convert`** | org.joda<br>[joda-convert](https://mvnrepository.com/artifact/org.joda/joda-convert)<br>2.0.1 |
 | Joda-Money | *`org.joda.money`* | org.joda<br>[joda-money](https://mvnrepository.com/artifact/org.joda/joda-money) |
 | Joda-Time | *`org.joda.time`* | joda-time<br>[joda-time](https://mvnrepository.com/artifact/joda-time/joda-time) |
 

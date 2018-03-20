@@ -1,4 +1,6 @@
+import java.util.HashMap;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
 import java.io.ByteArrayOutputStream;
 import java.io.StringReader;
@@ -20,6 +22,7 @@ import java.util.Optional;
 import java.util.TreeMap;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 @SuppressWarnings("WeakerAccess")
@@ -368,12 +371,35 @@ class Generator {
       if (version.isEmpty()) {
         version = xpath.evaluate("/project/parent/version", document);
       }
+      // expand `${...}` properties...
+      var nodes = (NodeList) xpath.evaluate("/project/properties/*", document, XPathConstants.NODESET);
+      Map<String, String> properties = new HashMap<>();
+      for (var i = 0; i < nodes.getLength(); i++) {
+        var node = nodes.item(i);
+        properties.put("${" + node.getNodeName() + "}", node.getTextContent().trim());
+      }
+      name = mapPomExpandProperties(name, properties);
+      url = mapPomExpandProperties(url, properties);
+      group = mapPomExpandProperties(group, properties);
+      artifact = mapPomExpandProperties(artifact, properties);
+      version = mapPomExpandProperties(version, properties);
+      // create final map
       return Map.of(
           "name", name, "url", url, "group", group, "artifact", artifact, "version", version);
     } catch (Exception e) {
       debug("scan({0}) failed: {0}", pom, e);
     }
     return Map.of();
+  }
+
+  String mapPomExpandProperties(String text, Map<String, String> properties) {
+    var result = text;
+    if (result.contains("${")) {
+      for (var property : properties.entrySet()) {
+        result = result.replace(property.getKey(), property.getValue());
+      }
+    }
+    return result;
   }
 
   /** Read content from specified uri as a string. */
