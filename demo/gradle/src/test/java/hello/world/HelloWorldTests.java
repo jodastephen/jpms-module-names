@@ -13,6 +13,6 @@ class HelloWorldTests {
   @Test
   void opcodeASM6() {
     assertEquals(393216, Opcodes.ASM6);
-    assertEquals("org.objectweb.asm@6.0", Opcodes.class.getModule().getDescriptor().toNameAndVersion());
+    assertEquals("org.objectweb.asm@6.1.1", Opcodes.class.getModule().getDescriptor().toNameAndVersion());
   }
 }

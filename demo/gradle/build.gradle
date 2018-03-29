@@ -12,7 +12,6 @@ dependencies {
     compile mod2mav('org.objectweb.asm')
     compile mod2mav('org.slf4j')
     // test
-    testCompile mod2mav('org.apiguardian.api') // can be removed when 5.1.0-M2 is released
     testCompile mod2mav('org.junit.jupiter.api')
     testRuntime mod2mav('org.junit.jupiter.engine')
     testRuntime mod2mav('org.junit.platform.console')
