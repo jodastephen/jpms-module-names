@@ -1,7 +1,5 @@
-import java.util.HashMap;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathFactory;
+import static javax.xml.xpath.XPathConstants.NODESET;
+
 import java.io.ByteArrayOutputStream;
 import java.io.StringReader;
 import java.lang.module.FindException;
@@ -16,12 +14,15 @@ import java.nio.file.Paths;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.TreeMap;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.xpath.XPathFactory;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
@@ -202,8 +203,7 @@ class Generator {
         if (!row.homepage.isEmpty()) {
           try {
             project = toMarkdownLink(project, URI.create(row.homepage));
-          }
-          catch (IllegalArgumentException e) {
+          } catch (IllegalArgumentException e) {
             System.err.println(project + ": not a valid homepage URI? " + row.homepage);
           }
         }
@@ -372,7 +372,7 @@ class Generator {
         version = xpath.evaluate("/project/parent/version", document);
       }
       // expand `${...}` properties...
-      var nodes = (NodeList) xpath.evaluate("/project/properties/*", document, XPathConstants.NODESET);
+      var nodes = (NodeList) xpath.evaluate("/project/properties/*", document, NODESET);
       Map<String, String> properties = new HashMap<>();
       for (var i = 0; i < nodes.getLength(); i++) {
         var node = nodes.item(i);

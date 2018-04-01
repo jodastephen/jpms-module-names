@@ -1,15 +1,14 @@
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.lang.module.ModuleDescriptor;
 import java.net.URI;
 import java.nio.file.Paths;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 class GeneratorTests {
 
@@ -69,8 +68,12 @@ class GeneratorTests {
     var pom = "pom-with-properties.pom";
     var map = new Generator().mapPom(load(pom));
     assertAll(
-            "scan " + pom,
-            () -> assertEquals("http://www.joda.org/joda-convert/", map.get("url")));
+        "scan " + pom,
+        () -> assertEquals("http://www.joda.org/joda-convert/", map.get("url")),
+        () -> assertEquals("org.joda", map.get("group")),
+        () -> assertEquals("joda-convert", map.get("artifact")),
+        () -> assertEquals("Joda-Convert", map.get("name")),
+        () -> assertEquals("2.0.1", map.get("version")));
   }
 
   private ModuleDescriptor describe(String jar) {
