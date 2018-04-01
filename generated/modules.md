@@ -33,12 +33,12 @@ ASM is an all purpose Java bytecode manipulation and analysis framework.
 
 | Project | JPMS Module Name | Maven Group, Artifact and Version |
 |---------|------------------|-----------------------------------|
-| [asm](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm`** | org.ow2.asm<br>[asm](https://mvnrepository.com/artifact/org.ow2.asm/asm)<br>6.1 |
-| [asm-analysis](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.tree.analysis`** | org.ow2.asm<br>[asm-analysis](https://mvnrepository.com/artifact/org.ow2.asm/asm-analysis)<br>6.1 |
-| [asm-commons](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.commons`** | org.ow2.asm<br>[asm-commons](https://mvnrepository.com/artifact/org.ow2.asm/asm-commons)<br>6.1 |
-| [asm-tree](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.tree`** | org.ow2.asm<br>[asm-tree](https://mvnrepository.com/artifact/org.ow2.asm/asm-tree)<br>6.1 |
-| [asm-util](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.util`** | org.ow2.asm<br>[asm-util](https://mvnrepository.com/artifact/org.ow2.asm/asm-util)<br>6.1 |
-| [asm-xml](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.xml`** | org.ow2.asm<br>[asm-xml](https://mvnrepository.com/artifact/org.ow2.asm/asm-xml)<br>6.1 |
+| [asm](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm`** | org.ow2.asm<br>[asm](https://mvnrepository.com/artifact/org.ow2.asm/asm)<br>6.1.1 |
+| [asm-analysis](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.tree.analysis`** | org.ow2.asm<br>[asm-analysis](https://mvnrepository.com/artifact/org.ow2.asm/asm-analysis)<br>6.1.1 |
+| [asm-commons](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.commons`** | org.ow2.asm<br>[asm-commons](https://mvnrepository.com/artifact/org.ow2.asm/asm-commons)<br>6.1.1 |
+| [asm-tree](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.tree`** | org.ow2.asm<br>[asm-tree](https://mvnrepository.com/artifact/org.ow2.asm/asm-tree)<br>6.1.1 |
+| [asm-util](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.util`** | org.ow2.asm<br>[asm-util](https://mvnrepository.com/artifact/org.ow2.asm/asm-util)<br>6.1.1 |
+| [asm-xml](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.xml`** | org.ow2.asm<br>[asm-xml](https://mvnrepository.com/artifact/org.ow2.asm/asm-xml)<br>6.1.1 |
 
 ## [Apache Commons](http://commons.apache.org)
 Apache Commons is an Apache project focused on all aspects of reusable Java components.
@@ -142,8 +142,8 @@ Faster, better open source XML and JSON parsing for the Java platform.
 
 | Project | JPMS Module Name | Maven Group, Artifact and Version |
 |---------|------------------|-----------------------------------|
-| [Jackson-core](https://github.com/FasterXML/jackson-core) | **:cd:`com.fasterxml.jackson.core`** | com.fasterxml.jackson.core<br>[jackson-core](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core)<br>2.9.4 |
-| [jackson-databind](http://github.com/FasterXML/jackson) | **:cd:`com.fasterxml.jackson.databind`** | com.fasterxml.jackson.core<br>[jackson-databind](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind)<br>2.9.4 |
+| [Jackson-core](https://github.com/FasterXML/jackson-core) | **:cd:`com.fasterxml.jackson.core`** | com.fasterxml.jackson.core<br>[jackson-core](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core)<br>2.9.5 |
+| [jackson-databind](http://github.com/FasterXML/jackson) | **:cd:`com.fasterxml.jackson.databind`** | com.fasterxml.jackson.core<br>[jackson-databind](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind)<br>2.9.5 |
 
 ## [Square Open Source](http://square.github.io)
 As a company built on open source, here are some of the internally-developed libraries we have contributed back to the community.
@@ -270,4 +270,4 @@ The Simple Logging Facade for Java (SLF4J) serves as a simple facade or abstract
 
 | Project | JPMS Module Name | Maven Group, Artifact and Version |
 |---------|------------------|-----------------------------------|
-| [SLF4J API Module](http://www.slf4j.org) | **:dvd:`org.slf4j`** | org.slf4j<br>[slf4j-api](https://mvnrepository.com/artifact/org.slf4j/slf4j-api)<br>1.8.0-beta1 |
+| [SLF4J API Module](http://www.slf4j.org) | **:dvd:`org.slf4j`** | org.slf4j<br>[slf4j-api](https://mvnrepository.com/artifact/org.slf4j/slf4j-api)<br>1.8.0-beta2 |

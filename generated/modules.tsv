@@ -1,6 +1,6 @@
 Module	Project	Group ID	Artifact ID	Version
-com.fasterxml.jackson.core	Jackson-core	com.fasterxml.jackson.core	jackson-core	2.9.4
-com.fasterxml.jackson.databind	jackson-databind	com.fasterxml.jackson.core	jackson-databind	2.9.4
+com.fasterxml.jackson.core	Jackson-core	com.fasterxml.jackson.core	jackson-core	2.9.5
+com.fasterxml.jackson.databind	jackson-databind	com.fasterxml.jackson.core	jackson-databind	2.9.5
 com.google.common	Guava: Google Core Libraries for Java	com.google.guava	guava	24.1-jre
 com.google.gson	Gson JSON library	com.google.code.gson	gson	
 com.squareup.javapoet	JavaPoet	com.squareup	javapoet	1.10.0
@@ -117,14 +117,14 @@ org.lwjgl.vulkan	LWJGL - Vulkan bindings	org.lwjgl	lwjgl-vulkan	3.1.6
 org.lwjgl.xxhash	LWJGL - xxHash bindings	org.lwjgl	lwjgl-xxhash	3.1.6
 org.lwjgl.yoga	LWJGL - Yoga bindings	org.lwjgl	lwjgl-yoga	3.1.6
 org.lwjgl.zstd	LWJGL - Zstandard bindings	org.lwjgl	lwjgl-zstd	3.1.6
-org.objectweb.asm	asm	org.ow2.asm	asm	6.1
-org.objectweb.asm.commons	asm-commons	org.ow2.asm	asm-commons	6.1
-org.objectweb.asm.tree	asm-tree	org.ow2.asm	asm-tree	6.1
-org.objectweb.asm.tree.analysis	asm-analysis	org.ow2.asm	asm-analysis	6.1
-org.objectweb.asm.util	asm-util	org.ow2.asm	asm-util	6.1
-org.objectweb.asm.xml	asm-xml	org.ow2.asm	asm-xml	6.1
+org.objectweb.asm	asm	org.ow2.asm	asm	6.1.1
+org.objectweb.asm.commons	asm-commons	org.ow2.asm	asm-commons	6.1.1
+org.objectweb.asm.tree	asm-tree	org.ow2.asm	asm-tree	6.1.1
+org.objectweb.asm.tree.analysis	asm-analysis	org.ow2.asm	asm-analysis	6.1.1
+org.objectweb.asm.util	asm-util	org.ow2.asm	asm-util	6.1.1
+org.objectweb.asm.xml	asm-xml	org.ow2.asm	asm-xml	6.1.1
 org.opentest4j	org.opentest4j:opentest4j	org.opentest4j	opentest4j	1.0.0
-org.slf4j	SLF4J API Module	org.slf4j	slf4j-api	1.8.0-beta1
+org.slf4j	SLF4J API Module	org.slf4j	slf4j-api	1.8.0-beta2
 spring.amqp	Spring AMQP Core	org.springframework.amqp	spring-amqp	2.0.1.RELEASE
 spring.aop	Spring AOP	org.springframework	spring-aop	5.0.4.RELEASE
 spring.aspects	Spring Aspects	org.springframework	spring-aspects	5.0.4.RELEASE
