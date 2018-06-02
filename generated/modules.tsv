@@ -48,7 +48,7 @@ org.apiguardian.api	org.apiguardian:apiguardian-api	org.apiguardian	apiguardian-
 org.joda.beans	Joda-Beans	org.joda	joda-beans	2.2
 org.joda.convert	Joda-Convert	org.joda	joda-convert	2.0.1
 org.joda.money	Joda-Money	org.joda	joda-money	
-org.joda.time	Joda-Time	joda-time	joda-time	
+org.joda.time	Joda-Time	joda-time	joda-time	2.10
 org.junit.jupiter.api	org.junit.jupiter:junit-jupiter-api	org.junit.jupiter	junit-jupiter-api	5.1.0
 org.junit.jupiter.engine	org.junit.jupiter:junit-jupiter-engine	org.junit.jupiter	junit-jupiter-engine	5.1.0
 org.junit.jupiter.migrationsupport	org.junit.jupiter:junit-jupiter-migrationsupport	org.junit.jupiter	junit-jupiter-migrationsupport	5.1.0

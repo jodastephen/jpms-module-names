@@ -5,6 +5,6 @@ joda.description = "The Joda project provides quality low-level libraries for th
 
 joda.add("org.joda", "joda-beans", "2.2")
 joda.add("org.joda", "joda-convert", "2.0.1")
+joda.add("joda-time", "joda-time", "2.10")
 
 joda.raw("Joda-Money", "org.joda.money", "org.joda", "joda-money")
-joda.raw("Joda-Time", "org.joda.time", "joda-time", "joda-time")
