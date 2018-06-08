@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.TreeMap;
+import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -86,6 +87,15 @@ class Generator {
       return row;
     }
 
+    void scan(String offset) {
+      info("Scanning {0}...", offset);
+      if (!offset.endsWith("/")) {
+        offset = offset + "/";
+      }
+      var scanner = new Scanner(this::add, offset);
+      scanner.scan("");
+    }
+
     Row raw(String caption, String module, String group, String artifact) {
       var row = new Row();
       row.caption = caption;
@@ -94,6 +104,87 @@ class Generator {
       row.artifact = artifact;
       rows.add(row);
       return row;
+    }
+  }
+
+  /** Create rows by scanning an URI tree. */
+  class Scanner {
+
+    final Consumer<URI> consumer;
+    final URI base;
+    final URI offset;
+
+    Scanner(Consumer<URI> consumer, String offset) {
+      this(consumer, URI.create("http://central.maven.org/maven2/"), URI.create(offset));
+    }
+
+    Scanner(Consumer<URI> consumer, URI base, URI offset) {
+      this.consumer = consumer;
+      this.base = base;
+      this.offset = offset;
+    }
+
+    void scan(String fragment) {
+      var uri = base.resolve(offset).resolve(fragment);
+      debug("scan({0}) // {1}", fragment, uri);
+      var optionalSource = read(uri);
+      if (!optionalSource.isPresent()) {
+        return;
+      }
+      var source = optionalSource.get();
+      if (source.contains("maven-metadata.xml")) {
+        if (scanMetadata(uri)) {
+          return;
+        }
+      }
+      scanContents(fragment, source);
+    }
+
+    void scanContents(String fragment, String source) {
+      debug("scanContents");
+      final var startKey = "<a href=\"";
+      for (var line : source.split("\\R")) {
+        var start = line.indexOf(startKey);
+        var end = line.indexOf("\" title");
+        if (start < 0 || end < 0) {
+          continue;
+        }
+        start += startKey.length();
+        var name = line.substring(start, end);
+        if (!name.endsWith("/")) {
+          continue;
+        }
+        scan(fragment + name);
+      }
+    }
+
+    boolean scanMetadata(URI uri) {
+      var meta = read(uri.resolve("maven-metadata.xml")).orElseThrow(Error::new);
+      var metaData = mapMetadata(meta);
+      if (meta.contains("<versioning>")) {
+        var updated = metaData.get("updated");
+        if (updated.length() != 14) {
+          debug("unexpected <lastUpdated> format: {0}", updated);
+          return true;
+        }
+        if (updated.compareTo("20170101000000") < 0) {
+          debug("too old: {0}", updated);
+          return true;
+        }
+        var artifact = metaData.get("artifact");
+        var version = metaData.getOrDefault("release", "");
+        if (version.isEmpty()) {
+          version = metaData.get("latest");
+        }
+        var jar = uri.resolve(version + "/" + artifact + "-" + version + ".jar");
+        try {
+          consumer.accept(jar);
+        } catch (Exception e) {
+          info("Consuming URI `{0}` failed: {1}", jar, e);
+        }
+        return true;
+      }
+      return false;
     }
   }
 
@@ -112,7 +203,24 @@ class Generator {
       row.version = "ALPHA";
     }
     demo.add("org.junit.jupiter:junit-jupiter-api:5.0.2");
+    demo.add(
+        "http://central.maven.org/maven2/org/slf4j/slf4j-simple/1.8.0-beta2/slf4j-simple-1.8.0-beta2.jar");
     demo.add("org.ow2.asm", "asm", "6.1-beta");
+
+    var joda = generator.add("Joda");
+    joda.scan("org/joda/");
+
+    //    var junit = generator.add("JUnit");
+    //    junit.description = "Modules published by the JUnit Team";
+    //    junit.homepage = "http://junit.org";
+    //    junit.scan("org/junit/");
+
+    //    var ow2 = generator.add("OW2 Consortium");
+    //    ow2.homepage = "https://www.ow2.org/";
+    //    ow2.scan("org/ow2/");
+
+    var asm = generator.add("ASM is an all purpose");
+    asm.scan("org/ow2/asm");
 
     generator
         .toPropertiesLines(row -> row.group + ':' + row.artifact + '@' + row.version)
@@ -386,6 +494,30 @@ class Generator {
       // create final map
       return Map.of(
           "name", name, "url", url, "group", group, "artifact", artifact, "version", version);
+    } catch (Exception e) {
+      debug("scan({0}) failed: {0}", pom, e);
+    }
+    return Map.of();
+  }
+
+  /** Extract specific metadata values from a XML-String into a map. */
+  Map<String, String> mapMetadata(String pom) {
+    try {
+      var builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
+      var document = builder.parse(new InputSource(new StringReader(pom)));
+      var xpath = XPathFactory.newInstance().newXPath();
+      // TODO expand `${...}` properties in metadata?
+      return Map.of(
+          "group",
+          xpath.evaluate("/metadata/groupId", document),
+          "artifact",
+          xpath.evaluate("/metadata/artifactId", document),
+          "latest",
+          xpath.evaluate("/metadata/versioning/latest", document),
+          "release",
+          xpath.evaluate("/metadata/versioning/release", document),
+          "updated",
+          xpath.evaluate("/metadata/versioning/lastUpdated", document));
     } catch (Exception e) {
       debug("scan({0}) failed: {0}", pom, e);
     }

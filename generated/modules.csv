@@ -45,21 +45,27 @@ org.apache.commons.io,Apache Commons IO,commons-io,commons-io,
 org.apache.commons.lang,Apache Commons Lang v2,commons-lang,commons-lang,
 org.apache.commons.lang3,Apache Commons Lang,org.apache.commons,commons-lang3,3.7
 org.apiguardian.api,org.apiguardian:apiguardian-api,org.apiguardian,apiguardian-api,1.0.0
-org.joda.beans,Joda-Beans,org.joda,joda-beans,2.2
-org.joda.convert,Joda-Convert,org.joda,joda-convert,2.0.1
+org.joda.beans,Joda-Beans,org.joda,joda-beans,2.2.1
+org.joda.beans.integrate.freemarker,Joda-Beans Freemarker integration,org.joda,joda-beans-integrate-freemarker,2.1
+org.joda.beans.integrate.kryo,Joda-Beans Kryo integration,org.joda,joda-beans-integrate-kryo,2.1
+org.joda.beans.integrate.mongo,Joda-Beans Mongo integration,org.joda,joda-beans-integrate-mongo,2.1
+org.joda.collect,Joda-Collect,org.joda,joda-collect,1.0.1
+org.joda.convert,Joda-Convert,org.joda,joda-convert,2.0.2
 org.joda.money,Joda-Money,org.joda,joda-money,
 org.joda.time,Joda-Time,joda-time,joda-time,2.10
-org.junit.jupiter.api,org.junit.jupiter:junit-jupiter-api,org.junit.jupiter,junit-jupiter-api,5.1.0
-org.junit.jupiter.engine,org.junit.jupiter:junit-jupiter-engine,org.junit.jupiter,junit-jupiter-engine,5.1.0
-org.junit.jupiter.migrationsupport,org.junit.jupiter:junit-jupiter-migrationsupport,org.junit.jupiter,junit-jupiter-migrationsupport,5.1.0
-org.junit.jupiter.params,org.junit.jupiter:junit-jupiter-params,org.junit.jupiter,junit-jupiter-params,5.1.0
-org.junit.platform.commons,org.junit.platform:junit-platform-commons,org.junit.platform,junit-platform-commons,1.1.0
-org.junit.platform.console,org.junit.platform:junit-platform-console,org.junit.platform,junit-platform-console,1.1.0
-org.junit.platform.engine,org.junit.platform:junit-platform-engine,org.junit.platform,junit-platform-engine,1.1.0
-org.junit.platform.launcher,org.junit.platform:junit-platform-launcher,org.junit.platform,junit-platform-launcher,1.1.0
-org.junit.platform.runner,org.junit.platform:junit-platform-runner,org.junit.platform,junit-platform-runner,1.1.0
-org.junit.platform.suite.api,org.junit.platform:junit-platform-suite-api,org.junit.platform,junit-platform-suite-api,1.1.0
-org.junit.vintage.engine,org.junit.vintage:junit-vintage-engine,org.junit.vintage,junit-vintage-engine,5.1.0
+org.junit.jupiter.api,JUnit Jupiter API,org.junit.jupiter,junit-jupiter-api,5.2.0
+org.junit.jupiter.engine,JUnit Jupiter Engine,org.junit.jupiter,junit-jupiter-engine,5.2.0
+org.junit.jupiter.migrationsupport,JUnit Jupiter Migration Support,org.junit.jupiter,junit-jupiter-migrationsupport,5.2.0
+org.junit.jupiter.params,JUnit Jupiter Params,org.junit.jupiter,junit-jupiter-params,5.2.0
+org.junit.platform.commons,JUnit Platform Commons,org.junit.platform,junit-platform-commons,1.2.0
+org.junit.platform.console,JUnit Platform Console,org.junit.platform,junit-platform-console,1.2.0
+org.junit.platform.engine,JUnit Platform Engine API,org.junit.platform,junit-platform-engine,1.2.0
+org.junit.platform.gradle.plugin,JUnit Platform Gradle Plugin (deprecated),org.junit.platform,junit-platform-gradle-plugin,1.2.0
+org.junit.platform.launcher,JUnit Platform Launcher,org.junit.platform,junit-platform-launcher,1.2.0
+org.junit.platform.runner,JUnit Platform Runner,org.junit.platform,junit-platform-runner,1.2.0
+org.junit.platform.suite.api,JUnit Platform Suite API,org.junit.platform,junit-platform-suite-api,1.2.0
+org.junit.platform.surefire.provider,JUnit Platform Surefire Provider,org.junit.platform,junit-platform-surefire-provider,1.2.0
+org.junit.vintage.engine,JUnit Vintage Engine,org.junit.vintage,junit-vintage-engine,5.2.0
 org.kordamp.bootstrapfx.core,bootstrapfx-core,org.kordamp.bootstrapfx,bootstrapfx-core,0.2.2
 org.kordamp.ikonli.core,ikonli-core,org.kordamp.ikonli,ikonli-core,2.1.1
 org.kordamp.ikonli.devicons,ikonli-devicons-pack,org.kordamp.ikonli,ikonli-devicons-pack,2.1.1
@@ -117,12 +123,14 @@ org.lwjgl.vulkan,LWJGL - Vulkan bindings,org.lwjgl,lwjgl-vulkan,3.1.6
 org.lwjgl.xxhash,LWJGL - xxHash bindings,org.lwjgl,lwjgl-xxhash,3.1.6
 org.lwjgl.yoga,LWJGL - Yoga bindings,org.lwjgl,lwjgl-yoga,3.1.6
 org.lwjgl.zstd,LWJGL - Zstandard bindings,org.lwjgl,lwjgl-zstd,3.1.6
-org.objectweb.asm,asm,org.ow2.asm,asm,6.1.1
-org.objectweb.asm.commons,asm-commons,org.ow2.asm,asm-commons,6.1.1
-org.objectweb.asm.tree,asm-tree,org.ow2.asm,asm-tree,6.1.1
-org.objectweb.asm.tree.analysis,asm-analysis,org.ow2.asm,asm-analysis,6.1.1
-org.objectweb.asm.util,asm-util,org.ow2.asm,asm-util,6.1.1
-org.objectweb.asm.xml,asm-xml,org.ow2.asm,asm-xml,6.1.1
+org.objectweb.asm,asm,org.ow2.asm,asm,6.2
+org.objectweb.asm.all,ASM All,org.ow2.asm,asm-all,6.0_BETA
+org.objectweb.asm.all.debug,ASM Debug All,org.ow2.asm,asm-debug-all,6.0_BETA
+org.objectweb.asm.commons,asm-commons,org.ow2.asm,asm-commons,6.2
+org.objectweb.asm.tree,asm-tree,org.ow2.asm,asm-tree,6.2
+org.objectweb.asm.tree.analysis,asm-analysis,org.ow2.asm,asm-analysis,6.2
+org.objectweb.asm.util,asm-util,org.ow2.asm,asm-util,6.2
+org.objectweb.asm.xml,asm-xml,org.ow2.asm,asm-xml,6.2
 org.opentest4j,org.opentest4j:opentest4j,org.opentest4j,opentest4j,1.0.0
 org.slf4j,SLF4J API Module,org.slf4j,slf4j-api,1.8.0-beta2
 spring.amqp,Spring AMQP Core,org.springframework.amqp,spring-amqp,2.0.1.RELEASE

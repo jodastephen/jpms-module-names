@@ -4,27 +4,33 @@ The Joda project provides quality low-level libraries for the Java platform.
 
 | Project | JPMS Module Name | Maven Group, Artifact and Version |
 |---------|------------------|-----------------------------------|
-| [Joda-Beans](http://www.joda.org/joda-beans/) | **:dvd:`org.joda.beans`** | org.joda<br>[joda-beans](https://mvnrepository.com/artifact/org.joda/joda-beans)<br>2.2 |
-| [Joda-Convert](http://www.joda.org/joda-convert/) | **:dvd:`org.joda.convert`** | org.joda<br>[joda-convert](https://mvnrepository.com/artifact/org.joda/joda-convert)<br>2.0.1 |
-| [Joda-Time](http://www.joda.org/joda-time/) | **:cd:`org.joda.time`** | joda-time<br>[joda-time](https://mvnrepository.com/artifact/joda-time/joda-time)<br>2.10 |
+| [Joda-Beans](http://www.joda.org/joda-beans/) | **:dvd:`org.joda.beans`** | org.joda<br>[joda-beans](https://mvnrepository.com/artifact/org.joda/joda-beans)<br>2.2.1 |
+| [Joda-Beans Freemarker integration](http://www.joda.org/joda-beans-integrate-freemarker/) | **:cd:`org.joda.beans.integrate.freemarker`** | org.joda<br>[joda-beans-integrate-freemarker](https://mvnrepository.com/artifact/org.joda/joda-beans-integrate-freemarker)<br>2.1 |
+| [Joda-Beans Kryo integration](http://www.joda.org/joda-beans-integrate-kryo/) | **:cd:`org.joda.beans.integrate.kryo`** | org.joda<br>[joda-beans-integrate-kryo](https://mvnrepository.com/artifact/org.joda/joda-beans-integrate-kryo)<br>2.1 |
+| [Joda-Beans Mongo integration](http://www.joda.org/joda-beans-integrate-mongo/) | **:cd:`org.joda.beans.integrate.mongo`** | org.joda<br>[joda-beans-integrate-mongo](https://mvnrepository.com/artifact/org.joda/joda-beans-integrate-mongo)<br>2.1 |
+| [Joda-Collect](http://www.joda.org/joda-collect/) | **:dvd:`org.joda.collect`** | org.joda<br>[joda-collect](https://mvnrepository.com/artifact/org.joda/joda-collect)<br>1.0.1 |
+| [Joda-Convert](http://www.joda.org/joda-convert/) | **:dvd:`org.joda.convert`** | org.joda<br>[joda-convert](https://mvnrepository.com/artifact/org.joda/joda-convert)<br>2.0.2 |
 | Joda-Money | *`org.joda.money`* | org.joda<br>[joda-money](https://mvnrepository.com/artifact/org.joda/joda-money) |
+| [Joda-Time](http://www.joda.org/joda-time/) | **:cd:`org.joda.time`** | joda-time<br>[joda-time](https://mvnrepository.com/artifact/joda-time/joda-time)<br>2.10 |
 
 ## [JUnit 5](http://junit.org/junit5)
 The new major version of the programmer-friendly testing framework for Java 8 and beyond.
 
 | Project | JPMS Module Name | Maven Group, Artifact and Version |
 |---------|------------------|-----------------------------------|
-| [org.junit.platform:junit-platform-commons](http://junit.org/junit5/) | **:cd:`org.junit.platform.commons`** | org.junit.platform<br>[junit-platform-commons](https://mvnrepository.com/artifact/org.junit.platform/junit-platform-commons)<br>1.1.0 |
-| [org.junit.platform:junit-platform-console](http://junit.org/junit5/) | **:cd:`org.junit.platform.console`** | org.junit.platform<br>[junit-platform-console](https://mvnrepository.com/artifact/org.junit.platform/junit-platform-console)<br>1.1.0 |
-| [org.junit.platform:junit-platform-launcher](http://junit.org/junit5/) | **:cd:`org.junit.platform.launcher`** | org.junit.platform<br>[junit-platform-launcher](https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher)<br>1.1.0 |
-| [org.junit.platform:junit-platform-engine](http://junit.org/junit5/) | **:cd:`org.junit.platform.engine`** | org.junit.platform<br>[junit-platform-engine](https://mvnrepository.com/artifact/org.junit.platform/junit-platform-engine)<br>1.1.0 |
-| [org.junit.platform:junit-platform-runner](http://junit.org/junit5/) | **:cd:`org.junit.platform.runner`** | org.junit.platform<br>[junit-platform-runner](https://mvnrepository.com/artifact/org.junit.platform/junit-platform-runner)<br>1.1.0 |
-| [org.junit.platform:junit-platform-suite-api](http://junit.org/junit5/) | **:cd:`org.junit.platform.suite.api`** | org.junit.platform<br>[junit-platform-suite-api](https://mvnrepository.com/artifact/org.junit.platform/junit-platform-suite-api)<br>1.1.0 |
-| [org.junit.jupiter:junit-jupiter-api](http://junit.org/junit5/) | **:cd:`org.junit.jupiter.api`** | org.junit.jupiter<br>[junit-jupiter-api](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api)<br>5.1.0 |
-| [org.junit.jupiter:junit-jupiter-engine](http://junit.org/junit5/) | **:cd:`org.junit.jupiter.engine`** | org.junit.jupiter<br>[junit-jupiter-engine](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine)<br>5.1.0 |
-| [org.junit.jupiter:junit-jupiter-migrationsupport](http://junit.org/junit5/) | **:cd:`org.junit.jupiter.migrationsupport`** | org.junit.jupiter<br>[junit-jupiter-migrationsupport](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-migrationsupport)<br>5.1.0 |
-| [org.junit.jupiter:junit-jupiter-params](http://junit.org/junit5/) | **:cd:`org.junit.jupiter.params`** | org.junit.jupiter<br>[junit-jupiter-params](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-params)<br>5.1.0 |
-| [org.junit.vintage:junit-vintage-engine](http://junit.org/junit5/) | **:cd:`org.junit.vintage.engine`** | org.junit.vintage<br>[junit-vintage-engine](https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine)<br>5.1.0 |
+| [JUnit Jupiter API](http://junit.org/junit5/) | **:cd:`org.junit.jupiter.api`** | org.junit.jupiter<br>[junit-jupiter-api](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api)<br>5.2.0 |
+| [JUnit Jupiter Engine](http://junit.org/junit5/) | **:cd:`org.junit.jupiter.engine`** | org.junit.jupiter<br>[junit-jupiter-engine](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine)<br>5.2.0 |
+| [JUnit Jupiter Migration Support](http://junit.org/junit5/) | **:cd:`org.junit.jupiter.migrationsupport`** | org.junit.jupiter<br>[junit-jupiter-migrationsupport](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-migrationsupport)<br>5.2.0 |
+| [JUnit Jupiter Params](http://junit.org/junit5/) | **:cd:`org.junit.jupiter.params`** | org.junit.jupiter<br>[junit-jupiter-params](https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-params)<br>5.2.0 |
+| [JUnit Platform Commons](http://junit.org/junit5/) | **:cd:`org.junit.platform.commons`** | org.junit.platform<br>[junit-platform-commons](https://mvnrepository.com/artifact/org.junit.platform/junit-platform-commons)<br>1.2.0 |
+| [JUnit Platform Console](http://junit.org/junit5/) | **:cd:`org.junit.platform.console`** | org.junit.platform<br>[junit-platform-console](https://mvnrepository.com/artifact/org.junit.platform/junit-platform-console)<br>1.2.0 |
+| [JUnit Platform Engine API](http://junit.org/junit5/) | **:cd:`org.junit.platform.engine`** | org.junit.platform<br>[junit-platform-engine](https://mvnrepository.com/artifact/org.junit.platform/junit-platform-engine)<br>1.2.0 |
+| [JUnit Platform Gradle Plugin (deprecated)](http://junit.org/junit5/) | **:cd:`org.junit.platform.gradle.plugin`** | org.junit.platform<br>[junit-platform-gradle-plugin](https://mvnrepository.com/artifact/org.junit.platform/junit-platform-gradle-plugin)<br>1.2.0 |
+| [JUnit Platform Launcher](http://junit.org/junit5/) | **:cd:`org.junit.platform.launcher`** | org.junit.platform<br>[junit-platform-launcher](https://mvnrepository.com/artifact/org.junit.platform/junit-platform-launcher)<br>1.2.0 |
+| [JUnit Platform Runner](http://junit.org/junit5/) | **:cd:`org.junit.platform.runner`** | org.junit.platform<br>[junit-platform-runner](https://mvnrepository.com/artifact/org.junit.platform/junit-platform-runner)<br>1.2.0 |
+| [JUnit Platform Suite API](http://junit.org/junit5/) | **:cd:`org.junit.platform.suite.api`** | org.junit.platform<br>[junit-platform-suite-api](https://mvnrepository.com/artifact/org.junit.platform/junit-platform-suite-api)<br>1.2.0 |
+| [JUnit Platform Surefire Provider](http://junit.org/junit5/) | **:cd:`org.junit.platform.surefire.provider`** | org.junit.platform<br>[junit-platform-surefire-provider](https://mvnrepository.com/artifact/org.junit.platform/junit-platform-surefire-provider)<br>1.2.0 |
+| [JUnit Vintage Engine](http://junit.org/junit5/) | **:cd:`org.junit.vintage.engine`** | org.junit.vintage<br>[junit-vintage-engine](https://mvnrepository.com/artifact/org.junit.vintage/junit-vintage-engine)<br>5.2.0 |
 | [org.apiguardian:apiguardian-api](https://github.com/apiguardian-team/apiguardian) | **:cd:`org.apiguardian.api`** | org.apiguardian<br>[apiguardian-api](https://mvnrepository.com/artifact/org.apiguardian/apiguardian-api)<br>1.0.0 |
 | [org.opentest4j:opentest4j](https://github.com/ota4j-team/opentest4j) | **:cd:`org.opentest4j`** | org.opentest4j<br>[opentest4j](https://mvnrepository.com/artifact/org.opentest4j/opentest4j)<br>1.0.0 |
 
@@ -33,12 +39,14 @@ ASM is an all purpose Java bytecode manipulation and analysis framework.
 
 | Project | JPMS Module Name | Maven Group, Artifact and Version |
 |---------|------------------|-----------------------------------|
-| [asm](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm`** | org.ow2.asm<br>[asm](https://mvnrepository.com/artifact/org.ow2.asm/asm)<br>6.1.1 |
-| [asm-analysis](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.tree.analysis`** | org.ow2.asm<br>[asm-analysis](https://mvnrepository.com/artifact/org.ow2.asm/asm-analysis)<br>6.1.1 |
-| [asm-commons](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.commons`** | org.ow2.asm<br>[asm-commons](https://mvnrepository.com/artifact/org.ow2.asm/asm-commons)<br>6.1.1 |
-| [asm-tree](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.tree`** | org.ow2.asm<br>[asm-tree](https://mvnrepository.com/artifact/org.ow2.asm/asm-tree)<br>6.1.1 |
-| [asm-util](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.util`** | org.ow2.asm<br>[asm-util](https://mvnrepository.com/artifact/org.ow2.asm/asm-util)<br>6.1.1 |
-| [asm-xml](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.xml`** | org.ow2.asm<br>[asm-xml](https://mvnrepository.com/artifact/org.ow2.asm/asm-xml)<br>6.1.1 |
+| [asm](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm`** | org.ow2.asm<br>[asm](https://mvnrepository.com/artifact/org.ow2.asm/asm)<br>6.2 |
+| ASM All | **:dvd:`org.objectweb.asm.all`** | org.ow2.asm<br>[asm-all](https://mvnrepository.com/artifact/org.ow2.asm/asm-all)<br>6.0_BETA |
+| [asm-analysis](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.tree.analysis`** | org.ow2.asm<br>[asm-analysis](https://mvnrepository.com/artifact/org.ow2.asm/asm-analysis)<br>6.2 |
+| [asm-commons](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.commons`** | org.ow2.asm<br>[asm-commons](https://mvnrepository.com/artifact/org.ow2.asm/asm-commons)<br>6.2 |
+| ASM Debug All | **:dvd:`org.objectweb.asm.all.debug`** | org.ow2.asm<br>[asm-debug-all](https://mvnrepository.com/artifact/org.ow2.asm/asm-debug-all)<br>6.0_BETA |
+| [asm-tree](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.tree`** | org.ow2.asm<br>[asm-tree](https://mvnrepository.com/artifact/org.ow2.asm/asm-tree)<br>6.2 |
+| [asm-util](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.util`** | org.ow2.asm<br>[asm-util](https://mvnrepository.com/artifact/org.ow2.asm/asm-util)<br>6.2 |
+| [asm-xml](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.xml`** | org.ow2.asm<br>[asm-xml](https://mvnrepository.com/artifact/org.ow2.asm/asm-xml)<br>6.2 |
 
 ## [Apache Commons](http://commons.apache.org)
 Apache Commons is an Apache project focused on all aspects of reusable Java components.
