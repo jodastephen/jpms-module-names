@@ -9,7 +9,7 @@ The Joda project provides quality low-level libraries for the Java platform.
 | [Joda-Beans Kryo integration](http://www.joda.org/joda-beans-integrate-kryo/) | **:cd:`org.joda.beans.integrate.kryo`** | org.joda<br>[joda-beans-integrate-kryo](https://mvnrepository.com/artifact/org.joda/joda-beans-integrate-kryo)<br>2.1 |
 | [Joda-Beans Mongo integration](http://www.joda.org/joda-beans-integrate-mongo/) | **:cd:`org.joda.beans.integrate.mongo`** | org.joda<br>[joda-beans-integrate-mongo](https://mvnrepository.com/artifact/org.joda/joda-beans-integrate-mongo)<br>2.1 |
 | [Joda-Collect](http://www.joda.org/joda-collect/) | **:dvd:`org.joda.collect`** | org.joda<br>[joda-collect](https://mvnrepository.com/artifact/org.joda/joda-collect)<br>1.0.1 |
-| [Joda-Convert](http://www.joda.org/joda-convert/) | **:dvd:`org.joda.convert`** | org.joda<br>[joda-convert](https://mvnrepository.com/artifact/org.joda/joda-convert)<br>2.0.2 |
+| [Joda-Convert](http://www.joda.org/joda-convert/) | **:dvd:`org.joda.convert`** | org.joda<br>[joda-convert](https://mvnrepository.com/artifact/org.joda/joda-convert)<br>2.1 |
 | Joda-Money | *`org.joda.money`* | org.joda<br>[joda-money](https://mvnrepository.com/artifact/org.joda/joda-money) |
 | [Joda-Time](http://www.joda.org/joda-time/) | **:cd:`org.joda.time`** | joda-time<br>[joda-time](https://mvnrepository.com/artifact/joda-time/joda-time)<br>2.10 |
 
@@ -40,10 +40,8 @@ ASM is an all purpose Java bytecode manipulation and analysis framework.
 | Project | JPMS Module Name | Maven Group, Artifact and Version |
 |---------|------------------|-----------------------------------|
 | [asm](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm`** | org.ow2.asm<br>[asm](https://mvnrepository.com/artifact/org.ow2.asm/asm)<br>6.2 |
-| ASM All | **:dvd:`org.objectweb.asm.all`** | org.ow2.asm<br>[asm-all](https://mvnrepository.com/artifact/org.ow2.asm/asm-all)<br>6.0_BETA |
 | [asm-analysis](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.tree.analysis`** | org.ow2.asm<br>[asm-analysis](https://mvnrepository.com/artifact/org.ow2.asm/asm-analysis)<br>6.2 |
 | [asm-commons](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.commons`** | org.ow2.asm<br>[asm-commons](https://mvnrepository.com/artifact/org.ow2.asm/asm-commons)<br>6.2 |
-| ASM Debug All | **:dvd:`org.objectweb.asm.all.debug`** | org.ow2.asm<br>[asm-debug-all](https://mvnrepository.com/artifact/org.ow2.asm/asm-debug-all)<br>6.0_BETA |
 | [asm-tree](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.tree`** | org.ow2.asm<br>[asm-tree](https://mvnrepository.com/artifact/org.ow2.asm/asm-tree)<br>6.2 |
 | [asm-util](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.util`** | org.ow2.asm<br>[asm-util](https://mvnrepository.com/artifact/org.ow2.asm/asm-util)<br>6.2 |
 | [asm-xml](http://asm.ow2.org/) | **:dvd:`org.objectweb.asm.xml`** | org.ow2.asm<br>[asm-xml](https://mvnrepository.com/artifact/org.ow2.asm/asm-xml)<br>6.2 |

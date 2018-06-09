@@ -5,3 +5,5 @@ asm.description = "ASM is an all purpose Java bytecode manipulation and analysis
 asm.group = "org.ow2.asm"
 
 asm.scan("org/ow2/asm/")
+
+asm.rows.removeIf(row -> row.module.startsWith("org.objectweb.asm.all"))
