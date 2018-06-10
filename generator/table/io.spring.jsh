@@ -20,6 +20,8 @@ spring.add("org.springframework", "spring-messaging", version)
 spring.add("org.springframework", "spring-orm", version)
 spring.add("org.springframework", "spring-oxm", version)
 spring.add("org.springframework.data", "spring-data-neo4j", version)
+spring.add("org.springframework", "spring-web", version)
+spring.add("org.springframework", "spring-webmvc", version)
 
 version = "2.0.1.RELEASE"
 spring.add("org.springframework.amqp", "spring-amqp", version)
@@ -38,6 +40,8 @@ spring.add("org.springframework.data", "spring-data-ldap", version)
 spring.add("org.springframework.data", "spring-data-mongodb", version)
 spring.add("org.springframework.data", "spring-data-mongodb-cross-store", version)
 spring.add("org.springframework.data", "spring-data-redis", version)
+spring.add("org.springframework.boot", "spring-boot", version);
+spring.add("org.springframework.boot", "spring-boot-autoconfigure", version); 
 
 version = "3.0.2.RELEASE"
 spring.add("org.springframework.data", "spring-data-couchbase", version)
