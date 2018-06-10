@@ -135,6 +135,8 @@ spring.amqp	Spring AMQP Core	org.springframework.amqp	spring-amqp	2.0.1.RELEASE
 spring.aop	Spring AOP	org.springframework	spring-aop	5.0.4.RELEASE
 spring.aspects	Spring Aspects	org.springframework	spring-aspects	5.0.4.RELEASE
 spring.beans	Spring Beans	org.springframework	spring-beans	5.0.4.RELEASE
+spring.boot	Spring Boot	org.springframework.boot	spring-boot	2.0.2.RELEASE
+spring.boot.autoconfigure	Spring Boot AutoConfigure	org.springframework.boot	spring-boot-autoconfigure	2.0.2.RELEASE
 spring.context	Spring Context	org.springframework	spring-context	5.0.4.RELEASE
 spring.context.indexer	Spring Context Indexer	org.springframework	spring-context-indexer	5.0.4.RELEASE
 spring.context.support	Spring Context Support	org.springframework	spring-context-support	5.0.4.RELEASE
@@ -206,3 +208,5 @@ spring.rabbit.junit	Spring Rabbit JUnit Support	org.springframework.amqp	spring-
 spring.security.acl	spring-security-acl	org.springframework.security	spring-security-acl	5.0.0.RELEASE
 spring.security.aspects	spring-security-aspects	org.springframework.security	spring-security-aspects	5.0.0.RELEASE
 spring.security.cas	spring-security-cas	org.springframework.security	spring-security-cas	5.0.0.RELEASE
+spring.web	Spring Web	org.springframework	spring-web	5.0.4.RELEASE
+spring.webmvc	Spring Web MVC	org.springframework	spring-webmvc	5.0.4.RELEASE
