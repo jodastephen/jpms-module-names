@@ -148,8 +148,9 @@ Faster, better open source XML and JSON parsing for the Java platform.
 
 | Project | JPMS Module Name | Maven Group, Artifact and Version |
 |---------|------------------|-----------------------------------|
-| [Jackson-core](https://github.com/FasterXML/jackson-core) | **:cd:`com.fasterxml.jackson.core`** | com.fasterxml.jackson.core<br>[jackson-core](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core)<br>2.9.5 |
-| [jackson-databind](http://github.com/FasterXML/jackson) | **:cd:`com.fasterxml.jackson.databind`** | com.fasterxml.jackson.core<br>[jackson-databind](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind)<br>2.9.5 |
+| [Jackson-annotations](http://github.com/FasterXML/jackson) | **:cd:`com.fasterxml.jackson.annotation`** | com.fasterxml.jackson.core<br>[jackson-annotations](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations)<br>2.9.6 |
+| [Jackson-core](https://github.com/FasterXML/jackson-core) | **:cd:`com.fasterxml.jackson.core`** | com.fasterxml.jackson.core<br>[jackson-core](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core)<br>2.9.6 |
+| [jackson-databind](http://github.com/FasterXML/jackson) | **:cd:`com.fasterxml.jackson.databind`** | com.fasterxml.jackson.core<br>[jackson-databind](https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind)<br>2.9.6 |
 
 ## [Square Open Source](http://square.github.io)
 As a company built on open source, here are some of the internally-developed libraries we have contributed back to the community.
@@ -164,55 +165,55 @@ Netty is an asynchronous event-driven network application framework for rapid de
 
 | Project | JPMS Module Name | Maven Group, Artifact and Version |
 |---------|------------------|-----------------------------------|
-| Netty/Buffer | **:cd:`io.netty.buffer`** | io.netty<br>[netty-buffer](https://mvnrepository.com/artifact/io.netty/netty-buffer)<br>4.1.22.Final |
-| Netty/Codec | **:cd:`io.netty.codec`** | io.netty<br>[netty-codec](https://mvnrepository.com/artifact/io.netty/netty-codec)<br>4.1.22.Final |
-| Netty/Codec/DNS | **:cd:`io.netty.codec.dns`** | io.netty<br>[netty-codec-dns](https://mvnrepository.com/artifact/io.netty/netty-codec-dns)<br>4.1.22.Final |
-| Netty/Codec/HAProxy | **:cd:`io.netty.codec.haproxy`** | io.netty<br>[netty-codec-haproxy](https://mvnrepository.com/artifact/io.netty/netty-codec-haproxy)<br>4.1.22.Final |
-| Netty/Codec/HTTP | **:cd:`io.netty.codec.http`** | io.netty<br>[netty-codec-http](https://mvnrepository.com/artifact/io.netty/netty-codec-http)<br>4.1.22.Final |
-| Netty/Codec/HTTP2 | **:cd:`io.netty.codec.http2`** | io.netty<br>[netty-codec-http2](https://mvnrepository.com/artifact/io.netty/netty-codec-http2)<br>4.1.22.Final |
-| Netty/Codec/Memcache | **:cd:`io.netty.codec.memcache`** | io.netty<br>[netty-codec-memcache](https://mvnrepository.com/artifact/io.netty/netty-codec-memcache)<br>4.1.22.Final |
-| Netty/Codec/MQTT | **:cd:`io.netty.codec.mqtt`** | io.netty<br>[netty-codec-mqtt](https://mvnrepository.com/artifact/io.netty/netty-codec-mqtt)<br>4.1.22.Final |
-| Netty/Codec/Redis | **:cd:`io.netty.codec.redis`** | io.netty<br>[netty-codec-redis](https://mvnrepository.com/artifact/io.netty/netty-codec-redis)<br>4.1.22.Final |
-| Netty/Codec/SMTP | **:cd:`io.netty.codec.smtp`** | io.netty<br>[netty-codec-smtp](https://mvnrepository.com/artifact/io.netty/netty-codec-smtp)<br>4.1.22.Final |
-| Netty/Codec/Socks | **:cd:`io.netty.codec.socks`** | io.netty<br>[netty-codec-socks](https://mvnrepository.com/artifact/io.netty/netty-codec-socks)<br>4.1.22.Final |
-| Netty/Codec/Stomp | **:cd:`io.netty.codec.stomp`** | io.netty<br>[netty-codec-stomp](https://mvnrepository.com/artifact/io.netty/netty-codec-stomp)<br>4.1.22.Final |
-| Netty/Codec/XML | **:cd:`io.netty.codec.xml`** | io.netty<br>[netty-codec-xml](https://mvnrepository.com/artifact/io.netty/netty-codec-xml)<br>4.1.22.Final |
-| Netty/Common | **:cd:`io.netty.common`** | io.netty<br>[netty-common](https://mvnrepository.com/artifact/io.netty/netty-common)<br>4.1.22.Final |
-| Netty/Handler | **:cd:`io.netty.handler`** | io.netty<br>[netty-handler](https://mvnrepository.com/artifact/io.netty/netty-handler)<br>4.1.22.Final |
-| Netty/Handler/Proxy | **:cd:`io.netty.handler.proxy`** | io.netty<br>[netty-handler-proxy](https://mvnrepository.com/artifact/io.netty/netty-handler-proxy)<br>4.1.22.Final |
-| Netty/Resolver | **:cd:`io.netty.resolver`** | io.netty<br>[netty-resolver](https://mvnrepository.com/artifact/io.netty/netty-resolver)<br>4.1.22.Final |
-| Netty/Resolver/DNS | **:cd:`io.netty.resolver.dns`** | io.netty<br>[netty-resolver-dns](https://mvnrepository.com/artifact/io.netty/netty-resolver-dns)<br>4.1.22.Final |
-| Netty/Transport | **:cd:`io.netty.transport`** | io.netty<br>[netty-transport](https://mvnrepository.com/artifact/io.netty/netty-transport)<br>4.1.22.Final |
-| Netty/Transport/Native/Epoll | **:cd:`io.netty.transport.epoll`** | io.netty<br>[netty-transport-native-epoll](https://mvnrepository.com/artifact/io.netty/netty-transport-native-epoll)<br>4.1.22.Final |
-| Netty/Transport/Native/KQueue | **:cd:`io.netty.transport.kqueue`** | io.netty<br>[netty-transport-native-kqueue](https://mvnrepository.com/artifact/io.netty/netty-transport-native-kqueue)<br>4.1.22.Final |
-| Netty/Transport/RXTX | **:cd:`io.netty.transport.rxtx`** | io.netty<br>[netty-transport-rxtx](https://mvnrepository.com/artifact/io.netty/netty-transport-rxtx)<br>4.1.22.Final |
-| Netty/Transport/SCTP | **:cd:`io.netty.transport.sctp`** | io.netty<br>[netty-transport-sctp](https://mvnrepository.com/artifact/io.netty/netty-transport-sctp)<br>4.1.22.Final |
-| Netty/Transport/UDT | **:cd:`io.netty.transport.udt`** | io.netty<br>[netty-transport-udt](https://mvnrepository.com/artifact/io.netty/netty-transport-udt)<br>4.1.22.Final |
-| Netty/Transport/Native/Unix/Common | **:cd:`io.netty.transport.unix.common`** | io.netty<br>[netty-transport-native-unix-common](https://mvnrepository.com/artifact/io.netty/netty-transport-native-unix-common)<br>4.1.22.Final |
+| Netty/Buffer | **:cd:`io.netty.buffer`** | io.netty<br>[netty-buffer](https://mvnrepository.com/artifact/io.netty/netty-buffer)<br>4.1.25.Final |
+| Netty/Codec | **:cd:`io.netty.codec`** | io.netty<br>[netty-codec](https://mvnrepository.com/artifact/io.netty/netty-codec)<br>4.1.25.Final |
+| Netty/Codec/DNS | **:cd:`io.netty.codec.dns`** | io.netty<br>[netty-codec-dns](https://mvnrepository.com/artifact/io.netty/netty-codec-dns)<br>4.1.25.Final |
+| Netty/Codec/HAProxy | **:cd:`io.netty.codec.haproxy`** | io.netty<br>[netty-codec-haproxy](https://mvnrepository.com/artifact/io.netty/netty-codec-haproxy)<br>4.1.25.Final |
+| Netty/Codec/HTTP | **:cd:`io.netty.codec.http`** | io.netty<br>[netty-codec-http](https://mvnrepository.com/artifact/io.netty/netty-codec-http)<br>4.1.25.Final |
+| Netty/Codec/HTTP2 | **:cd:`io.netty.codec.http2`** | io.netty<br>[netty-codec-http2](https://mvnrepository.com/artifact/io.netty/netty-codec-http2)<br>4.1.25.Final |
+| Netty/Codec/Memcache | **:cd:`io.netty.codec.memcache`** | io.netty<br>[netty-codec-memcache](https://mvnrepository.com/artifact/io.netty/netty-codec-memcache)<br>4.1.25.Final |
+| Netty/Codec/MQTT | **:cd:`io.netty.codec.mqtt`** | io.netty<br>[netty-codec-mqtt](https://mvnrepository.com/artifact/io.netty/netty-codec-mqtt)<br>4.1.25.Final |
+| Netty/Codec/Redis | **:cd:`io.netty.codec.redis`** | io.netty<br>[netty-codec-redis](https://mvnrepository.com/artifact/io.netty/netty-codec-redis)<br>4.1.25.Final |
+| Netty/Codec/SMTP | **:cd:`io.netty.codec.smtp`** | io.netty<br>[netty-codec-smtp](https://mvnrepository.com/artifact/io.netty/netty-codec-smtp)<br>4.1.25.Final |
+| Netty/Codec/Socks | **:cd:`io.netty.codec.socks`** | io.netty<br>[netty-codec-socks](https://mvnrepository.com/artifact/io.netty/netty-codec-socks)<br>4.1.25.Final |
+| Netty/Codec/Stomp | **:cd:`io.netty.codec.stomp`** | io.netty<br>[netty-codec-stomp](https://mvnrepository.com/artifact/io.netty/netty-codec-stomp)<br>4.1.25.Final |
+| Netty/Codec/XML | **:cd:`io.netty.codec.xml`** | io.netty<br>[netty-codec-xml](https://mvnrepository.com/artifact/io.netty/netty-codec-xml)<br>4.1.25.Final |
+| Netty/Common | **:cd:`io.netty.common`** | io.netty<br>[netty-common](https://mvnrepository.com/artifact/io.netty/netty-common)<br>4.1.25.Final |
+| Netty/Handler | **:cd:`io.netty.handler`** | io.netty<br>[netty-handler](https://mvnrepository.com/artifact/io.netty/netty-handler)<br>4.1.25.Final |
+| Netty/Handler/Proxy | **:cd:`io.netty.handler.proxy`** | io.netty<br>[netty-handler-proxy](https://mvnrepository.com/artifact/io.netty/netty-handler-proxy)<br>4.1.25.Final |
+| Netty/Resolver | **:cd:`io.netty.resolver`** | io.netty<br>[netty-resolver](https://mvnrepository.com/artifact/io.netty/netty-resolver)<br>4.1.25.Final |
+| Netty/Resolver/DNS | **:cd:`io.netty.resolver.dns`** | io.netty<br>[netty-resolver-dns](https://mvnrepository.com/artifact/io.netty/netty-resolver-dns)<br>4.1.25.Final |
+| Netty/Transport | **:cd:`io.netty.transport`** | io.netty<br>[netty-transport](https://mvnrepository.com/artifact/io.netty/netty-transport)<br>4.1.25.Final |
+| Netty/Transport/Native/Epoll | **:cd:`io.netty.transport.epoll`** | io.netty<br>[netty-transport-native-epoll](https://mvnrepository.com/artifact/io.netty/netty-transport-native-epoll)<br>4.1.25.Final |
+| Netty/Transport/Native/KQueue | **:cd:`io.netty.transport.kqueue`** | io.netty<br>[netty-transport-native-kqueue](https://mvnrepository.com/artifact/io.netty/netty-transport-native-kqueue)<br>4.1.25.Final |
+| Netty/Transport/RXTX | **:cd:`io.netty.transport.rxtx`** | io.netty<br>[netty-transport-rxtx](https://mvnrepository.com/artifact/io.netty/netty-transport-rxtx)<br>4.1.25.Final |
+| Netty/Transport/SCTP | **:cd:`io.netty.transport.sctp`** | io.netty<br>[netty-transport-sctp](https://mvnrepository.com/artifact/io.netty/netty-transport-sctp)<br>4.1.25.Final |
+| Netty/Transport/UDT | **:cd:`io.netty.transport.udt`** | io.netty<br>[netty-transport-udt](https://mvnrepository.com/artifact/io.netty/netty-transport-udt)<br>4.1.25.Final |
+| Netty/Transport/Native/Unix/Common | **:cd:`io.netty.transport.unix.common`** | io.netty<br>[netty-transport-native-unix-common](https://mvnrepository.com/artifact/io.netty/netty-transport-native-unix-common)<br>4.1.25.Final |
 
 ## [Spring](https://spring.io)
 Spring: the source for modern java
 
 | Project | JPMS Module Name | Maven Group, Artifact and Version |
 |---------|------------------|-----------------------------------|
-| [Spring AOP](https://github.com/spring-projects/spring-framework) | **:cd:`spring.aop`** | org.springframework<br>[spring-aop](https://mvnrepository.com/artifact/org.springframework/spring-aop)<br>5.0.4.RELEASE |
-| [Spring Aspects](https://github.com/spring-projects/spring-framework) | **:cd:`spring.aspects`** | org.springframework<br>[spring-aspects](https://mvnrepository.com/artifact/org.springframework/spring-aspects)<br>5.0.4.RELEASE |
-| [Spring Beans](https://github.com/spring-projects/spring-framework) | **:cd:`spring.beans`** | org.springframework<br>[spring-beans](https://mvnrepository.com/artifact/org.springframework/spring-beans)<br>5.0.4.RELEASE |
-| [Spring Context](https://github.com/spring-projects/spring-framework) | **:cd:`spring.context`** | org.springframework<br>[spring-context](https://mvnrepository.com/artifact/org.springframework/spring-context)<br>5.0.4.RELEASE |
-| [Spring Context Indexer](https://github.com/spring-projects/spring-framework) | **:cd:`spring.context.indexer`** | org.springframework<br>[spring-context-indexer](https://mvnrepository.com/artifact/org.springframework/spring-context-indexer)<br>5.0.4.RELEASE |
-| [Spring Context Support](https://github.com/spring-projects/spring-framework) | **:cd:`spring.context.support`** | org.springframework<br>[spring-context-support](https://mvnrepository.com/artifact/org.springframework/spring-context-support)<br>5.0.4.RELEASE |
-| [Spring Core](https://github.com/spring-projects/spring-framework) | **:cd:`spring.core`** | org.springframework<br>[spring-core](https://mvnrepository.com/artifact/org.springframework/spring-core)<br>5.0.4.RELEASE |
-| [Spring Expression Language (SpEL)](https://github.com/spring-projects/spring-framework) | **:cd:`spring.expression`** | org.springframework<br>[spring-expression](https://mvnrepository.com/artifact/org.springframework/spring-expression)<br>5.0.4.RELEASE |
-| [Spring Instrument](https://github.com/spring-projects/spring-framework) | **:cd:`spring.instrument`** | org.springframework<br>[spring-instrument](https://mvnrepository.com/artifact/org.springframework/spring-instrument)<br>5.0.4.RELEASE |
-| [Spring Commons Logging Bridge](https://github.com/spring-projects/spring-framework) | **:cd:`spring.jcl`** | org.springframework<br>[spring-jcl](https://mvnrepository.com/artifact/org.springframework/spring-jcl)<br>5.0.4.RELEASE |
-| [Spring JDBC](https://github.com/spring-projects/spring-framework) | **:cd:`spring.jdbc`** | org.springframework<br>[spring-jdbc](https://mvnrepository.com/artifact/org.springframework/spring-jdbc)<br>5.0.4.RELEASE |
-| [Spring JMS](https://github.com/spring-projects/spring-framework) | **:cd:`spring.jms`** | org.springframework<br>[spring-jms](https://mvnrepository.com/artifact/org.springframework/spring-jms)<br>5.0.4.RELEASE |
-| [Spring Messaging](https://github.com/spring-projects/spring-framework) | **:cd:`spring.messaging`** | org.springframework<br>[spring-messaging](https://mvnrepository.com/artifact/org.springframework/spring-messaging)<br>5.0.4.RELEASE |
-| [Spring Object/Relational Mapping](https://github.com/spring-projects/spring-framework) | **:cd:`spring.orm`** | org.springframework<br>[spring-orm](https://mvnrepository.com/artifact/org.springframework/spring-orm)<br>5.0.4.RELEASE |
-| [Spring Object/XML Marshalling](https://github.com/spring-projects/spring-framework) | **:cd:`spring.oxm`** | org.springframework<br>[spring-oxm](https://mvnrepository.com/artifact/org.springframework/spring-oxm)<br>5.0.4.RELEASE |
-| Spring Data Neo4J - Core | **:cd:`spring.data.neo4j`** | org.springframework.data<br>[spring-data-neo4j](https://mvnrepository.com/artifact/org.springframework.data/spring-data-neo4j)<br>5.0.4.RELEASE |
-| [Spring Web](https://github.com/spring-projects/spring-framework) | **:cd:`spring.web`** | org.springframework<br>[spring-web](https://mvnrepository.com/artifact/org.springframework/spring-web)<br>5.0.4.RELEASE |
-| [Spring Web MVC](https://github.com/spring-projects/spring-framework) | **:cd:`spring.webmvc`** | org.springframework<br>[spring-webmvc](https://mvnrepository.com/artifact/org.springframework/spring-webmvc)<br>5.0.4.RELEASE |
+| [Spring AOP](https://github.com/spring-projects/spring-framework) | **:cd:`spring.aop`** | org.springframework<br>[spring-aop](https://mvnrepository.com/artifact/org.springframework/spring-aop)<br>5.0.7.RELEASE |
+| [Spring Aspects](https://github.com/spring-projects/spring-framework) | **:cd:`spring.aspects`** | org.springframework<br>[spring-aspects](https://mvnrepository.com/artifact/org.springframework/spring-aspects)<br>5.0.7.RELEASE |
+| [Spring Beans](https://github.com/spring-projects/spring-framework) | **:cd:`spring.beans`** | org.springframework<br>[spring-beans](https://mvnrepository.com/artifact/org.springframework/spring-beans)<br>5.0.7.RELEASE |
+| [Spring Context](https://github.com/spring-projects/spring-framework) | **:cd:`spring.context`** | org.springframework<br>[spring-context](https://mvnrepository.com/artifact/org.springframework/spring-context)<br>5.0.7.RELEASE |
+| [Spring Context Indexer](https://github.com/spring-projects/spring-framework) | **:cd:`spring.context.indexer`** | org.springframework<br>[spring-context-indexer](https://mvnrepository.com/artifact/org.springframework/spring-context-indexer)<br>5.0.7.RELEASE |
+| [Spring Context Support](https://github.com/spring-projects/spring-framework) | **:cd:`spring.context.support`** | org.springframework<br>[spring-context-support](https://mvnrepository.com/artifact/org.springframework/spring-context-support)<br>5.0.7.RELEASE |
+| [Spring Core](https://github.com/spring-projects/spring-framework) | **:cd:`spring.core`** | org.springframework<br>[spring-core](https://mvnrepository.com/artifact/org.springframework/spring-core)<br>5.0.7.RELEASE |
+| [Spring Expression Language (SpEL)](https://github.com/spring-projects/spring-framework) | **:cd:`spring.expression`** | org.springframework<br>[spring-expression](https://mvnrepository.com/artifact/org.springframework/spring-expression)<br>5.0.7.RELEASE |
+| [Spring Instrument](https://github.com/spring-projects/spring-framework) | **:cd:`spring.instrument`** | org.springframework<br>[spring-instrument](https://mvnrepository.com/artifact/org.springframework/spring-instrument)<br>5.0.7.RELEASE |
+| [Spring Commons Logging Bridge](https://github.com/spring-projects/spring-framework) | **:cd:`spring.jcl`** | org.springframework<br>[spring-jcl](https://mvnrepository.com/artifact/org.springframework/spring-jcl)<br>5.0.7.RELEASE |
+| [Spring JDBC](https://github.com/spring-projects/spring-framework) | **:cd:`spring.jdbc`** | org.springframework<br>[spring-jdbc](https://mvnrepository.com/artifact/org.springframework/spring-jdbc)<br>5.0.7.RELEASE |
+| [Spring JMS](https://github.com/spring-projects/spring-framework) | **:cd:`spring.jms`** | org.springframework<br>[spring-jms](https://mvnrepository.com/artifact/org.springframework/spring-jms)<br>5.0.7.RELEASE |
+| [Spring Messaging](https://github.com/spring-projects/spring-framework) | **:cd:`spring.messaging`** | org.springframework<br>[spring-messaging](https://mvnrepository.com/artifact/org.springframework/spring-messaging)<br>5.0.7.RELEASE |
+| [Spring Object/Relational Mapping](https://github.com/spring-projects/spring-framework) | **:cd:`spring.orm`** | org.springframework<br>[spring-orm](https://mvnrepository.com/artifact/org.springframework/spring-orm)<br>5.0.7.RELEASE |
+| [Spring Object/XML Marshalling](https://github.com/spring-projects/spring-framework) | **:cd:`spring.oxm`** | org.springframework<br>[spring-oxm](https://mvnrepository.com/artifact/org.springframework/spring-oxm)<br>5.0.7.RELEASE |
+| Spring Data Neo4J - Core | **:cd:`spring.data.neo4j`** | org.springframework.data<br>[spring-data-neo4j](https://mvnrepository.com/artifact/org.springframework.data/spring-data-neo4j)<br>5.0.7.RELEASE |
+| [Spring Web](https://github.com/spring-projects/spring-framework) | **:cd:`spring.web`** | org.springframework<br>[spring-web](https://mvnrepository.com/artifact/org.springframework/spring-web)<br>5.0.7.RELEASE |
+| [Spring Web MVC](https://github.com/spring-projects/spring-framework) | **:cd:`spring.webmvc`** | org.springframework<br>[spring-webmvc](https://mvnrepository.com/artifact/org.springframework/spring-webmvc)<br>5.0.7.RELEASE |
 | [Spring AMQP Core](https://projects.spring.io/spring-amqp) | **:cd:`spring.amqp`** | org.springframework.amqp<br>[spring-amqp](https://mvnrepository.com/artifact/org.springframework.amqp/spring-amqp)<br>2.0.1.RELEASE |
 | [Spring RabbitMQ Support](https://projects.spring.io/spring-amqp) | **:cd:`spring.rabbit`** | org.springframework.amqp<br>[spring-rabbit](https://mvnrepository.com/artifact/org.springframework.amqp/spring-rabbit)<br>2.0.1.RELEASE |
 | [Spring Rabbit JUnit Support](https://projects.spring.io/spring-amqp) | **:cd:`spring.rabbit.junit`** | org.springframework.amqp<br>[spring-rabbit-junit](https://mvnrepository.com/artifact/org.springframework.amqp/spring-rabbit-junit)<br>2.0.1.RELEASE |

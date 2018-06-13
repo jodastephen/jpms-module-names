@@ -3,7 +3,7 @@ var spring = generator.add("Spring")
 spring.homepage = "https://spring.io"
 spring.description = "Spring: the source for modern java"
 
-version = "5.0.4.RELEASE"
+version = "5.0.7.RELEASE"
 spring.add("org.springframework", "spring-aop", version)
 spring.add("org.springframework", "spring-aspects", version)
 spring.add("org.springframework", "spring-beans", version)

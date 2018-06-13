@@ -89,6 +89,7 @@ class Generator {
 
     void scan(String offset) {
       info("Scanning {0}...", offset);
+      offset = offset.replace('.', '/');
       if (!offset.endsWith("/")) {
         offset = offset + "/";
       }
