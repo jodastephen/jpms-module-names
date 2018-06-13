@@ -21,6 +21,7 @@ import java.util.Optional;
 import java.util.TreeMap;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPathFactory;
@@ -88,12 +89,21 @@ class Generator {
     }
 
     void scan(String offset) {
+      scan(offset, uri -> true);
+    }
+
+    void scan(String offset, Predicate<String> predicate) {
+      scan("http://central.maven.org/maven2/", offset, predicate);
+    }
+
+    void scan(String base, String offset, Predicate<String> predicate) {
       info("Scanning {0}...", offset);
       offset = offset.replace('.', '/');
       if (!offset.endsWith("/")) {
         offset = offset + "/";
       }
-      var scanner = new Scanner(this::add, offset);
+
+      var scanner = new Scanner(predicate, this::add, URI.create(base), URI.create(offset));
       scanner.scan("");
     }
 
@@ -111,15 +121,13 @@ class Generator {
   /** Create rows by scanning an URI tree. */
   class Scanner {
 
+    final Predicate<String> predicate;
     final Consumer<URI> consumer;
     final URI base;
     final URI offset;
 
-    Scanner(Consumer<URI> consumer, String offset) {
-      this(consumer, URI.create("http://central.maven.org/maven2/"), URI.create(offset));
-    }
-
-    Scanner(Consumer<URI> consumer, URI base, URI offset) {
+    Scanner(Predicate<String> predicate, Consumer<URI> consumer, URI base, URI offset) {
+      this.predicate = predicate;
       this.consumer = consumer;
       this.base = base;
       this.offset = offset;
@@ -127,7 +135,11 @@ class Generator {
 
     void scan(String fragment) {
       var uri = base.resolve(offset).resolve(fragment);
-      debug("scan({0}) // {1}", fragment, uri);
+      if (!predicate.test(uri.toString())) {
+          info("predicate skips scan({0}) // {1}", fragment, uri);
+          return;
+      }
+      info("scan({0}) // {1}", fragment, uri);
       var optionalSource = read(uri);
       if (!optionalSource.isPresent()) {
         return;
@@ -221,7 +233,10 @@ class Generator {
     //    ow2.scan("org/ow2/");
 
     var asm = generator.add("ASM is an all purpose");
-    asm.scan("org/ow2/asm");
+    asm.scan("org/ow2/asm", uri -> !uri.contains("-all"));
+
+    var square = generator.add("Square");
+    square.scan("com/squareup", uri -> !uri.contains("misk"));
 
     generator
         .toPropertiesLines(row -> row.group + ':' + row.artifact + '@' + row.version)

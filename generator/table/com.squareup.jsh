@@ -4,5 +4,4 @@ square.description = "As a company built on open source, here are some of the in
 square.homepage = "http://square.github.io"
 square.group = "com.squareup"
 
-square.add("com.squareup", "javapoet", "1.10.0")
-square.add("com.squareup", "kotlinpoet", "0.7.0")
+square.scan("com.squareup", uri -> !uri.contains("misk"))

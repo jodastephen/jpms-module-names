@@ -157,8 +157,37 @@ As a company built on open source, here are some of the internally-developed lib
 
 | Project | JPMS Module Name | Maven Group, Artifact and Version |
 |---------|------------------|-----------------------------------|
-| [JavaPoet](http://github.com/square/javapoet/) | **:cd:`com.squareup.javapoet`** | com.squareup<br>[javapoet](https://mvnrepository.com/artifact/com.squareup/javapoet)<br>1.10.0 |
+| [JavaPoet](http://github.com/square/javapoet/) | **:cd:`com.squareup.javapoet`** | com.squareup<br>[javapoet](https://mvnrepository.com/artifact/com.squareup/javapoet)<br>1.11.1 |
 | [KotlinPoet](http://github.com/square/kotlinpoet/) | **:cd:`com.squareup.kotlinpoet`** | com.squareup<br>[kotlinpoet](https://mvnrepository.com/artifact/com.squareup/kotlinpoet)<br>0.7.0 |
+| Moshi | **:cd:`com.squareup.moshi`** | com.squareup.moshi<br>[moshi](https://mvnrepository.com/artifact/com.squareup.moshi/moshi)<br>1.6.0 |
+|  | **:cd:`com.squareup.moshi.adapters`** | com.squareup.moshi<br>[moshi-adapters](https://mvnrepository.com/artifact/com.squareup.moshi/moshi-adapters)<br>1.6.0 |
+|  | **:cd:`com.squareup.moshi.kotlin`** | com.squareup.moshi<br>[moshi-kotlin](https://mvnrepository.com/artifact/com.squareup.moshi/moshi-kotlin)<br>1.6.0 |
+| OkHttp Logging Interceptor | **:cd:`okhttp3.logging`** | com.squareup.okhttp3<br>[logging-interceptor](https://mvnrepository.com/artifact/com.squareup.okhttp3/logging-interceptor)<br>3.10.0 |
+| MockWebServer | **:cd:`okhttp3.mockwebserver`** | com.squareup.okhttp3<br>[mockwebserver](https://mvnrepository.com/artifact/com.squareup.okhttp3/mockwebserver)<br>3.10.0 |
+| OkCurl | **:cd:`okhttp3.curl`** | com.squareup.okhttp3<br>[okcurl](https://mvnrepository.com/artifact/com.squareup.okhttp3/okcurl)<br>3.10.0 |
+| OkHttp | **:cd:`okhttp3`** | com.squareup.okhttp3<br>[okhttp](https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp)<br>3.10.0 |
+| OkHttp Android Platform Support | **:cd:`okhttp3.androidsupport`** | com.squareup.okhttp3<br>[okhttp-android-support](https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp-android-support)<br>3.10.0 |
+| OkHttp Apache HttpClient | **:cd:`okhttp3.apache`** | com.squareup.okhttp3<br>[okhttp-apache](https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp-apache)<br>3.10.0 |
+| OkHttp test support classes | **:cd:`okhttp3.testing`** | com.squareup.okhttp3<br>[okhttp-testing-support](https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp-testing-support)<br>3.10.0 |
+| OkHttp URLConnection | **:cd:`okhttp3.urlconnection`** | com.squareup.okhttp3<br>[okhttp-urlconnection](https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp-urlconnection)<br>3.10.0 |
+| Okio | **:cd:`okio`** | com.squareup.okio<br>[okio](https://mvnrepository.com/artifact/com.squareup.okio/okio)<br>1.14.1 |
+| Adapter: Guava | **:cd:`retrofit2.adapter.guava`** | com.squareup.retrofit2<br>[adapter-guava](https://mvnrepository.com/artifact/com.squareup.retrofit2/adapter-guava)<br>2.4.0 |
+| Adapter: Java 8 | **:cd:`retrofit2.adapter.java8`** | com.squareup.retrofit2<br>[adapter-java8](https://mvnrepository.com/artifact/com.squareup.retrofit2/adapter-java8)<br>2.4.0 |
+| Adapter: RxJava | **:cd:`retrofit2.adapter.rxjava`** | com.squareup.retrofit2<br>[adapter-rxjava](https://mvnrepository.com/artifact/com.squareup.retrofit2/adapter-rxjava)<br>2.4.0 |
+| Adapter: RxJava 2 | **:cd:`retrofit2.adapter.rxjava2`** | com.squareup.retrofit2<br>[adapter-rxjava2](https://mvnrepository.com/artifact/com.squareup.retrofit2/adapter-rxjava2)<br>2.4.0 |
+| Adapter: Scala | **:cd:`retrofit2.adapter.scala`** | com.squareup.retrofit2<br>[adapter-scala](https://mvnrepository.com/artifact/com.squareup.retrofit2/adapter-scala)<br>2.4.0 |
+| Converter: Gson | **:cd:`retrofit2.converter.gson`** | com.squareup.retrofit2<br>[converter-gson](https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-gson)<br>2.4.0 |
+| Converter: Guava | **:cd:`retrofit2.converter.guava`** | com.squareup.retrofit2<br>[converter-guava](https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-guava)<br>2.4.0 |
+| Converter: Jackson | **:cd:`retrofit2.converter.jackson`** | com.squareup.retrofit2<br>[converter-jackson](https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-jackson)<br>2.4.0 |
+| Converter: Java 8 | **:cd:`retrofit2.converter.java8`** | com.squareup.retrofit2<br>[converter-java8](https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-java8)<br>2.4.0 |
+| Converter: JAXB | **:cd:`retrofit2.converter.jaxb`** | com.squareup.retrofit2<br>[converter-jaxb](https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-jaxb)<br>2.4.0 |
+| Converter: Moshi | **:cd:`retrofit2.converter.moshi`** | com.squareup.retrofit2<br>[converter-moshi](https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-moshi)<br>2.4.0 |
+| Converter: Protocol Buffers | **:cd:`retrofit2.converter.protobuf`** | com.squareup.retrofit2<br>[converter-protobuf](https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-protobuf)<br>2.4.0 |
+| Converter: Java Scalars | **:cd:`retrofit2.converter.scalars`** | com.squareup.retrofit2<br>[converter-scalars](https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-scalars)<br>2.4.0 |
+| Converter: SimpleXML | **:cd:`retrofit2.converter.simplexml`** | com.squareup.retrofit2<br>[converter-simplexml](https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-simplexml)<br>2.4.0 |
+| Converter: Wire Protocol Buffers | **:cd:`retrofit2.converter.wire`** | com.squareup.retrofit2<br>[converter-wire](https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-wire)<br>2.4.0 |
+| Retrofit | **:cd:`retrofit2`** | com.squareup.retrofit2<br>[retrofit](https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit)<br>2.4.0 |
+| Retrofit Mock Adapter | **:cd:`retrofit2.mock`** | com.squareup.retrofit2<br>[retrofit-mock](https://mvnrepository.com/artifact/com.squareup.retrofit2/retrofit-mock)<br>2.4.0 |
 
 ## [Netty](http://netty.io)
 Netty is an asynchronous event-driven network application framework for rapid development of maintainable high performance protocol servers & clients.

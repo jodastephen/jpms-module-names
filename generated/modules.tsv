@@ -4,8 +4,11 @@ com.fasterxml.jackson.core	Jackson-core	com.fasterxml.jackson.core	jackson-core	
 com.fasterxml.jackson.databind	jackson-databind	com.fasterxml.jackson.core	jackson-databind	2.9.6
 com.google.common	Guava: Google Core Libraries for Java	com.google.guava	guava	24.1-jre
 com.google.gson	Gson JSON library	com.google.code.gson	gson	
-com.squareup.javapoet	JavaPoet	com.squareup	javapoet	1.10.0
+com.squareup.javapoet	JavaPoet	com.squareup	javapoet	1.11.1
 com.squareup.kotlinpoet	KotlinPoet	com.squareup	kotlinpoet	0.7.0
+com.squareup.moshi	Moshi	com.squareup.moshi	moshi	1.6.0
+com.squareup.moshi.adapters		com.squareup.moshi	moshi-adapters	1.6.0
+com.squareup.moshi.kotlin		com.squareup.moshi	moshi-kotlin	1.6.0
 io.netty.buffer	Netty/Buffer	io.netty	netty-buffer	4.1.25.Final
 io.netty.codec	Netty/Codec	io.netty	netty-codec	4.1.25.Final
 io.netty.codec.dns	Netty/Codec/DNS	io.netty	netty-codec-dns	4.1.25.Final
@@ -31,6 +34,15 @@ io.netty.transport.rxtx	Netty/Transport/RXTX	io.netty	netty-transport-rxtx	4.1.2
 io.netty.transport.sctp	Netty/Transport/SCTP	io.netty	netty-transport-sctp	4.1.25.Final
 io.netty.transport.udt	Netty/Transport/UDT	io.netty	netty-transport-udt	4.1.25.Final
 io.netty.transport.unix.common	Netty/Transport/Native/Unix/Common	io.netty	netty-transport-native-unix-common	4.1.25.Final
+okhttp3	OkHttp	com.squareup.okhttp3	okhttp	3.10.0
+okhttp3.androidsupport	OkHttp Android Platform Support	com.squareup.okhttp3	okhttp-android-support	3.10.0
+okhttp3.apache	OkHttp Apache HttpClient	com.squareup.okhttp3	okhttp-apache	3.10.0
+okhttp3.curl	OkCurl	com.squareup.okhttp3	okcurl	3.10.0
+okhttp3.logging	OkHttp Logging Interceptor	com.squareup.okhttp3	logging-interceptor	3.10.0
+okhttp3.mockwebserver	MockWebServer	com.squareup.okhttp3	mockwebserver	3.10.0
+okhttp3.testing	OkHttp test support classes	com.squareup.okhttp3	okhttp-testing-support	3.10.0
+okhttp3.urlconnection	OkHttp URLConnection	com.squareup.okhttp3	okhttp-urlconnection	3.10.0
+okio	Okio	com.squareup.okio	okio	1.14.1
 org.apache.commons.beanutils	Apache Commons BeanUtils	commons-beanutils	commons-beanutils	
 org.apache.commons.cli	Apache Commons CLI	commons-cli	commons-cli	
 org.apache.commons.codec	Apache Commons Codec	commons-codec	commons-codec	
@@ -132,6 +144,23 @@ org.objectweb.asm.util	asm-util	org.ow2.asm	asm-util	6.2
 org.objectweb.asm.xml	asm-xml	org.ow2.asm	asm-xml	6.2
 org.opentest4j	org.opentest4j:opentest4j	org.opentest4j	opentest4j	1.0.0
 org.slf4j	SLF4J API Module	org.slf4j	slf4j-api	1.8.0-beta2
+retrofit2	Retrofit	com.squareup.retrofit2	retrofit	2.4.0
+retrofit2.adapter.guava	Adapter: Guava	com.squareup.retrofit2	adapter-guava	2.4.0
+retrofit2.adapter.java8	Adapter: Java 8	com.squareup.retrofit2	adapter-java8	2.4.0
+retrofit2.adapter.rxjava	Adapter: RxJava	com.squareup.retrofit2	adapter-rxjava	2.4.0
+retrofit2.adapter.rxjava2	Adapter: RxJava 2	com.squareup.retrofit2	adapter-rxjava2	2.4.0
+retrofit2.adapter.scala	Adapter: Scala	com.squareup.retrofit2	adapter-scala	2.4.0
+retrofit2.converter.gson	Converter: Gson	com.squareup.retrofit2	converter-gson	2.4.0
+retrofit2.converter.guava	Converter: Guava	com.squareup.retrofit2	converter-guava	2.4.0
+retrofit2.converter.jackson	Converter: Jackson	com.squareup.retrofit2	converter-jackson	2.4.0
+retrofit2.converter.java8	Converter: Java 8	com.squareup.retrofit2	converter-java8	2.4.0
+retrofit2.converter.jaxb	Converter: JAXB	com.squareup.retrofit2	converter-jaxb	2.4.0
+retrofit2.converter.moshi	Converter: Moshi	com.squareup.retrofit2	converter-moshi	2.4.0
+retrofit2.converter.protobuf	Converter: Protocol Buffers	com.squareup.retrofit2	converter-protobuf	2.4.0
+retrofit2.converter.scalars	Converter: Java Scalars	com.squareup.retrofit2	converter-scalars	2.4.0
+retrofit2.converter.simplexml	Converter: SimpleXML	com.squareup.retrofit2	converter-simplexml	2.4.0
+retrofit2.converter.wire	Converter: Wire Protocol Buffers	com.squareup.retrofit2	converter-wire	2.4.0
+retrofit2.mock	Retrofit Mock Adapter	com.squareup.retrofit2	retrofit-mock	2.4.0
 spring.amqp	Spring AMQP Core	org.springframework.amqp	spring-amqp	2.0.1.RELEASE
 spring.aop	Spring AOP	org.springframework	spring-aop	5.0.7.RELEASE
 spring.aspects	Spring Aspects	org.springframework	spring-aspects	5.0.7.RELEASE
