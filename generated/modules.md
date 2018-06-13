@@ -66,6 +66,22 @@ Apache Commons is an Apache project focused on all aspects of reusable Java comp
 | Apache Commons IO | *`org.apache.commons.io`* | commons-io<br>[commons-io](https://mvnrepository.com/artifact/commons-io/commons-io) |
 | Apache Commons Lang v2 | *`org.apache.commons.lang`* | commons-lang<br>[commons-lang](https://mvnrepository.com/artifact/commons-lang/commons-lang) |
 
+## [ASM](https://www.jooq.org/)
+jOOQ generates Java code from your database and lets you build type safe SQL queries through its fluent API.
+
+| Project | JPMS Module Name | Maven Group, Artifact and Version |
+|---------|------------------|-----------------------------------|
+| jOOL | **:dvd:`org.jooq.jool`** | org.jooq<br>[jool](https://mvnrepository.com/artifact/org.jooq/jool)<br>0.9.14 |
+| jOOQ | **:cd:`org.jooq`** | org.jooq<br>[jooq](https://mvnrepository.com/artifact/org.jooq/jooq)<br>3.11.0 |
+| jOOQ Checker | **:cd:`org.jooq.checker`** | org.jooq<br>[jooq-checker](https://mvnrepository.com/artifact/org.jooq/jooq-checker)<br>3.11.0 |
+| jOOQ Codegen | **:cd:`org.jooq.codegen`** | org.jooq<br>[jooq-codegen](https://mvnrepository.com/artifact/org.jooq/jooq-codegen)<br>3.11.0 |
+| jOOQ Codegen Maven | **:cd:`org.jooq.codegen.maven`** | org.jooq<br>[jooq-codegen-maven](https://mvnrepository.com/artifact/org.jooq/jooq-codegen-maven)<br>3.11.0 |
+| jOOQ Meta | **:cd:`org.jooq.meta`** | org.jooq<br>[jooq-meta](https://mvnrepository.com/artifact/org.jooq/jooq-meta)<br>3.11.0 |
+| jOOQ Meta Extensions | **:cd:`org.jooq.meta.extensions`** | org.jooq<br>[jooq-meta-extensions](https://mvnrepository.com/artifact/org.jooq/jooq-meta-extensions)<br>3.11.0 |
+| [jOOR](https://github.com/jOOQ/jOOR) | **:dvd:`org.jooq.joor`** | org.jooq<br>[joor](https://mvnrepository.com/artifact/org.jooq/joor)<br>0.9.9 |
+| [jOOU](https://github.com/jOOQ/jOOU) | **:dvd:`org.jooq.joou`** | org.jooq<br>[joou](https://mvnrepository.com/artifact/org.jooq/joou)<br>0.9.4 |
+| [jOOX](https://github.com/jOOQ/jOOX) | **:dvd:`org.jooq.joox`** | org.jooq<br>[joox](https://mvnrepository.com/artifact/org.jooq/joox)<br>1.6.0 |
+
 ## [Kordamp](https://github.com/aalmiray)
 Building a better world one commit at a time
 

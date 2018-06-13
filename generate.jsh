@@ -15,6 +15,7 @@ String version = "?"
 /open generator/table/org.junit.jsh
 /open generator/table/org.objectweb.asm.jsh
 /open generator/table/org.apache.commons.jsh
+/open generator/table/org.jooq.jsh
 /open generator/table/org.kordamp.jsh
 /open generator/table/org.lwjgl.jsh
 /open generator/table/com.google.jsh

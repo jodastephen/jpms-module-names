@@ -77,6 +77,16 @@ org.joda.collect	Joda-Collect	org.joda	joda-collect	1.0.1
 org.joda.convert	Joda-Convert	org.joda	joda-convert	2.1
 org.joda.money	Joda-Money	org.joda	joda-money	
 org.joda.time	Joda-Time	joda-time	joda-time	2.10
+org.jooq	jOOQ	org.jooq	jooq	3.11.0
+org.jooq.checker	jOOQ Checker	org.jooq	jooq-checker	3.11.0
+org.jooq.codegen	jOOQ Codegen	org.jooq	jooq-codegen	3.11.0
+org.jooq.codegen.maven	jOOQ Codegen Maven	org.jooq	jooq-codegen-maven	3.11.0
+org.jooq.jool	jOOL	org.jooq	jool	0.9.14
+org.jooq.joor	jOOR	org.jooq	joor	0.9.9
+org.jooq.joou	jOOU	org.jooq	joou	0.9.4
+org.jooq.joox	jOOX	org.jooq	joox	1.6.0
+org.jooq.meta	jOOQ Meta	org.jooq	jooq-meta	3.11.0
+org.jooq.meta.extensions	jOOQ Meta Extensions	org.jooq	jooq-meta-extensions	3.11.0
 org.junit.jupiter.api	JUnit Jupiter API	org.junit.jupiter	junit-jupiter-api	5.2.0
 org.junit.jupiter.engine	JUnit Jupiter Engine	org.junit.jupiter	junit-jupiter-engine	5.2.0
 org.junit.jupiter.migrationsupport	JUnit Jupiter Migration Support	org.junit.jupiter	junit-jupiter-migrationsupport	5.2.0

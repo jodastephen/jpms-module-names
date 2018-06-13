@@ -136,8 +136,8 @@ class Generator {
     void scan(String fragment) {
       var uri = base.resolve(offset).resolve(fragment);
       if (!predicate.test(uri.toString())) {
-          info("predicate skips scan({0}) // {1}", fragment, uri);
-          return;
+        info("predicate skips scan({0}) // {1}", fragment, uri);
+        return;
       }
       info("scan({0}) // {1}", fragment, uri);
       var optionalSource = read(uri);
@@ -220,8 +220,8 @@ class Generator {
         "http://central.maven.org/maven2/org/slf4j/slf4j-simple/1.8.0-beta2/slf4j-simple-1.8.0-beta2.jar");
     demo.add("org.ow2.asm", "asm", "6.1-beta");
 
-    var joda = generator.add("Joda");
-    joda.scan("org/joda/");
+    //    var joda = generator.add("Joda");
+    //    joda.scan("org/joda/");
 
     //    var junit = generator.add("JUnit");
     //    junit.description = "Modules published by the JUnit Team";
@@ -232,11 +232,14 @@ class Generator {
     //    ow2.homepage = "https://www.ow2.org/";
     //    ow2.scan("org/ow2/");
 
-    var asm = generator.add("ASM is an all purpose");
-    asm.scan("org/ow2/asm", uri -> !uri.contains("-all"));
+    //    var asm = generator.add("ASM is an all purpose");
+    //    asm.scan("org/ow2/asm", uri -> !uri.contains("-all"));
 
-    var square = generator.add("Square");
-    square.scan("com/squareup", uri -> !uri.contains("misk"));
+    //    var square = generator.add("Square");
+    //    square.scan("com/squareup", uri -> !uri.contains("misk"));
+
+    var jooq = generator.add("jOOQ");
+      jooq.scan("org/jooq");
 
     generator
         .toPropertiesLines(row -> row.group + ':' + row.artifact + '@' + row.version)
