@@ -2,6 +2,17 @@ Module,Project,Group ID,Artifact ID,Version
 com.fasterxml.jackson.annotation,Jackson-annotations,com.fasterxml.jackson.core,jackson-annotations,2.9.6
 com.fasterxml.jackson.core,Jackson-core,com.fasterxml.jackson.core,jackson-core,2.9.6
 com.fasterxml.jackson.databind,jackson-databind,com.fasterxml.jackson.core,jackson-databind,2.9.6
+com.fasterxml.jackson.datatype.guava,Jackson datatype: Guava,com.fasterxml.jackson.datatype,jackson-datatype-guava,2.9.6
+com.fasterxml.jackson.datatype.hibernate3,Jackson-datatype-Hibernate3,com.fasterxml.jackson.datatype,jackson-datatype-hibernate3,2.9.6
+com.fasterxml.jackson.datatype.hibernate4,Jackson-datatype-Hibernate4,com.fasterxml.jackson.datatype,jackson-datatype-hibernate4,2.9.6
+com.fasterxml.jackson.datatype.hibernate5,Jackson-datatype-Hibernate5,com.fasterxml.jackson.datatype,jackson-datatype-hibernate5,2.9.6
+com.fasterxml.jackson.datatype.hppc,Jackson datatype: HPPC,com.fasterxml.jackson.datatype,jackson-datatype-hppc,2.9.6
+com.fasterxml.jackson.datatype.jaxrs,Jackson-JAXRS-Datatypes,com.fasterxml.jackson.datatype,jackson-datatype-jaxrs,2.9.6
+com.fasterxml.jackson.datatype.jdk8,Jackson datatype: jdk8,com.fasterxml.jackson.datatype,jackson-datatype-jdk8,2.9.6
+com.fasterxml.jackson.datatype.joda,Jackson-datatype-Joda,com.fasterxml.jackson.datatype,jackson-datatype-joda,2.9.6
+com.fasterxml.jackson.datatype.jsonorg,Jackson-datatype-json.org,com.fasterxml.jackson.datatype,jackson-datatype-json-org,2.9.6
+com.fasterxml.jackson.datatype.jsr310,Jackson datatype: JSR310,com.fasterxml.jackson.datatype,jackson-datatype-jsr310,2.9.6
+com.fasterxml.jackson.datatype.jsr353,Jackson-datatype-JSR-353,com.fasterxml.jackson.datatype,jackson-datatype-jsr353,2.9.6
 com.google.common,Guava: Google Core Libraries for Java,com.google.guava,guava,24.1-jre
 com.google.gson,Gson JSON library,com.google.code.gson,gson,
 com.squareup.javapoet,JavaPoet,com.squareup,javapoet,1.11.1
@@ -58,7 +69,7 @@ org.apache.commons.io,Apache Commons IO,commons-io,commons-io,
 org.apache.commons.lang,Apache Commons Lang v2,commons-lang,commons-lang,
 org.apache.commons.lang3,Apache Commons Lang,org.apache.commons,commons-lang3,3.7
 org.apiguardian.api,org.apiguardian:apiguardian-api,org.apiguardian,apiguardian-api,1.0.0
-org.joda.beans,Joda-Beans,org.joda,joda-beans,2.2.1
+org.joda.beans,Joda-Beans,org.joda,joda-beans,2.2.2
 org.joda.beans.integrate.freemarker,Joda-Beans Freemarker integration,org.joda,joda-beans-integrate-freemarker,2.1
 org.joda.beans.integrate.kryo,Joda-Beans Kryo integration,org.joda,joda-beans-integrate-kryo,2.1
 org.joda.beans.integrate.mongo,Joda-Beans Mongo integration,org.joda,joda-beans-integrate-mongo,2.1
