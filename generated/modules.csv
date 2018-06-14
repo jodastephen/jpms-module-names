@@ -1,7 +1,19 @@
 Module,Project,Group ID,Artifact ID,Version
+com.ctc.wstx,Woodstox,com.fasterxml.woodstox,woodstox-core,5.1.0
+com.fasterxml.aalto,aalto-xml,com.fasterxml,aalto-xml,1.1.0
+com.fasterxml.classmate,ClassMate,com.fasterxml,classmate,1.4.0
 com.fasterxml.jackson.annotation,Jackson-annotations,com.fasterxml.jackson.core,jackson-annotations,2.9.6
 com.fasterxml.jackson.core,Jackson-core,com.fasterxml.jackson.core,jackson-core,2.9.6
 com.fasterxml.jackson.databind,jackson-databind,com.fasterxml.jackson.core,jackson-databind,2.9.6
+com.fasterxml.jackson.dataformat.avro,Jackson dataformat: Avro,com.fasterxml.jackson.dataformat,jackson-dataformat-avro,2.9.6
+com.fasterxml.jackson.dataformat.cbor,Jackson dataformat: CBOR,com.fasterxml.jackson.dataformat,jackson-dataformat-cbor,2.9.6
+com.fasterxml.jackson.dataformat.csv,Jackson-dataformat-CSV,com.fasterxml.jackson.dataformat,jackson-dataformat-csv,2.9.6
+com.fasterxml.jackson.dataformat.ion,Jackson dataformat: Ion,com.fasterxml.jackson.dataformat,jackson-dataformat-ion,2.9.6
+com.fasterxml.jackson.dataformat.javaprop,Jackson-dataformat-Properties,com.fasterxml.jackson.dataformat,jackson-dataformat-properties,2.9.6
+com.fasterxml.jackson.dataformat.protobuf,Jackson dataformat: protobuf,com.fasterxml.jackson.dataformat,jackson-dataformat-protobuf,2.9.6
+com.fasterxml.jackson.dataformat.smile,Jackson dataformat: Smile,com.fasterxml.jackson.dataformat,jackson-dataformat-smile,2.9.6
+com.fasterxml.jackson.dataformat.xml,Jackson-dataformat-XML,com.fasterxml.jackson.dataformat,jackson-dataformat-xml,2.9.6
+com.fasterxml.jackson.dataformat.yaml,Jackson-dataformat-YAML,com.fasterxml.jackson.dataformat,jackson-dataformat-yaml,2.9.6
 com.fasterxml.jackson.datatype.guava,Jackson datatype: Guava,com.fasterxml.jackson.datatype,jackson-datatype-guava,2.9.6
 com.fasterxml.jackson.datatype.hibernate3,Jackson-datatype-Hibernate3,com.fasterxml.jackson.datatype,jackson-datatype-hibernate3,2.9.6
 com.fasterxml.jackson.datatype.hibernate4,Jackson-datatype-Hibernate4,com.fasterxml.jackson.datatype,jackson-datatype-hibernate4,2.9.6
@@ -13,6 +25,21 @@ com.fasterxml.jackson.datatype.joda,Jackson-datatype-Joda,com.fasterxml.jackson.
 com.fasterxml.jackson.datatype.jsonorg,Jackson-datatype-json.org,com.fasterxml.jackson.datatype,jackson-datatype-json-org,2.9.6
 com.fasterxml.jackson.datatype.jsr310,Jackson datatype: JSR310,com.fasterxml.jackson.datatype,jackson-datatype-jsr310,2.9.6
 com.fasterxml.jackson.datatype.jsr353,Jackson-datatype-JSR-353,com.fasterxml.jackson.datatype,jackson-datatype-jsr353,2.9.6
+com.fasterxml.jackson.jaxrs.cbor,Jackson-JAXRS-CBOR,com.fasterxml.jackson.jaxrs,jackson-jaxrs-cbor-provider,2.9.6
+com.fasterxml.jackson.jaxrs.json,Jackson-JAXRS-JSON,com.fasterxml.jackson.jaxrs,jackson-jaxrs-json-provider,2.9.6
+com.fasterxml.jackson.jaxrs.smile,Jackson-JAXRS-Smile,com.fasterxml.jackson.jaxrs,jackson-jaxrs-smile-provider,2.9.6
+com.fasterxml.jackson.jaxrs.xml,Jackson-JAXRS-XML,com.fasterxml.jackson.jaxrs,jackson-jaxrs-xml-provider,2.9.6
+com.fasterxml.jackson.jaxrs.yaml,Jackson-JAXRS-YAML,com.fasterxml.jackson.jaxrs,jackson-jaxrs-yaml-provider,2.9.6
+com.fasterxml.jackson.jr.ob,,com.fasterxml.jackson.jr,jackson-jr-objects,2.9.6
+com.fasterxml.jackson.jr.stree,,com.fasterxml.jackson.jr,jackson-jr-stree,2.9.6
+com.fasterxml.jackson.module.afterburner,Jackson module: Afterburner,com.fasterxml.jackson.module,jackson-module-afterburner,2.9.6
+com.fasterxml.jackson.module.guice,Jackson module: Guice,com.fasterxml.jackson.module,jackson-module-guice,2.9.6
+com.fasterxml.jackson.module.jaxb,Jackson module: JAXB Annotations,com.fasterxml.jackson.module,jackson-module-jaxb-annotations,2.9.6
+com.fasterxml.jackson.module.kotlin,jackson-module-kotlin,com.fasterxml.jackson.module,jackson-module-kotlin,2.9.6
+com.fasterxml.jackson.module.mrbean,Jackson module: Mr Bean,com.fasterxml.jackson.module,jackson-module-mrbean,2.9.6
+com.fasterxml.jackson.module.osgi,Jackson module: OSGi,com.fasterxml.jackson.module,jackson-module-osgi,2.9.6
+com.fasterxml.jackson.module.paramnames,Jackson-module-parameter-names,com.fasterxml.jackson.module,jackson-module-parameter-names,2.9.6
+com.fasterxml.jackson.module.paranamer,Jackson module: Paranamer,com.fasterxml.jackson.module,jackson-module-paranamer,2.9.6
 com.google.common,Guava: Google Core Libraries for Java,com.google.guava,guava,24.1-jre
 com.google.gson,Gson JSON library,com.google.code.gson,gson,
 com.squareup.javapoet,JavaPoet,com.squareup,javapoet,1.11.1

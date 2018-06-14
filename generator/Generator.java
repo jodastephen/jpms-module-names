@@ -238,8 +238,13 @@ class Generator {
     //    var square = generator.add("Square");
     //    square.scan("com/squareup", uri -> !uri.contains("misk"));
 
-    var jooq = generator.add("jOOQ");
-      jooq.scan("org/jooq");
+    //    var jooq = generator.add("jOOQ");
+    //    jooq.scan("org/jooq");
+
+    if (args.length == 2) {
+      var table = generator.add(args[0]);
+      table.scan(args[1]);
+    }
 
     generator
         .toPropertiesLines(row -> row.group + ':' + row.artifact + '@' + row.version)

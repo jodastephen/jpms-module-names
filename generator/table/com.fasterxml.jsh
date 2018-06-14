@@ -3,5 +3,4 @@ var fasterxml = generator.add("Faster:XML")
 fasterxml.homepage = "http://fasterxml.com/"
 fasterxml.description = "Faster, better open source XML and JSON parsing for the Java platform."
 
-fasterxml.scan("com.fasterxml.jackson.core")
-fasterxml.scan("com.fasterxml.jackson.datatype")
+fasterxml.scan("com.fasterxml")
