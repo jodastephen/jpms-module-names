@@ -66,6 +66,13 @@ Apache Commons is an Apache project focused on all aspects of reusable Java comp
 | Apache Commons IO | *`org.apache.commons.io`* | commons-io<br>[commons-io](https://mvnrepository.com/artifact/commons-io/commons-io) |
 | Apache Commons Lang v2 | *`org.apache.commons.lang`* | commons-lang<br>[commons-lang](https://mvnrepository.com/artifact/commons-lang/commons-lang) |
 
+## [Flyway](https://flywaydb.org)
+Version control for your database so you can migrate it with ease and confidence
+
+| Project | JPMS Module Name | Maven Group, Artifact and Version |
+|---------|------------------|-----------------------------------|
+| ${project.artifactId} | **:cd:`org.flywaydb.core`** | org.flywaydb<br>[flyway-core](https://mvnrepository.com/artifact/org.flywaydb/flyway-core)<br>5.1.1 |
+
 ## [jOOQ](https://www.jooq.org/)
 jOOQ generates Java code from your database and lets you build type safe SQL queries through its fluent API.
 

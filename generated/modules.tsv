@@ -96,6 +96,7 @@ org.apache.commons.io	Apache Commons IO	commons-io	commons-io
 org.apache.commons.lang	Apache Commons Lang v2	commons-lang	commons-lang	
 org.apache.commons.lang3	Apache Commons Lang	org.apache.commons	commons-lang3	3.7
 org.apiguardian.api	org.apiguardian:apiguardian-api	org.apiguardian	apiguardian-api	1.0.0
+org.flywaydb.core	${project.artifactId}	org.flywaydb	flyway-core	5.1.1
 org.joda.beans	Joda-Beans	org.joda	joda-beans	2.2.2
 org.joda.beans.integrate.freemarker	Joda-Beans Freemarker integration	org.joda	joda-beans-integrate-freemarker	2.1
 org.joda.beans.integrate.kryo	Joda-Beans Kryo integration	org.joda	joda-beans-integrate-kryo	2.1
