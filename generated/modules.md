@@ -71,7 +71,7 @@ Version control for your database so you can migrate it with ease and confidence
 
 | Project | JPMS Module Name | Maven Group, Artifact and Version |
 |---------|------------------|-----------------------------------|
-| ${project.artifactId} | **:cd:`org.flywaydb.core`** | org.flywaydb<br>[flyway-core](https://mvnrepository.com/artifact/org.flywaydb/flyway-core)<br>5.1.1 |
+| flyway-core | **:cd:`org.flywaydb.core`** | org.flywaydb<br>[flyway-core](https://mvnrepository.com/artifact/org.flywaydb/flyway-core)<br>5.1.1 |
 
 ## [jOOQ](https://www.jooq.org/)
 jOOQ generates Java code from your database and lets you build type safe SQL queries through its fluent API.

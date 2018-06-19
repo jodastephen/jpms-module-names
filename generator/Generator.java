@@ -510,6 +510,11 @@ class Generator {
         var node = nodes.item(i);
         properties.put("${" + node.getNodeName() + "}", node.getTextContent().trim());
       }
+      // manually add common "project.xxx" values
+      properties.put("${project.groupId}", group);
+      properties.put("${project.artifactId}", artifact);
+      properties.put("${project.version}", version);
+      // now expand
       name = mapPomExpandProperties(name, properties);
       url = mapPomExpandProperties(url, properties);
       group = mapPomExpandProperties(group, properties);
