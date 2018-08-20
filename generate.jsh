@@ -25,6 +25,7 @@ String version = "?"
 /open generator/table/io.netty.jsh
 /open generator/table/io.spring.jsh
 /open generator/table/org.slf4j.jsh
+/open generator/table/org.threeten.jsh
 
 printf("%d table(s) collected.%n", generator.tables.size())
 
