@@ -1,13 +1,15 @@
+import static java.util.stream.Collectors.toList;
+
 import javax.lang.model.SourceVersion;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
 /** Scan a CSV file and update generated property files. */
 public class CsvScanner {
@@ -19,11 +21,10 @@ public class CsvScanner {
     System.out.println(generator.uniques.size() + " unique modules found");
     System.out.println(generator.syntax.size() + " module names are syntactically invalid");
     System.out.println(generator.javas.size() + " module names start with 'java[x].'");
-    System.out.println(generator.nodots.size() + " module names don't contain a single dot ('.')");
+    System.out.println(generator.simple.size() + " module names don't contain a single dot ('.')");
     System.out.println(generator.duplicates.size() + " module names are not unique");
     System.out.println(generator.impostors.size() + " modules are impostors!");
 
-    System.out.println();
     var mavens = new PropertiesWriter(Path.of("generated", "module-maven.properties"));
     var versions = new PropertiesWriter(Path.of("generated", "module-version.properties"));
 
@@ -37,6 +38,20 @@ public class CsvScanner {
             });
     mavens.write();
     versions.write();
+    System.out.println();
+    System.out.printf("Wrote %d lines to %s %n", mavens.map.size(), mavens.path);
+    System.out.printf("Wrote %d lines to %s %n", versions.map.size(), versions.path);
+
+    write(Path.of("error", "error-syntax.txt"), generator.syntax);
+    write(Path.of("error", "error-simple.txt"), generator.simple);
+    write(Path.of("error", "error-javas.txt"), generator.javas);
+    write(Path.of("error", "error-impostors.txt"), generator.impostors.values());
+    write(Path.of("error", "error-duplicates.txt"), generator.duplicates.values());
+  }
+
+  private static void write(Path path, Collection<?> collection) throws Exception {
+    Files.createDirectories(path.getParent());
+    Files.write(path, collection.stream().map(Object::toString).sorted().collect(toList()));
   }
 
   private static class PropertiesWriter {
@@ -66,7 +81,7 @@ public class CsvScanner {
               .stream()
               .sorted(Comparator.comparing(Map.Entry::getKey))
               .map(e -> e.getKey() + '=' + e.getValue())
-              .collect(Collectors.toList());
+              .collect(toList());
       Files.write(path, lines);
     }
   }
@@ -78,7 +93,7 @@ public class CsvScanner {
     final Map<String, Entry> uniques = new TreeMap<>();
     final List<Entry> syntax = new ArrayList<>();
     final List<Entry> javas = new ArrayList<>();
-    final List<Entry> nodots = new ArrayList<>();
+    final List<Entry> simple = new ArrayList<>();
 
     private void build(Path path) throws Exception {
       try (var lines = Files.lines(path)) {
@@ -100,7 +115,7 @@ public class CsvScanner {
       if (moduleName.indexOf('.') == -1) {
         // System.out.println("Module name doesn't contain a single dot: " + entry + " // " +
         // entry.moduleMode);
-        nodots.add(entry);
+        simple.add(entry);
         return;
       }
       if (!SourceVersion.isName(moduleName)) {
