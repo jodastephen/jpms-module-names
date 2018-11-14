@@ -17,11 +17,22 @@ In summary, the strategy is:
 To get the whole process started, I've gathered some module names, based on conversations with the relevant projects.
 
 * Markdown table: [modules.md](generated/modules.md)
-
-> :dvd: indicates an explicit module: the jar includes a valid `module-info.class`.
-
-> :cd: marks a jar that defines a stable `Automatic-Module-Name` in it's `MANIFEST.MF` file.
-
 * Comma/tab separated values: [modules.csv](generated/modules.csv) / [modules.tsv](generated/modules.tsv)
-* Module name to Maven Group+Artifact ID map: [module-maven.properties](generated/module-maven.properties)
-* Module name to version map: [module-version.properties](generated/module-version.properties)
+
+## Modules published on Maven Central
+
+Generated `.properties` files that contain thousands of unique module names. 
+
+* [module-maven.properties](generated/module-maven.properties) - Module name to Maven Group+Artifact ID map
+* [module-version.properties](generated/module-version.properties) - Module name to version map
+
+## Suspicious modules
+
+Modules listed in the _error_ files below are suspicious and need manual correction.
+If you find your module listed here, or know an author of one, please [create an issue](https://github.com/jodastephen/jpms-module-names/issues/new) for investigation.
+
+* [error-syntax.txt](error/error-syntax.txt) - Modules with illegal names. E.g. containing Java keywords or dashes (`-`) or...
+* [error-javas.txt](error/error-javas.txt) - Module names starting with `java.` or `javax.`...
+* [error-simple.txt](error/error-simple.txt) - Module names without a single dot (`.`)...
+* [error-duplicates.txt](error/error-duplicates.txt) - Module names that are not unique...
+* [error-impostors.txt](error/error-impostors.txt) - Modules that use a well-known name already taken by other modules...
