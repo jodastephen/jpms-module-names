@@ -29,9 +29,9 @@ String version = "?"
 
 printf("%d table(s) collected.%n", generator.tables.size())
 
-printf("Generating files...%n")
-int size = generator.dump("generated")
-
-printf("Done. Dumped %d distinct modules.%n", size)
+// printf("Generating files...%n")
+// int size = generator.dump("generated")
+//
+// printf("Done. Dumped %d distinct modules.%n", size)
 
 /exit
