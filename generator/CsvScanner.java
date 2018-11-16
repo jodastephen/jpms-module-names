@@ -1,6 +1,8 @@
 import static java.util.stream.Collectors.toList;
 
 import javax.lang.model.SourceVersion;
+import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -32,9 +34,9 @@ public class CsvScanner {
         .uniques
         .values()
         .forEach(
-            entry -> {
-              mavens.put(entry, e -> e.mavenGroupColonArtifact, false);
-              versions.put(entry, e -> e.mavenVersion, true);
+            item -> {
+              mavens.put(item, e -> e.mavenGroupColonArtifact, false);
+              versions.put(item, e -> e.mavenVersion, true);
             });
     mavens.write();
     versions.write();
@@ -58,14 +60,14 @@ public class CsvScanner {
     private final Path path;
     private final Map<String, String> map;
 
-    PropertiesWriter(Path path) throws Exception {
+    PropertiesWriter(Path path) {
       this.path = path;
       this.map = loadFromProperties(path);
     }
 
-    void put(Entry entry, Function<Entry, String> function, boolean allowUpdates) {
-      var key = entry.moduleName;
-      var value = function.apply(entry);
+    void put(Item item, Function<Item, String> function, boolean allowUpdates) {
+      var key = item.moduleName;
+      var value = function.apply(item);
       var old = map.put(key, value);
       if (old != null) {
         if (allowUpdates || old.equals(value)) {
@@ -88,12 +90,15 @@ public class CsvScanner {
 
   private static class MapGenerator {
 
-    final Map<String, List<Entry>> duplicates = new TreeMap<>();
-    final Map<String, List<Entry>> impostors = new TreeMap<>();
-    final Map<String, Entry> uniques = new TreeMap<>();
-    final List<Entry> syntax = new ArrayList<>();
-    final List<Entry> javas = new ArrayList<>();
-    final List<Entry> simple = new ArrayList<>();
+    final Map<String, List<Item>> duplicates = new TreeMap<>();
+    final Map<String, List<Item>> impostors = new TreeMap<>();
+    final Map<String, Item> uniques = new TreeMap<>();
+    final List<Item> syntax = new ArrayList<>();
+    final List<Item> javas = new ArrayList<>();
+    final List<Item> simple = new ArrayList<>();
+
+    private final Map<String, String> startOfModuleNamesToMavenGroupMap =
+        loadFromProperties(Path.of("etc", "module-name-to-maven-group.properties"));
 
     private void build(Path path) throws Exception {
       try (var lines = Files.lines(path)) {
@@ -107,93 +112,82 @@ public class CsvScanner {
         // Skip caption line...
         return;
       }
-      var entry = new Entry(line);
-      var moduleName = entry.moduleName;
+      var item = new Item(line);
+      var moduleName = item.moduleName;
       if (moduleName.isBlank()) {
         return;
       }
       if (moduleName.indexOf('.') == -1) {
-        // System.out.println("Module name doesn't contain a single dot: " + entry + " // " +
-        // entry.moduleMode);
-        simple.add(entry);
+        // System.out.println("Module name doesn't contain a single dot: " + item + " // " +
+        // item.moduleMode);
+        simple.add(item);
         return;
       }
       if (!SourceVersion.isName(moduleName)) {
-        // System.out.println("Invalid module name detected: " + entry + " // " + entry.moduleMode);
-        syntax.add(entry);
+        // System.out.println("Invalid module name detected: " + item + " // " + item.moduleMode);
+        syntax.add(item);
         return;
       }
       if (moduleName.startsWith("java.") || moduleName.startsWith("javax.")) {
-        // System.out.println("Module names should not start with 'java[x].' " + entry);
-        javas.add(entry);
+        // System.out.println("Module names should not start with 'java[x].' " + item);
+        javas.add(item);
         return;
       }
-      if (!isExpectedModuleName(entry)) {
-        // System.out.println("Impostor detected: " + entry + " // " + entry.moduleMode);
-        impostors.computeIfAbsent(moduleName, key -> new ArrayList<>()).add(entry);
+      if (isImpostor(item)) {
+        // System.out.println("Impostor detected: " + item + " // " + item.moduleMode);
+        impostors.computeIfAbsent(moduleName, key -> new ArrayList<>()).add(item);
         return;
       }
       var dup = duplicates.get(moduleName);
       if (dup != null) {
-        dup.add(entry);
-        // System.out.println("Duplicate module name detected: " + entry);
+        dup.add(item);
+        // System.out.println("Duplicate module name detected: " + item);
         return;
       }
       var old = uniques.get(moduleName);
       if (old != null) {
-        if (!entry.mavenGroupColonArtifact.equals(old.mavenGroupColonArtifact)) {
+        if (!item.mavenGroupColonArtifact.equals(old.mavenGroupColonArtifact)) {
           var duplicateList = duplicates.computeIfAbsent(moduleName, key -> new ArrayList<>());
           duplicateList.add(old);
-          duplicateList.add(entry);
+          duplicateList.add(item);
           return;
         }
       }
-      uniques.put(moduleName, entry);
+      uniques.put(moduleName, item);
+    }
+
+    private boolean isImpostor(Item item) {
+      for (var entry : startOfModuleNamesToMavenGroupMap.entrySet()) {
+        if (item.moduleName.startsWith(entry.getKey())) {
+          return !item.mavenGroupId.equals(entry.getValue());
+        }
+      }
+      return false;
     }
   }
 
-  private static Map<String, String> loadFromProperties(Path path) throws Exception {
+  private static Map<String, String> loadFromProperties(Path path) {
     var map = new TreeMap<String, String>();
-    for (var line : Files.readAllLines(path)) {
-      var values = line.split("=");
-      var key = values[0].trim();
-      var value = values[1].trim();
-      if (map.put(key, value) != null) {
-        throw new IllegalStateException("Non unique key found: " + key);
+    try {
+      for (var line : Files.readAllLines(path)) {
+        var values = line.split("=");
+        var key = values[0].trim();
+        var value = values[1].trim();
+        if (map.put(key, value) != null) {
+          throw new IllegalStateException("Non unique key found: " + key);
+        }
       }
+    } catch (IOException e) {
+      throw new UncheckedIOException("Loading properties failed for: " + path, e);
     }
     return map;
-  }
-
-  private static boolean isExpectedModuleName(Entry e) {
-    // ASM
-    if (e.moduleName.startsWith("org.objectweb.asm")) {
-      return "org.ow2.asm".equals(e.mavenGroupId);
-    }
-    // Apache Commons
-    if (e.moduleName.startsWith("org.apache.commons")) {
-      return "org.apache.commons".equals(e.mavenGroupId);
-    }
-    // Apache Log4J
-    if (e.moduleName.startsWith("org.apache.logging.log4j")) {
-      return "org.apache.logging.log4j".equals(e.mavenGroupId);
-    }
-    // ByteBuddy
-    if (e.moduleName.startsWith("net.bytebuddy")) {
-      return "net.bytebuddy".equals(e.mavenGroupId);
-    }
-    // SLF4J
-    if (e.moduleName.startsWith("org.slf4j")) {
-      return "org.slf4j".equals(e.mavenGroupId);
-    }
-    return true;
   }
 
   private static String valueOrBlankIfDash(String value) {
     return "-".equals(value) ? "" : value;
   }
 
-  private static class Entry {
+  private static class Item {
 
     final String mavenGroupId;
     final String mavenArtifactId;
@@ -208,7 +202,7 @@ public class CsvScanner {
     final String jdepsToolError;
     final List<String> jdepsViolations;
 
-    private Entry(String line) {
+    private Item(String line) {
       var values = line.split(",");
       //
       this.mavenGroupId = valueOrBlankIfDash(values[0]);
