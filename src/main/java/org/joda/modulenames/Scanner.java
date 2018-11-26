@@ -104,7 +104,7 @@ public class Scanner implements AutoCloseable {
   private void scan() {
     try (var bucket = new Bucket("java9plusadoption", "us-east-1")) {
       // Prepare and load available keys from the bucket...
-      var keys = bucket.getKeys(10000, summary.startedAfter);
+      var keys = bucket.getKeys(10, summary.startedAfter);
       if (keys.isEmpty()) {
         return;
       }
