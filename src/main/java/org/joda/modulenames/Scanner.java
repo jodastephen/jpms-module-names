@@ -113,10 +113,11 @@ public class Scanner implements AutoCloseable {
       // Process each key by scan all lines within each key...
       for (var key : keys) {
         var counter = ++summary.scanObjectCounter;
-        logger.log(INFO, "[{0}/{1}] ", counter, keys.size(), key);
-        logger.log(INFO, "[{0}/{1}] -> {2}", counter, keys.size(), key);
+        var pointer = String.format("[%d/%d]", counter, keys.size());
+        logger.log(INFO, "");
+        logger.log(INFO, "{0} -> {1}", pointer, key);
         bucket.processObject(key, this::scanLine);
-        logger.log(INFO, "[{0}/{1}] -> {2}", counter, keys.size(), modules.size());
+        logger.log(INFO, "{0} -> {1} modules so far", pointer, modules.size());
         summary.lastProcessed = key;
       }
     }
@@ -163,7 +164,7 @@ public class Scanner implements AutoCloseable {
     if (module != null) {
       // Is it an identical line, a glitch in the matrix?
       if (module.line.equals(item.line)) {
-        logger.log(INFO, "Exact line duplication detected: ", item.line);
+        logger.log(INFO, "Exact line duplication detected: {0}", item.line);
         return;
       }
       // Is it an update of the Maven version?
