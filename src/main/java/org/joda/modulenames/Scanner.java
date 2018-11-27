@@ -29,7 +29,10 @@ public class Scanner implements AutoCloseable {
     var logger = System.getLogger(Scanner.class.getName());
     logger.log(INFO, "BEGIN");
 
-    try (var scanner = new Scanner(logger)) {
+    var workspace = args.length > 0 ? Path.of(args[0]) : Path.of("target", "workspace");
+    logger.log(INFO, "Workspace set to {0}", workspace);
+
+    try (var scanner = new Scanner(logger, workspace)) {
       scanner.scan();
       var s = Duration.between(begin, Instant.now()).getSeconds();
       var clock = String.format("%d:%02d:%02d", s / 3600, (s % 3600) / 60, (s % 60));
@@ -47,12 +50,12 @@ public class Scanner implements AutoCloseable {
   private final Path lastProcessedObjectPath;
   private final Path modulesProperties;
 
-  private Scanner(System.Logger logger) {
+  private Scanner(System.Logger logger, Path workspace) {
     this.logger = logger;
     this.modules = new TreeMap<>();
-    this.summary = new Summary();
-    this.modulesProperties = summary.workspace.resolve("modules.properties");
-    this.lastProcessedObjectPath = summary.workspace.resolve("last-processed-object.txt");
+    this.summary = new Summary(workspace);
+    this.modulesProperties = workspace.resolve("modules.properties");
+    this.lastProcessedObjectPath = workspace.resolve("last-processed-object.txt");
 
     // Load settings...
     this.mavenGroupAlias = loadFromProperties(Path.of("etc", "maven-group-alias.properties"));

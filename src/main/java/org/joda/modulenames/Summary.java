@@ -54,7 +54,11 @@ class Summary {
   final Suspicious suspicious = new Suspicious();
 
   /** Defaults to volatile {@code target/workspace}. */
-  Path workspace = Path.of("target", "workspace");
+  final Path workspace;
+
+  Summary(Path workspace) {
+    this.workspace = workspace;
+  }
 
   List<String> toStrings() {
     return List.of(
