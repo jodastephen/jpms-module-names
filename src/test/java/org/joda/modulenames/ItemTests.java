@@ -4,11 +4,17 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import java.util.List;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.RepetitionInfo;
 import org.junit.jupiter.api.Test;
 
 class ItemTests {
+
+  private static final List<String> MODULE_LINES =
+      List.of(
+          "org.ow2.asm,asm,6.0,org.objectweb.asm,-,explicit,-,-,-",
+          "org.junit.jupiter,junit-jupiter-api,5.0.0,org.junit.jupiter.api,-,automatic,-,-,-");
 
   @Test
   void lineIsStoredAsIs() {
@@ -27,5 +33,12 @@ class ItemTests {
     } else {
       assertDoesNotThrow(() -> new Item(line));
     }
+  }
+
+  @Test
+  void moduleModeIcon() {
+    assertEquals("?", new Item("-" + ",-".repeat(8)).toMarkdownModuleModeIcon());
+    assertEquals(":dvd:", new Item(MODULE_LINES.get(0)).toMarkdownModuleModeIcon());
+    assertEquals(":cd:", new Item(MODULE_LINES.get(1)).toMarkdownModuleModeIcon());
   }
 }

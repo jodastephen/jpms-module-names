@@ -1,5 +1,7 @@
 package org.joda.modulenames;
 
+import static java.util.Comparator.comparing;
+
 import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -66,7 +68,7 @@ class Summary {
         "",
         scanObjectCounter + " objects (`.csv` files) processed",
         scanLineCounter + " lines scanned",
-        scanModuleCounter + " modules detected",
+        scanModuleCounter + " module-related events detected",
         "Started with " + startedWith + " well-known modules",
         "Started after file: " + (startedAfter.isBlank() ? "-" : startedAfter),
         "First processed file: " + firstProcessed,
@@ -89,29 +91,29 @@ class Summary {
     md.add("```");
     md.addAll(toStrings());
     md.add("```");
-    md.add("");
-    md.add("### " + uniques.size() + " new modules");
-    uniques.values().forEach(it -> md.add("- `" + it.moduleName + "` -> " + it.line));
-    md.add("");
-    md.add("### " + updates.size() + " updated modules");
-    updates.values().forEach(it -> md.add("- `" + it.moduleName + "` -> " + it.line));
+    toMarkdown(md, "New Unique Modules", uniques);
+    toMarkdown(md, "Updated Modules", updates);
     md.add("");
     md.add("## Suspicious Modules");
     md.add("");
     md.add("Modules listed below didn't make it into the `modules.properties` database.");
-    md.add("");
-    md.add("### Syntax Error (" + suspicious.syntax.size() + ")");
-    md.add("");
-    suspicious.syntax.forEach(it -> md.add("- `" + it.moduleName + "` -> " + it.line));
-    md.add("");
-    md.add("### Impostor (" + suspicious.impostors.size() + ")");
-    md.add("");
-    suspicious.impostors.forEach(it -> md.add("- `" + it.moduleName + "` -> " + it.line));
-    md.add("");
-    md.add("### Unexpected Naming (" + suspicious.naming.size() + ")");
-    md.add("");
-    suspicious.naming.forEach(it -> md.add("- `" + it.moduleName + "` -> " + it.line));
-    md.add("");
+    toMarkdown(md, "Syntax Error", suspicious.syntax);
+    toMarkdown(md, "Impostor", suspicious.impostors);
+    toMarkdown(md, "Unexpected Naming", suspicious.naming);
     return md;
+  }
+
+  private void toMarkdown(List<String> md, String caption, Map<String, Item> map) {
+    md.add("");
+    md.add("### " + caption + " (" + map.size() + ")");
+    md.add("");
+    map.values().forEach(item -> md.add(item.toMarkdown()));
+  }
+
+  private void toMarkdown(List<String> md, String caption, Set<Item> items) {
+    md.add("");
+    md.add("### " + caption + " (" + items.size() + ")");
+    md.add("");
+    items.stream().sorted(comparing(Item::name)).forEach(item -> md.add(item.toMarkdown()));
   }
 }

@@ -66,6 +66,26 @@ final class Item implements Comparable<Item> {
     return Objects.hashCode(line);
   }
 
+  String name() {
+    return moduleName;
+  }
+
+  String toMarkdown() {
+    var icon = toMarkdownModuleModeIcon();
+    return "- " + icon + " `" + moduleName + "` -> " + line;
+  }
+
+  String toMarkdownModuleModeIcon() {
+    switch (moduleMode) {
+      case "automatic":
+        return ":cd:";
+      case "explicit":
+        return ":dvd:";
+      default:
+        return "?";
+    }
+  }
+
   @Override
   public String toString() {
     return line;
