@@ -21,9 +21,13 @@ class Item {
   final List<String> jdepsViolations;
 
   // https://github.com/sandermak/modulescanner/blob/master/src/main/java/org/adoptopenjdk/modulescanner/SeparatedValuesPrinter.java
-  Item(String csvLine) {
-    this.line = csvLine;
-    var values = csvLine.split(",");
+  Item(String line) {
+    this.line = line;
+    var values = line.split(",");
+    if (values.length < 9) {
+      throw new IllegalArgumentException(
+          "Expected at least 9 values, only got " + values.length + " in: " + line);
+    }
     //
     this.mavenGroupId = blankIfDash(values[0]);
     this.mavenArtifactId = blankIfDash(values[1]);
