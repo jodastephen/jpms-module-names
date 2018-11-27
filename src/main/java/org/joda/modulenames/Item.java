@@ -47,5 +47,4 @@ class Item {
   private static String blankIfDash(String value) {
     return "-".equals(value) ? "" : value;
   }
-
 }

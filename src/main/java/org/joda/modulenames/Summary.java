@@ -1,5 +1,7 @@
 package org.joda.modulenames;
 
+import static java.util.Comparator.comparing;
+
 import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -96,17 +98,17 @@ class Summary {
     md.add("");
     md.add("### Syntax Error (" + suspicious.syntax.size() + ")");
     md.add("");
-    suspicious.syntax.sort((i, j) -> i.moduleMode.compareTo(j.moduleName));
+    suspicious.syntax.sort(comparing(i -> i.moduleName));
     suspicious.syntax.forEach(it -> md.add("- `" + it.moduleName + "` -> " + it.line));
     md.add("");
     md.add("### Impostor (" + suspicious.impostors.size() + ")");
     md.add("");
-    suspicious.impostors.sort((i, j) -> i.moduleMode.compareTo(j.moduleName));
+    suspicious.impostors.sort(comparing(i -> i.moduleName));
     suspicious.impostors.forEach(it -> md.add("- `" + it.moduleName + "` -> " + it.line));
     md.add("");
     md.add("### Unexpected Naming (" + suspicious.naming.size() + ")");
     md.add("");
-    suspicious.naming.sort((i, j) -> i.moduleMode.compareTo(j.moduleName));
+    suspicious.naming.sort(comparing(i -> i.moduleName));
     suspicious.naming.forEach(it -> md.add("- `" + it.moduleName + "` -> " + it.line));
     md.add("");
     return md;
