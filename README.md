@@ -24,5 +24,5 @@ Meanwhile, Generated `.properties` files that contain thousands of unique module
 
 ## Suspicious modules found on Maven Central
 
-Modules listed in the **Suspicious Modules** section in the [summaries](generated/logs/) are suspicious and need manual correction.
+Modules listed in the **Suspicious Modules** section in the [logs](generated/log/) are suspicious and need manual correction.
 If you find your module listed here, or know an author of one, please [create an issue](https://github.com/jodastephen/jpms-module-names/issues/new) for investigation.
