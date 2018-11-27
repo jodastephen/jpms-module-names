@@ -13,27 +13,16 @@ In summary, the strategy is:
 * Creating a module with a particular name takes ownership of that package name and everything beneath it.
 * As the owner of that namespace, any sub-packages may be grouped into sub-modules as desired so long as no package is in two modules.
 
-## Well-known module names
+## Well-known module names published on Maven Central
 
 To get the whole process started, I've gathered some module names, based on conversations with the relevant projects.
-
-* Markdown table: [modules.md](generated/modules.md)
-* Comma/tab separated values: [modules.csv](generated/modules.csv) / [modules.tsv](generated/modules.tsv)
-
-## Modules published on Maven Central
-
-Generated `.properties` files that contain thousands of unique module names. 
+Meanwhile, Generated `.properties` files that contain thousands of unique module names. 
 
 * [module-maven.properties](generated/module-maven.properties) - Module name to Maven Group+Artifact ID map
 * [module-version.properties](generated/module-version.properties) - Module name to version map
+* [modules.properties](generated/modules.properties) - Module name to CSV source line map
 
-## Suspicious modules
+## Suspicious modules found on Maven Central
 
-Modules listed in the _error_ files below are suspicious and need manual correction.
+Modules listed in the **Suspicious Modules** section in the [summaries](generated/logs/) are suspicious and need manual correction.
 If you find your module listed here, or know an author of one, please [create an issue](https://github.com/jodastephen/jpms-module-names/issues/new) for investigation.
-
-* [error-syntax.txt](error/error-syntax.txt) - Modules with illegal names. E.g. containing Java keywords or dashes (`-`) or...
-* [error-javas.txt](error/error-javas.txt) - Module names starting with `java.` or `javax.`...
-* [error-simple.txt](error/error-simple.txt) - Module names without a single dot (`.`)...
-* [error-duplicates.txt](error/error-duplicates.txt) - Module names that are not unique...
-* [error-impostors.txt](error/error-impostors.txt) - Modules that use a well-known name already taken by other modules...
