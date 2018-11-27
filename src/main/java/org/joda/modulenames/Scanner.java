@@ -60,10 +60,11 @@ public class Scanner implements AutoCloseable {
     // Load settings...
     this.mavenGroupAlias = loadFromProperties(Path.of("etc", "maven-group-alias.properties"));
 
-    // Load all well-known module items from previous scan runs...
-    var wellKnownModules = loadFromProperties(modulesProperties, Item::new);
-    modules.putAll(wellKnownModules);
-    logger.log(INFO, "Loaded {0} modules from {1}", modules.size(), modulesProperties);
+    // Load all well-known module items from previous scan runs or bootstrap modules...
+    var bootstrapProperties = Path.of("etc", "bootstrap-modules.properties");
+    var path = Files.exists(modulesProperties) ? modulesProperties : bootstrapProperties;
+    modules.putAll(loadFromProperties(path, Item::new));
+    logger.log(INFO, "Starting with {0} well-known modules: {1}", modules.size(), path);
 
     summary.startedWith = modules.size();
     summary.lastProcessed = loadString(lastProcessedObjectPath);
