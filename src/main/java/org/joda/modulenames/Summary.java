@@ -1,23 +1,23 @@
 package org.joda.modulenames;
 
-import static java.util.Comparator.comparing;
-
 import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
 /** Single scan run summary. */
 class Summary {
 
   /** Collection of suspicious modules. */
   class Suspicious {
-    final List<Item> impostors = new ArrayList<>();
-    final List<Item> naming = new ArrayList<>();
-    final List<Item> syntax = new ArrayList<>();
+    final Set<Item> impostors = new TreeSet<>();
+    final Set<Item> naming = new TreeSet<>();
+    final Set<Item> syntax = new TreeSet<>();
   }
 
   /** Date and time. */
@@ -68,7 +68,7 @@ class Summary {
         scanLineCounter + " lines scanned",
         scanModuleCounter + " modules detected",
         "Started with " + startedWith + " well-known modules",
-        "Started after file: " + startedAfter,
+        "Started after file: " + (startedAfter.isBlank() ? "-" : startedAfter),
         "First processed file: " + firstProcessed,
         "Last processed file: " + lastProcessed,
         "",
@@ -102,17 +102,14 @@ class Summary {
     md.add("");
     md.add("### Syntax Error (" + suspicious.syntax.size() + ")");
     md.add("");
-    suspicious.syntax.sort(comparing(i -> i.moduleName));
     suspicious.syntax.forEach(it -> md.add("- `" + it.moduleName + "` -> " + it.line));
     md.add("");
     md.add("### Impostor (" + suspicious.impostors.size() + ")");
     md.add("");
-    suspicious.impostors.sort(comparing(i -> i.moduleName));
     suspicious.impostors.forEach(it -> md.add("- `" + it.moduleName + "` -> " + it.line));
     md.add("");
     md.add("### Unexpected Naming (" + suspicious.naming.size() + ")");
     md.add("");
-    suspicious.naming.sort(comparing(i -> i.moduleName));
     suspicious.naming.forEach(it -> md.add("- `" + it.moduleName + "` -> " + it.line));
     md.add("");
     return md;
