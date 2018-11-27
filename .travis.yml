@@ -1,0 +1,14 @@
+language: java
+jdk: openjdk11
+
+before_install:
+  - unset _JAVA_OPTIONS
+
+install: true
+
+script:
+  - mvn verify
+
+cache:
+  directories:
+    - $HOME/.m2
