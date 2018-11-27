@@ -1,9 +1,10 @@
 package org.joda.modulenames;
 
 import java.util.List;
+import java.util.Objects;
 
 /** Raw data item. */
-class Item {
+final class Item implements Comparable<Item> {
 
   final String line;
 
@@ -41,6 +42,28 @@ class Item {
     //
     this.jdepsToolError = blankIfDash(values[7]);
     this.jdepsViolations = List.of(values[8].split(" \\+ "));
+  }
+
+  @Override
+  public int compareTo(Item other) {
+    return line.compareTo(other.line);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == null) {
+      return false;
+    }
+    if (!(obj instanceof Item)) {
+      return false;
+    }
+    var other = (Item) obj;
+    return Objects.equals(this.line, other.line);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(line);
   }
 
   @Override
