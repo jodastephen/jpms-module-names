@@ -8,7 +8,8 @@ import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.ListObjectsV2Request;
 import java.io.IOException;
-import java.io.UncheckedIOException;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -21,16 +22,28 @@ class Bucket implements AutoCloseable {
   private static final int MAX_KEYS_PER_PAGE = 1000;
 
   private final String bucketName;
+  private final Path cache;
   private final AmazonS3 s3;
+  private final FileSystem zipfs;
 
-  Bucket(String bucketName, String bucketRegion) {
+  Bucket(String bucketName, String bucketRegion) throws IOException {
     this.bucketName = bucketName;
     this.s3 = AmazonS3ClientBuilder.standard().withRegion(bucketRegion).build();
+
+    var loader = getClass().getClassLoader();
+    this.cache = Path.of("etc", "cache", bucketName);
+    this.zipfs = FileSystems.newFileSystem(cache.resolve(bucketName + ".zip"), loader);
+
+    if (LOG.isLoggable(INFO)) {
+      var count = Files.list(zipfs.getPath("/")).count();
+      LOG.log(INFO, "{0} entries in {1}", count, zipfs);
+    }
   }
 
   @Override
-  public void close() {
+  public void close() throws IOException {
     s3.shutdown();
+    zipfs.close();
   }
 
   List<String> getKeys(int limit, String after) {
@@ -49,7 +62,7 @@ class Bucket implements AutoCloseable {
         break;
       }
       request.setMaxKeys(Math.min(pendingKeys, MAX_KEYS_PER_PAGE));
-      LOG.log(INFO, "Get objects list... (max={0}, token={1})", request.getMaxKeys(), request.getContinuationToken());
+      LOG.log(INFO, "Get objects list... (max={0})", request.getMaxKeys());
       var objects = s3.listObjectsV2(request);
       var summaries = objects.getObjectSummaries();
       for (var summary : summaries) {
@@ -68,13 +81,16 @@ class Bucket implements AutoCloseable {
     return keys;
   }
 
-  void processObject(String key, Consumer<String> consumeLine) {
-    var home = Path.of(System.getProperty("user.home"));
-    var cache = home.resolve(".jpms-module-names").resolve(bucketName);
+  void processObject(String key, Consumer<String> consumeLine) throws IOException {
+    var zip = zipfs.getPath(key);
     var csv = cache.resolve(key);
-    try {
+    Path path;
+    if (Files.exists(zip)) {
+      LOG.log(INFO, "Extracting {0} from {1}...", key, zip);
+      path = zip;
+    } else {
       if (Files.notExists(csv)) {
-        LOG.log(INFO, "Downloading {0}...", key);
+        LOG.log(INFO, "Downloading {0} from {1}...", key, bucketName);
         Files.createDirectories(cache);
         try (var object = s3.getObject(new GetObjectRequest(bucketName, key))) {
           LOG.log(DEBUG, "Content-Type: {0}", object.getObjectMetadata().getContentType());
@@ -82,9 +98,8 @@ class Bucket implements AutoCloseable {
         }
         LOG.log(INFO, "Loaded {0} bytes to {1}", Files.size(csv), csv);
       }
-      Files.readAllLines(csv).forEach(consumeLine);
-    } catch (IOException e) {
-      throw new UncheckedIOException("Processing object failed: " + key, e);
+      path = csv;
     }
+    Files.readAllLines(path).forEach(consumeLine);
   }
 }

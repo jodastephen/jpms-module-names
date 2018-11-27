@@ -1,8 +1,7 @@
 package org.joda.modulenames;
 
-import javax.lang.model.SourceVersion;
-
 import static java.lang.System.Logger.Level.DEBUG;
+import static java.lang.System.Logger.Level.ERROR;
 import static java.lang.System.Logger.Level.INFO;
 import static java.lang.System.Logger.Level.WARNING;
 import static org.joda.modulenames.Utility.loadFromProperties;
@@ -17,6 +16,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
+import javax.lang.model.SourceVersion;
 
 /** Main scanner program. */
 public class Scanner implements AutoCloseable {
@@ -34,6 +34,8 @@ public class Scanner implements AutoCloseable {
       var s = Duration.between(begin, Instant.now()).getSeconds();
       var clock = String.format("%d:%02d:%02d", s / 3600, (s % 3600) / 60, (s % 60));
       logger.log(INFO, "Scanner clock shows {0}", clock);
+    } catch (IOException e) {
+      logger.log(ERROR, "Scanning failed!", e);
     }
     logger.log(INFO, "END");
   }
@@ -101,7 +103,7 @@ public class Scanner implements AutoCloseable {
     }
   }
 
-  private void scan() {
+  private void scan() throws IOException {
     try (var bucket = new Bucket("java9plusadoption", "us-east-1")) {
       // Prepare and load available keys from the bucket...
       var keys = bucket.getKeys(10, summary.startedAfter);
