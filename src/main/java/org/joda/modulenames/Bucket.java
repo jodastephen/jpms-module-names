@@ -86,14 +86,13 @@ class Bucket implements AutoCloseable {
     var csv = cache.resolve(key);
     Path path;
     if (Files.exists(zip)) {
-      LOG.log(INFO, "Extracting {0} from {1}...", key, zip);
+      LOG.log(INFO, "Extracting {0} from {1}...", key, zipfs);
       path = zip;
     } else {
       if (Files.notExists(csv)) {
-        LOG.log(INFO, "Downloading {0} from {1}...", key, bucketName);
+        LOG.log(INFO, "Downloading {0} from remote {1}...", key, bucketName);
         Files.createDirectories(cache);
         try (var object = s3.getObject(new GetObjectRequest(bucketName, key))) {
-          LOG.log(DEBUG, "Content-Type: {0}", object.getObjectMetadata().getContentType());
           Files.copy(object.getObjectContent().getDelegateStream(), csv);
         }
         LOG.log(INFO, "Loaded {0} bytes to {1}", Files.size(csv), csv);
