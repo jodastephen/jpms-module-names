@@ -2,9 +2,11 @@ package org.joda.modulenames;
 
 import static java.lang.System.Logger.Level.DEBUG;
 import static java.lang.System.Logger.Level.INFO;
+import static java.lang.System.Logger.Level.WARNING;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
+import com.amazonaws.services.s3.model.AmazonS3Exception;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.ListObjectsV2Request;
 import java.io.IOException;
@@ -30,23 +32,51 @@ class Bucket implements AutoCloseable {
     this.bucketName = bucketName;
     this.s3 = AmazonS3ClientBuilder.standard().withRegion(bucketRegion).build();
 
+    try {
+      if (!s3.doesBucketExistV2(bucketName)) {
+        var message = String.format("Bucket %s not found in %s", bucketName, bucketRegion);
+        throw new IllegalArgumentException(message);
+      }
+    } catch (AmazonS3Exception e) {
+      throw new IllegalArgumentException("Illegal bucket name or region?", e);
+    }
+
     var loader = getClass().getClassLoader();
     this.cache = Path.of("etc", "cache", bucketName);
-    this.zipfs = FileSystems.newFileSystem(cache.resolve(bucketName + ".zip"), loader);
-
-    if (LOG.isLoggable(INFO)) {
-      var count = Files.list(zipfs.getPath("/")).count();
-      LOG.log(INFO, "{0} entries in {1}", count, zipfs);
+    var zipfile = cache.resolve(bucketName + ".zip");
+    if (Files.exists(zipfile)) {
+      this.zipfs = FileSystems.newFileSystem(zipfile, loader);
+      if (LOG.isLoggable(INFO)) {
+        var count = Files.list(zipfs.getPath("/")).count();
+        LOG.log(INFO, "{0} entries in {1}", count, zipfs);
+      }
+    } else {
+      this.zipfs = null;
     }
   }
 
   @Override
-  public void close() throws IOException {
+  public void close() {
     s3.shutdown();
-    zipfs.close();
+    if (zipfs != null) {
+      try {
+        zipfs.close();
+      } catch (IOException e) {
+        LOG.log(WARNING, "Closing file system failed!", e);
+      }
+    }
   }
 
   List<String> getKeys(int limit, String after) {
+    if (limit < 0) {
+      throw new IllegalArgumentException("limit must not be negative: " + limit);
+    }
+    if (limit == 0) {
+      return List.of();
+    }
+    if (after == null) {
+      throw new IllegalArgumentException("after must not be null");
+    }
     LOG.log(INFO, "Get keys from {0} bucket (limit={1}, after={2})...", bucketName, limit, after);
     var keys = new ArrayList<String>();
     var bytes = 0L;
@@ -82,23 +112,28 @@ class Bucket implements AutoCloseable {
   }
 
   void processObject(String key, Consumer<String> consumeLine) throws IOException {
-    var zip = zipfs.getPath(key);
-    var csv = cache.resolve(key);
-    Path path;
-    if (Files.exists(zip)) {
-      LOG.log(INFO, "Extracting {0} from {1}...", key, zipfs);
-      path = zip;
-    } else {
-      if (Files.notExists(csv)) {
-        LOG.log(INFO, "Downloading {0} from remote {1}...", key, bucketName);
-        Files.createDirectories(cache);
-        try (var object = s3.getObject(new GetObjectRequest(bucketName, key))) {
-          Files.copy(object.getObjectContent().getDelegateStream(), csv);
-        }
-        LOG.log(INFO, "Loaded {0} bytes to {1}", Files.size(csv), csv);
-      }
-      path = csv;
-    }
+    Path path = toPath(key);
+    LOG.log(INFO, "Processing {0} by reading lines from {1}...", key, path);
     Files.readAllLines(path).forEach(consumeLine);
+  }
+
+  private Path toPath(String key) throws IOException {
+    if (zipfs != null) {
+      var zip = zipfs.getPath(key);
+      if (Files.exists(zip)) {
+        LOG.log(DEBUG, "Extracting {0} from {1}...", key, zipfs);
+        return zip;
+      }
+    }
+    var csv = cache.resolve(key);
+    if (Files.notExists(csv)) {
+      LOG.log(DEBUG, "Downloading {0} from remote {1}...", key, bucketName);
+      Files.createDirectories(cache);
+      try (var object = s3.getObject(new GetObjectRequest(bucketName, key))) {
+        Files.copy(object.getObjectContent().getDelegateStream(), csv);
+      }
+      LOG.log(DEBUG, "Loaded {0} bytes to {1}", Files.size(csv), csv);
+    }
+    return csv;
   }
 }
