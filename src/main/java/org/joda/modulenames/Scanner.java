@@ -15,6 +15,7 @@ import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Objects;
 import java.util.TreeMap;
 import javax.lang.model.SourceVersion;
 
@@ -110,7 +111,7 @@ public class Scanner implements AutoCloseable {
   private void scan() throws IOException {
     try (var bucket = new Bucket("java9plusadoption", "us-east-1")) {
       // Prepare and load available keys from the bucket...
-      var keys = bucket.getKeys(1000, summary.startedAfter);
+      var keys = bucket.getKeys("reports/", 1000, summary.startedAfter);
       if (keys.isEmpty()) {
         return;
       }
@@ -177,6 +178,10 @@ public class Scanner implements AutoCloseable {
       if (module.mavenGroupColonArtifact.equals(item.mavenGroupColonArtifact)) {
         var now = item.mavenVersion;
         var old = module.mavenVersion;
+        if (Objects.equals(now, old)) {
+          logger.log(INFO, "Version duplication detected: {0}", item.line);
+          return;
+        }
         logger.log(INFO, "Version of module {0} set to {1} (was={2}) ", name, now, old);
         modules.put(name, item);
         summary.updates.put(name, item);

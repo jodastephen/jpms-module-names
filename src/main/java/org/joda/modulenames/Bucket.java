@@ -45,6 +45,7 @@ class Bucket implements AutoCloseable {
     this.cache = Path.of("etc", "cache", bucketName);
     var zipfile = cache.resolve(bucketName + ".zip");
     if (Files.exists(zipfile)) {
+      LOG.log(INFO, "Creating cache file system from {0}...", zipfile);
       this.zipfs = FileSystems.newFileSystem(zipfile, loader);
       if (LOG.isLoggable(INFO)) {
         var count = Files.list(zipfs.getPath("/")).count();
@@ -67,7 +68,7 @@ class Bucket implements AutoCloseable {
     }
   }
 
-  List<String> getKeys(int limit, String after) {
+  List<String> getKeys(String prefix, int limit, String after) {
     if (limit < 0) {
       throw new IllegalArgumentException("limit must not be negative: " + limit);
     }
@@ -92,6 +93,8 @@ class Bucket implements AutoCloseable {
         break;
       }
       request.setMaxKeys(Math.min(pendingKeys, MAX_KEYS_PER_PAGE));
+      request.setDelimiter("/");
+      request.setPrefix(prefix);
       LOG.log(INFO, "Get objects list... (max={0})", request.getMaxKeys());
       var objects = s3.listObjectsV2(request);
       var summaries = objects.getObjectSummaries();
@@ -127,10 +130,15 @@ class Bucket implements AutoCloseable {
     }
     var csv = cache.resolve(key);
     if (Files.notExists(csv)) {
-      LOG.log(DEBUG, "Downloading {0} from remote {1}...", key, bucketName);
+      Files.createDirectories(csv.getParent());
+      LOG.log(INFO, "Downloading {0} from remote {1}...", key, bucketName);
       Files.createDirectories(cache);
       try (var object = s3.getObject(new GetObjectRequest(bucketName, key))) {
-        Files.copy(object.getObjectContent().getDelegateStream(), csv);
+        var length = object.getObjectMetadata().getContentLength();
+        LOG.log(INFO, "Loading {0} bytes to {1}...", length, csv);
+        try (var stream = object.getObjectContent().getDelegateStream()) {
+          Files.copy(stream, csv);
+        }
       }
       LOG.log(DEBUG, "Loaded {0} bytes to {1}", Files.size(csv), csv);
     }

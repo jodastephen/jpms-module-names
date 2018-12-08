@@ -19,27 +19,37 @@ class BucketTests {
   }
 
   @Test
-  void getKeys1To10() {
+  void getKeys1To10_inRoot() {
+    getKeys1To10("");
+  }
+
+  @Test
+  void getKeys1To10_inReports() {
+    getKeys1To10("reports/");
+  }
+
+  private void getKeys1To10(String prefix) {
     try (var bucket = bucket()) {
-      var actualKeys = bucket.getKeys(10, "");
+      var actualKeys = bucket.getKeys(prefix, 10, "");
       assertLinesMatch(
           List.of(
-              "modulescanner-report-2018_08_18_00_58_06.csv",
-              "modulescanner-report-2018_08_20_19_49_05.csv",
-              "modulescanner-report-2018_08_20_20_23_29.csv",
-              "modulescanner-report-2018_08_20_20_24_45.csv",
-              "modulescanner-report-2018_08_20_20_33_12.csv",
-              "modulescanner-report-2018_08_20_20_35_15.csv",
-              "modulescanner-report-2018_08_20_21_08_53.csv",
-              "modulescanner-report-2018_08_20_21_23_19.csv",
-              "modulescanner-report-2018_08_20_21_35_31.csv",
-              "modulescanner-report-2018_08_20_21_41_55.csv"),
+              prefix + "modulescanner-report-2018_08_18_00_58_06.csv",
+              prefix + "modulescanner-report-2018_08_20_19_49_05.csv",
+              prefix + "modulescanner-report-2018_08_20_20_23_29.csv",
+              prefix + "modulescanner-report-2018_08_20_20_24_45.csv",
+              prefix + "modulescanner-report-2018_08_20_20_33_12.csv",
+              prefix + "modulescanner-report-2018_08_20_20_35_15.csv",
+              prefix + "modulescanner-report-2018_08_20_21_08_53.csv",
+              prefix + "modulescanner-report-2018_08_20_21_23_19.csv",
+              prefix + "modulescanner-report-2018_08_20_21_35_31.csv",
+              prefix + "modulescanner-report-2018_08_20_21_41_55.csv"),
           actualKeys);
     }
     var logger = System.getLogger(Bucket.class.getName());
     if (logger instanceof CollectingLoggerFinder.Logger) {
       var logs = ((CollectingLoggerFinder.Logger) logger).getLogs();
       logs.stream().map(CollectingLoggerFinder.Log::getMessage).forEach(System.out::println);
+      logs.clear();
     }
   }
 
