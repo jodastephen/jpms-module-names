@@ -22,6 +22,9 @@ import javax.lang.model.SourceVersion;
 /** Main scanner program. */
 public class Scanner implements AutoCloseable {
 
+  private static final boolean DRY_RUN = false;
+  private static final String PREFIX = "reports/";
+
   public static void main(String... args) {
     System.setProperty(
         "java.util.logging.SimpleFormatter.format",
@@ -111,8 +114,9 @@ public class Scanner implements AutoCloseable {
   private void scan() throws IOException {
     try (var bucket = new Bucket("java9plusadoption", "us-east-1")) {
       // Prepare and load available keys from the bucket...
-      var keys = bucket.getKeys("reports/", 1000, summary.startedAfter);
-      if (keys.isEmpty()) {
+      var limit = DRY_RUN ? Integer.MAX_VALUE : 1000;
+      var keys = bucket.getKeys(PREFIX, limit, summary.startedAfter);
+      if (DRY_RUN || keys.isEmpty()) {
         return;
       }
       summary.firstProcessed = keys.get(0);
