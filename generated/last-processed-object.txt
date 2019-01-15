@@ -1,1 +1,1 @@
-reports/modulescanner-report-2018_11_15_07_07_35.csv
+modulescanner-report-2018_11_15_07_07_35.csv
