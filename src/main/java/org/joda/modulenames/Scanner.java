@@ -23,7 +23,7 @@ import javax.lang.model.SourceVersion;
 public class Scanner implements AutoCloseable {
 
   private static final boolean DRY_RUN = false;
-  private static final String PREFIX = "reports/";
+  private static final String PREFIX = ""; // a potential sub-directory like: "reports/"
 
   public static void main(String... args) {
     System.setProperty(
