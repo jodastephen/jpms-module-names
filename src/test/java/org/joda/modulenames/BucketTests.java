@@ -23,11 +23,6 @@ class BucketTests {
     getKeys1To10("");
   }
 
-  @Test
-  void getKeys1To10_inReports() {
-    getKeys1To10("reports/");
-  }
-
   private void getKeys1To10(String prefix) {
     try (var bucket = bucket()) {
       var actualKeys = bucket.getKeys(prefix, 10, "");
