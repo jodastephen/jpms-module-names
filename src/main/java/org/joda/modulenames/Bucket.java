@@ -15,7 +15,9 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.function.Consumer;
 
 class Bucket implements AutoCloseable {
@@ -26,7 +28,7 @@ class Bucket implements AutoCloseable {
   private final String bucketName;
   private final Path cache;
   private final AmazonS3 s3;
-  private final FileSystem zipfs;
+  private final Map<Integer, FileSystem> zips;
 
   Bucket(String bucketName, String bucketRegion) throws IOException {
     this.bucketName = bucketName;
@@ -41,27 +43,35 @@ class Bucket implements AutoCloseable {
       throw new IllegalArgumentException("Illegal bucket name or region?", e);
     }
 
-    var loader = getClass().getClassLoader();
     this.cache = Path.of("etc", "cache", bucketName);
-    var zipfile = cache.resolve(bucketName + ".zip");
-    if (Files.exists(zipfile)) {
-      LOG.log(INFO, "Creating cache file system from {0}...", zipfile);
-      this.zipfs = FileSystems.newFileSystem(zipfile, loader);
-      if (LOG.isLoggable(INFO)) {
-        var count = Files.list(zipfs.getPath("/")).count();
-        LOG.log(INFO, "{0} entries in {1}", count, zipfs);
+    this.zips = createZips();
+  }
+
+  private Map<Integer, FileSystem> createZips() throws IOException {
+    var loader = getClass().getClassLoader();
+    var map = new HashMap<Integer, FileSystem>();
+    for (int year = 2018; year < 2030; year++) {
+      var zipfile = cache.resolve(bucketName + "-" + year + ".zip");
+      if (Files.notExists(zipfile)) {
+        continue;
       }
-    } else {
-      this.zipfs = null;
+      LOG.log(INFO, "Creating cache file system from {0}...", zipfile);
+      var zipFileSystem = FileSystems.newFileSystem(zipfile, loader);
+      if (LOG.isLoggable(INFO)) {
+        var count = Files.list(zipFileSystem.getPath("/")).count();
+        LOG.log(INFO, "{0} entries in {1}", count, zipFileSystem);
+      }
+      map.put(year, zipFileSystem);
     }
+    return map;
   }
 
   @Override
   public void close() {
     s3.shutdown();
-    if (zipfs != null) {
+    for (var zip : zips.values()) {
       try {
-        zipfs.close();
+        zip.close();
       } catch (IOException e) {
         LOG.log(WARNING, "Closing file system failed!", e);
       }
@@ -121,10 +131,13 @@ class Bucket implements AutoCloseable {
   }
 
   private Path toPath(String key) throws IOException {
-    if (zipfs != null) {
-      var zip = zipfs.getPath(key);
+    // Expecting key format: "modulescanner-report-2018_08_18_00_58_06.csv"
+    var year = Integer.valueOf(key.substring(21, 25));
+    var zipFileSystem = zips.get(year);
+    if (zipFileSystem != null) {
+      var zip = zipFileSystem.getPath(key);
       if (Files.exists(zip)) {
-        LOG.log(DEBUG, "Extracting {0} from {1}...", key, zipfs);
+        LOG.log(DEBUG, "Extracting {0} from {1}...", key, zipFileSystem);
         return zip;
       }
     }
